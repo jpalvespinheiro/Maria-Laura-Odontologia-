@@ -218,8 +218,7 @@ export default function Home() {
             </motion.div>
             
             <motion.h1 variants={fadeIn} className="text-5xl lg:text-7xl font-heading font-bold leading-[1.05] mb-8 text-[#29221c] tracking-tight">
-              A ARTE DE <br/>
-              <span className="text-[#c29a63] font-serif italic font-normal">Esculpir</span> SORRISOS
+              Excelência em cada detalhe do seu <span className="text-[#c29a63]">sorriso</span>.
             </motion.h1>
             
             <motion.p variants={fadeIn} className="text-xl text-[#5c4d40] mb-10 leading-relaxed max-w-lg font-light">
@@ -552,20 +551,23 @@ export default function Home() {
                     target="_blank" 
                     className="flex items-center gap-2 text-[#c29a63] font-bold text-xs uppercase tracking-widest hover:text-white transition-all group"
                   >
-                    Avalie no Google <ExternalLink className="w-3 h-3 group-hover:translate-x-1" />
+                    Avalie-nos no Google <ExternalLink className="w-3 h-3 group-hover:translate-x-1" />
                   </a>
                 </div>
                 <div className="bg-white/5 p-8 rounded-[2.5rem] border border-white/10 backdrop-blur-sm flex flex-col justify-center items-center text-center">
-                  <p className="text-xs font-bold uppercase tracking-widest text-white/30 mb-2">Desenvolvido por</p>
-                  <p className="text-[#c29a63] font-heading font-bold text-lg">Ethos</p>
-                  <p className="text-white/50 text-[10px] uppercase tracking-tighter">Desenvolvimento de Software</p>
+                  <p className="text-xs font-bold uppercase tracking-widest text-white/30 mb-2">Localização Estratégica</p>
+                  <p className="text-white/70 text-sm leading-tight">Centro de Mossâmedes - GO</p>
                 </div>
               </div>
             </div>
           </div>
           
-          <div className="border-t border-white/10 pt-10 text-center text-white/20 text-[10px] uppercase font-bold tracking-[0.3em]">
-            <p>© {new Date().getFullYear()} Dra. Maria Laura Barbosa | Luxo & Odontologia</p>
+          <div className="border-t border-white/10 pt-10 flex flex-col md:flex-row items-center justify-between gap-4 text-white/20 text-[10px] uppercase font-bold tracking-[0.3em]">
+            <p>© {new Date().getFullYear()} DRA. MARIA LAURA BARBOSA | LUXO & ODONTOLOGIA</p>
+            <div className="flex items-center gap-2">
+              <span>Desenvolvido por</span>
+              <span className="text-[#c29a63] text-xs">Ethos Desenvolvimento de Software</span>
+            </div>
           </div>
         </div>
       </footer>
