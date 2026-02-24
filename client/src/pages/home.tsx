@@ -554,8 +554,8 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.2 }}
-                whileHover={{ y: -10, backgroundColor: "#fff" }}
-                className="bg-white p-10 rounded-[2.5rem] border border-[#ebdabe]/30 shadow-sm transition-all flex flex-col justify-between"
+                whileHover={{ y: -10, backgroundColor: "#fff", borderColor: "#c29a63" }}
+                className="bg-white p-10 rounded-[2.5rem] border-2 border-[#ebdabe] shadow-sm transition-all flex flex-col justify-between"
               >
                 <div>
                   <div className="flex gap-1 mb-6">
