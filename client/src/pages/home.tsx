@@ -211,11 +211,11 @@ export default function Home() {
             <div className="h-14 w-14 rounded-full overflow-hidden border-2 border-[#a88252]/30 shadow-sm flex-shrink-0 bg-white">
               <img src="/assets/logo.jpg" alt="Logo" className="w-full h-full object-cover" />
             </div>
-            <div className="flex flex-col justify-center">
+            <div className="flex flex-col items-center">
               <span className="font-heading text-base md:text-lg font-semibold tracking-tight text-[#29221c] leading-none antialiased">
                 Dra. Maria Laura
               </span>
-              <span className="font-heading text-[9px] md:text-[10px] font-medium tracking-[0.25em] uppercase text-[#a88252] mt-1 antialiased">
+              <span className="font-heading text-xs md:text-sm font-medium text-[#a88252] mt-1 antialiased">
                 Odontologia
               </span>
             </div>
