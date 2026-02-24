@@ -208,7 +208,7 @@ export default function Home() {
       <nav className="fixed top-0 w-full z-50 bg-[#faf8f5]/80 backdrop-blur-md">
         <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <div className="h-16 w-16 flex items-center justify-center">
+            <div className="h-20 w-32 flex items-center justify-center">
               <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 1024.000000 1024.000000"
                 preserveAspectRatio="xMidYMid meet"
