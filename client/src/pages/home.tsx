@@ -1,7 +1,8 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
-import { ArrowRight, MapPin, Sparkles, Smile, Star, CheckCircle2, ChevronRight, ChevronLeft, Instagram, Phone, Mail, ExternalLink, Award, Heart, Wind, Coffee, ShieldCheck, Plus, Minus, X, Facebook } from "lucide-react";
+import { ArrowRight, MapPin, Sparkles, Smile, Star, CheckCircle2, ChevronRight, ChevronLeft, Instagram, Phone, Mail, ExternalLink, Award, Heart, Wind, Coffee, ShieldCheck, Plus, Minus, X, Facebook, Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Sheet, SheetContent, SheetTrigger, SheetClose } from "@/components/ui/sheet";
 
 // Assets
 import dentist1 from "@assets/WhatsApp_Image_2026-02-24_at_12.42.38_(1)_1771948728851.jpeg";
@@ -23,15 +24,33 @@ const EMAIL = "dramarialaurabarbosacunhaesilv@gmail.com";
 
 const dentistPhotos = [dentist1, dentist2, dentist3, dentist4];
 
-const fadeIn = {
-  hidden: { opacity: 0, y: 20 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } }
+const textVariant = {
+  hidden: { opacity: 0, y: 30 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } }
 };
 
-const staggerContainer = {
-  hidden: { opacity: 0 },
-  visible: { opacity: 1, transition: { staggerChildren: 0.2 } }
+const hoverCard = {
+  initial: { scale: 1 },
+  hover: { scale: 1.02, y: -5, transition: { duration: 0.3 } }
 };
+
+const testimonials = [
+  {
+    name: "Ana Beatriz",
+    comment: "A Dra. Maria Laura superou todas as minhas expectativas. O resultado das minhas facetas ficou tão natural que ninguém percebe que fiz o procedimento. Atendimento impecável!",
+    stars: 5
+  },
+  {
+    name: "Lucas Ferreira",
+    comment: "Ambiente extremamente acolhedor e climatizado. Me senti muito seguro durante todo o tratamento. Recomendo para quem busca perfeccionismo.",
+    stars: 5
+  },
+  {
+    name: "Juliana Mendes",
+    comment: "O clareamento estratégico fez toda a diferença no meu sorriso. A precisão e o olhar artístico da Dra. são únicos. Estou muito feliz com meu novo sorriso.",
+    stars: 5
+  }
+];
 
 const services = [
   { 
@@ -151,7 +170,7 @@ function ServiceModal({ service, isOpen, onClose }: { service: any, isOpen: bool
               </div>
 
               <div className="mt-10 pt-10 border-t border-[#ebdabe]/50 flex flex-col sm:flex-row items-center justify-between gap-6">
-                <p className="text-[#c29a63] font-heading italic font-normal text-left text-[18px]">Pronta para redescobrir sua melhor versão?</p>
+                <p className="text-[#c29a63] font-heading font-bold text-lg italic">Pronta para redescobrir sua melhor versão?</p>
                 <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
                   <Button size="lg" className="bg-[#c29a63] hover:bg-[#a88252] text-white rounded-full px-8 shadow-xl shadow-[#c29a63]/20 font-bold uppercase tracking-widest flex items-center gap-2">
                     Agendar via WhatsApp
@@ -197,14 +216,39 @@ export default function Home() {
             <a href="#especialidades" className="hover:text-[#c29a63] transition-colors">Serviços</a>
             <a href="#clinica" className="hover:text-[#c29a63] transition-colors">Clínica</a>
             <a href="#sobre" className="hover:text-[#c29a63] transition-colors">Sobre Mim</a>
-            <a href="#faq" className="hover:text-[#c29a63] transition-colors">Dúvidas</a>
+            <a href="#depoimentos" className="hover:text-[#c29a63] transition-colors">Depoimentos</a>
           </div>
-          <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
-            <Button className="bg-[#c29a63] hover:bg-[#a88252] text-white rounded-full px-6 transition-all duration-300 shadow-md shadow-[#c29a63]/20 font-heading font-bold text-xs uppercase tracking-widest flex items-center gap-2" data-testid="button-fale-conosco-nav">
-              <Phone className="w-4 h-4" />
-              Fale Conosco
-            </Button>
-          </a>
+
+          <div className="flex items-center gap-4">
+            <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="hidden md:block">
+              <Button className="bg-[#c29a63] hover:bg-[#a88252] text-white rounded-full px-6 transition-all duration-300 shadow-md shadow-[#c29a63]/20 font-heading font-bold text-xs uppercase tracking-widest flex items-center gap-2" data-testid="button-fale-conosco-nav">
+                <Phone className="w-4 h-4" />
+                Fale Conosco
+              </Button>
+            </a>
+
+            <Sheet>
+              <SheetTrigger asChild>
+                <Button variant="ghost" size="icon" className="md:hidden">
+                  <Menu className="w-6 h-6 text-[#c29a63]" />
+                </Button>
+              </SheetTrigger>
+              <SheetContent className="bg-[#faf8f5] border-l-[#ebdabe]">
+                <div className="flex flex-col gap-8 mt-12 text-center">
+                  <SheetClose asChild><a href="#especialidades" className="text-xl font-heading font-bold text-[#29221c]">Serviços</a></SheetClose>
+                  <SheetClose asChild><a href="#clinica" className="text-xl font-heading font-bold text-[#29221c]">Clínica</a></SheetClose>
+                  <SheetClose asChild><a href="#sobre" className="text-xl font-heading font-bold text-[#29221c]">Sobre Mim</a></SheetClose>
+                  <SheetClose asChild><a href="#depoimentos" className="text-xl font-heading font-bold text-[#29221c]">Depoimentos</a></SheetClose>
+                  <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
+                    <Button className="w-full bg-[#c29a63] text-white rounded-full h-14 font-bold uppercase tracking-widest flex items-center justify-center gap-3">
+                      <Phone className="w-5 h-5" />
+                      Fale Conosco
+                    </Button>
+                  </a>
+                </div>
+              </SheetContent>
+            </Sheet>
+          </div>
         </div>
       </nav>
 
@@ -212,31 +256,38 @@ export default function Home() {
       <section className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 px-6">
         <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
           <motion.div initial="hidden" animate="visible" variants={staggerContainer} className="z-10">
-            <motion.div variants={fadeIn} className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#ebdabe]/40 text-[#a88252] text-[10px] font-bold uppercase tracking-[0.3em] mb-8">
+            <motion.div variants={textVariant} className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#ebdabe]/40 text-[#a88252] text-[10px] font-bold uppercase tracking-[0.3em] mb-8">
               <Sparkles className="w-3.5 h-3.5" />
               <span>Transforme seu <span className="text-[#c29a63]">sorriso</span> com naturalidade e <span className="text-[#c29a63]">precisão</span>.</span>
             </motion.div>
             
-            <motion.h1 variants={fadeIn} className="text-5xl lg:text-7xl font-heading font-bold leading-[1.05] mb-8 text-[#29221c] tracking-tight">
+            <motion.h1 variants={textVariant} className="text-5xl lg:text-7xl font-heading font-bold leading-[1.05] mb-8 text-[#29221c] tracking-tight">
               Excelência em cada detalhe do seu <span className="text-[#c29a63]">sorriso</span>.
             </motion.h1>
             
-            <motion.p variants={fadeIn} className="text-xl text-[#5c4d40] mb-10 leading-relaxed max-w-lg font-light">
+            <motion.p variants={textVariant} className="text-xl text-[#5c4d40] mb-10 leading-relaxed max-w-lg font-light">
               Se você busca um resultado elegante, harmônico e sem aparência artificial, está no lugar certo. Trabalhamos com técnicas modernas de mimetismo dental para criar sorrisos que impressionam pela naturalidade e elevam sua confiança desde o primeiro olhar.
             </motion.p>
             
-            <motion.div variants={fadeIn} className="flex flex-col sm:flex-row gap-5">
+            <motion.div variants={textVariant} className="flex flex-col sm:flex-row gap-5">
               <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
-                <Button size="lg" className="w-full bg-[#c29a63] hover:bg-[#a88252] text-white rounded-full text-base h-16 px-10 shadow-xl shadow-[#c29a63]/20 font-bold uppercase tracking-widest flex items-center gap-3" data-testid="button-whatsapp-hero">
-                  Agendar via WhatsApp
-                  <img src={whatsappIcon} alt="WhatsApp" className="w-6 h-6 object-contain" />
-                </Button>
+                <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                  <Button size="lg" className="w-full bg-[#c29a63] hover:bg-[#a88252] text-white rounded-full text-base h-16 px-10 shadow-xl shadow-[#c29a63]/20 font-bold uppercase tracking-widest flex items-center gap-3" data-testid="button-whatsapp-hero">
+                    Agendar via WhatsApp
+                    <img src={whatsappIcon} alt="WhatsApp" className="w-6 h-6 object-contain" />
+                  </Button>
+                </motion.div>
               </a>
             </motion.div>
           </motion.div>
           
           <div className="relative">
-            <div className="relative rounded-[3rem] overflow-hidden aspect-[4/5] shadow-2xl bg-[#ebdabe]/20">
+            <motion.div 
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 1 }}
+              className="relative rounded-[3rem] overflow-hidden aspect-[4/5] shadow-2xl bg-[#ebdabe]/20"
+            >
               <AnimatePresence mode="wait">
                 <motion.img 
                   key={currentSlide}
@@ -249,7 +300,7 @@ export default function Home() {
                 />
               </AnimatePresence>
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-40" />
-            </div>
+            </motion.div>
 
             <div className="absolute bottom-8 right-8 flex gap-3 z-20">
               <button onClick={prevSlide} className="w-12 h-12 rounded-full bg-white/10 backdrop-blur-xl text-white border border-white/20 flex items-center justify-center hover:bg-white/20 transition-all">
@@ -267,51 +318,62 @@ export default function Home() {
       <section id="clinica" className="py-24 px-6 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-20 items-center">
-            <motion.div 
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              className="order-2 lg:order-1"
-            >
-              <div className="flex items-center gap-4 mb-6">
+            <div className="order-2 lg:order-1">
+              <motion.div 
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                variants={textVariant}
+                className="flex items-center gap-4 mb-6"
+              >
                 <div className="h-[2px] w-12 bg-[#c29a63]" />
                 <span className="text-[#c29a63] font-bold text-xs uppercase tracking-[0.3em]">Ambiente Exclusivo</span>
-              </div>
-              <h2 className="text-4xl lg:text-5xl font-heading font-bold text-[#29221c] mb-8 leading-tight">Nossa Clínica</h2>
-              <p className="text-[#5c4d40] text-lg font-light leading-relaxed mb-10">
+              </motion.div>
+              <motion.h2 
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                variants={textVariant}
+                className="text-4xl lg:text-5xl font-heading font-bold text-[#29221c] mb-8 leading-tight"
+              >
+                Nossa Clínica
+              </motion.h2>
+              <motion.p 
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                variants={textVariant}
+                className="text-[#5c4d40] text-lg font-light leading-relaxed mb-10"
+              >
                 Preparamos um espaço focado no seu bem-estar. Nossa clínica oferece um <span className="text-[#29221c] font-semibold">ambiente organizado, totalmente climatizado</span> e projetado para proporcionar o melhor aconchego durante o seu atendimento.
-              </p>
+              </motion.p>
               
               <div className="grid gap-6">
-                <div className="flex items-center gap-4 bg-[#faf8f5] p-5 rounded-2xl border border-[#ebdabe]/30">
-                  <div className="w-12 h-12 rounded-xl bg-white flex items-center justify-center text-[#c29a63] shadow-sm">
-                    <Wind className="w-6 h-6" />
-                  </div>
-                  <div>
-                    <h4 className="font-bold text-[#29221c]">Climatização Total</h4>
-                    <p className="text-sm text-[#5c4d40]">Temperatura ideal para o seu máximo conforto.</p>
-                  </div>
-                </div>
-                <div className="flex items-center gap-4 bg-[#faf8f5] p-5 rounded-2xl border border-[#ebdabe]/30">
-                  <div className="w-12 h-12 rounded-xl bg-white flex items-center justify-center text-[#c29a63] shadow-sm">
-                    <Coffee className="w-6 h-6" />
-                  </div>
-                  <div>
-                    <h4 className="font-bold text-[#29221c]">Melhor Aconchego</h4>
-                    <p className="text-sm text-[#5c4d40]">Espaço acolhedor para uma experiência relaxante.</p>
-                  </div>
-                </div>
-                <div className="flex items-center gap-4 bg-[#faf8f5] p-5 rounded-2xl border border-[#ebdabe]/30">
-                  <div className="w-12 h-12 rounded-xl bg-white flex items-center justify-center text-[#c29a63] shadow-sm">
-                    <ShieldCheck className="w-6 h-6" />
-                  </div>
-                  <div>
-                    <h4 className="font-bold text-[#29221c]">Organização & Biossegurança</h4>
-                    <p className="text-sm text-[#5c4d40]">Rigor técnico e organização impecável.</p>
-                  </div>
-                </div>
+                {[
+                  { icon: <Wind className="w-6 h-6" />, title: "Climatização Total", desc: "Temperatura ideal para o seu máximo conforto." },
+                  { icon: <Coffee className="w-6 h-6" />, title: "Melhor Aconchego", desc: "Espaço acolhedor para uma experiência relaxante." },
+                  { icon: <ShieldCheck className="w-6 h-6" />, title: "Organização & Biossegurança", desc: "Rigor técnico e organização impecável." }
+                ].map((item, idx) => (
+                  <motion.div 
+                    key={idx}
+                    initial={{ opacity: 0, x: -30 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: idx * 0.2 }}
+                    whileHover={{ x: 10, backgroundColor: "#faf8f5" }}
+                    className="flex items-center gap-4 bg-[#faf8f5]/50 p-5 rounded-2xl border border-[#ebdabe]/30 transition-all cursor-default"
+                  >
+                    <div className="w-12 h-12 rounded-xl bg-white flex items-center justify-center text-[#c29a63] shadow-sm">
+                      {item.icon}
+                    </div>
+                    <div>
+                      <h4 className="font-bold text-[#29221c]">{item.title}</h4>
+                      <p className="text-sm text-[#5c4d40]">{item.desc}</p>
+                    </div>
+                  </motion.div>
+                ))}
               </div>
-            </motion.div>
+            </div>
             
             <motion.div 
               initial={{ opacity: 0, scale: 0.95 }}
@@ -321,7 +383,13 @@ export default function Home() {
             >
               <div className="absolute -inset-4 border border-[#c29a63]/20 rounded-[3.5rem] -z-10" />
               <div className="rounded-[3rem] overflow-hidden shadow-2xl aspect-video lg:aspect-[4/5]">
-                <img src={clinicImg} alt="Ambiente da Clínica" className="w-full h-full object-cover transition-transform duration-700 hover:scale-105" />
+                <motion.img 
+                  src={clinicImg} 
+                  alt="Ambiente da Clínica" 
+                  whileHover={{ scale: 1.05 }}
+                  transition={{ duration: 0.7 }}
+                  className="w-full h-full object-cover" 
+                />
               </div>
             </motion.div>
           </div>
@@ -356,16 +424,17 @@ export default function Home() {
             </motion.div>
 
             <motion.div 
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              initial="hidden"
+              whileInView="visible"
               viewport={{ once: true }}
+              variants={staggerContainer}
             >
-              <div className="flex items-center gap-4 mb-6">
+              <motion.div variants={textVariant} className="flex items-center gap-4 mb-6">
                 <div className="h-[2px] w-12 bg-[#c29a63]" />
                 <span className="text-[#c29a63] font-bold text-xs uppercase tracking-[0.3em]">A Doutora</span>
-              </div>
-              <h2 className="text-4xl lg:text-5xl font-heading font-bold text-[#29221c] mb-8 leading-tight">Sobre mim</h2>
-              <div className="space-y-6 text-[#5c4d40] text-lg font-light leading-relaxed">
+              </motion.div>
+              <motion.h2 variants={textVariant} className="text-4xl lg:text-5xl font-heading font-bold text-[#29221c] mb-8 leading-tight">Sobre mim</motion.h2>
+              <motion.div variants={textVariant} className="space-y-6 text-[#5c4d40] text-lg font-light leading-relaxed">
                 <p>
                   Olá, eu sou a <span className="text-[#29221c] font-bold">Dra. Maria Laura</span>.
                 </p>
@@ -375,17 +444,17 @@ export default function Home() {
                 <p>
                   Me considero uma entusiasta na arte dental, onde busco sempre resultados com extrema naturalidade, respeitando a essência de cada sorriso. Acredito que a odontologia estética vai além da técnica; é sobre devolver confiança e harmonia através de um olhar artístico e delicado.
                 </p>
-              </div>
-              <div className="mt-10 grid grid-cols-2 gap-6">
-                <div className="flex items-start gap-3">
+              </motion.div>
+              <motion.div variants={textVariant} className="mt-10 grid grid-cols-2 gap-6">
+                <motion.div whileHover={{ y: -5 }} className="flex items-start gap-3 p-4 bg-white rounded-2xl shadow-sm border border-[#ebdabe]/20">
                   <Heart className="w-5 h-5 text-[#c29a63] mt-1" />
                   <p className="text-sm font-medium text-[#29221c]">Atendimento <br/>Humanizado</p>
-                </div>
-                <div className="flex items-start gap-3">
+                </motion.div>
+                <motion.div whileHover={{ y: -5 }} className="flex items-start gap-3 p-4 bg-white rounded-2xl shadow-sm border border-[#ebdabe]/20">
                   <Sparkles className="w-5 h-5 text-[#c29a63] mt-1" />
                   <p className="text-sm font-medium text-[#29221c]">Foco em <br/>Naturalidade</p>
-                </div>
-              </div>
+                </motion.div>
+              </motion.div>
             </motion.div>
           </div>
         </div>
@@ -394,13 +463,19 @@ export default function Home() {
       {/* Services Section */}
       <section id="especialidades" className="py-24 px-6 bg-white">
         <div className="max-w-7xl mx-auto">
-          <div className="mb-24">
-            <div className="flex items-center gap-4 mb-4">
+          <motion.div 
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={staggerContainer}
+            className="mb-24"
+          >
+            <motion.div variants={textVariant} className="flex items-center gap-4 mb-4">
               <div className="h-[2px] w-12 bg-[#c29a63]" />
               <span className="text-[#c29a63] font-bold text-xs uppercase tracking-[0.3em]">Serviços Especializados</span>
-            </div>
-            <h2 className="text-4xl lg:text-5xl font-heading font-bold text-[#29221c] tracking-tight">O Que Fazemos de Melhor</h2>
-          </div>
+            </motion.div>
+            <motion.h2 variants={textVariant} className="text-4xl lg:text-5xl font-heading font-bold text-[#29221c] tracking-tight">O Que Fazemos de Melhor</motion.h2>
+          </motion.div>
 
           <div className="grid gap-32">
             {services.map((service, idx) => (
@@ -413,24 +488,80 @@ export default function Home() {
                 >
                   <div className="absolute inset-4 border border-white/20 rounded-[2.5rem] z-10 pointer-events-none" />
                   <div className="rounded-[2.5rem] overflow-hidden shadow-2xl aspect-video lg:aspect-square">
-                    <img src={service.img} alt={service.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                    <motion.img 
+                      src={service.img} 
+                      alt={service.title} 
+                      whileHover={{ scale: 1.1 }}
+                      transition={{ duration: 0.7 }}
+                      className="w-full h-full object-cover" 
+                    />
                   </div>
                 </motion.div>
-                <div className={`${service.reverse ? 'lg:order-1 lg:pr-12' : 'lg:pl-12'}`}>
-                  <div className="w-14 h-14 rounded-2xl bg-[#c29a63]/10 flex items-center justify-center text-[#c29a63] mb-8">
+                <motion.div 
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true }}
+                  variants={staggerContainer}
+                  className={`${service.reverse ? 'lg:order-1 lg:pr-12' : 'lg:pl-12'}`}
+                >
+                  <motion.div variants={textVariant} className="w-14 h-14 rounded-2xl bg-[#c29a63]/10 flex items-center justify-center text-[#c29a63] mb-8">
                     {service.icon}
-                  </div>
-                  <h3 className="text-3xl font-heading font-bold mb-6 text-[#29221c] leading-tight">{service.title}</h3>
-                  <p className="text-[#5c4d40] text-lg font-light leading-relaxed mb-8">{service.shortDesc}</p>
-                  <Button 
-                    variant="link" 
-                    onClick={() => setSelectedService(service)}
-                    className="text-[#c29a63] p-0 font-bold uppercase tracking-widest text-xs flex items-center gap-2 hover:gap-4 transition-all"
-                  >
-                    Saber mais detalhes <ArrowRight className="w-4 h-4" />
-                  </Button>
-                </div>
+                  </motion.div>
+                  <motion.h3 variants={textVariant} className="text-3xl font-heading font-bold mb-6 text-[#29221c] leading-tight">{service.title}</motion.h3>
+                  <motion.p variants={textVariant} className="text-[#5c4d40] text-lg font-light leading-relaxed mb-8">{service.shortDesc}</motion.p>
+                  <motion.div variants={textVariant}>
+                    <Button 
+                      variant="link" 
+                      onClick={() => setSelectedService(service)}
+                      className="text-[#c29a63] p-0 font-bold uppercase tracking-widest text-xs flex items-center gap-2 hover:gap-4 transition-all"
+                    >
+                      Saber mais detalhes <ArrowRight className="w-4 h-4" />
+                    </Button>
+                  </motion.div>
+                </motion.div>
               </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials Section */}
+      <section id="depoimentos" className="py-24 px-6 bg-[#fdfbf9]">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-20">
+            <motion.div 
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#c29a63]/10 text-[#c29a63] text-[10px] font-bold uppercase tracking-[0.3em] mb-6"
+            >
+              <Star className="w-3.5 h-3.5" />
+              <span>Depoimentos Reais</span>
+            </motion.div>
+            <h2 className="text-4xl lg:text-5xl font-heading font-bold text-[#29221c] tracking-tight">O que dizem nossos pacientes</h2>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {testimonials.map((t, idx) => (
+              <motion.div 
+                key={idx}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: idx * 0.2 }}
+                whileHover={{ y: -10, backgroundColor: "#fff" }}
+                className="bg-white p-10 rounded-[2.5rem] border border-[#ebdabe]/30 shadow-sm transition-all flex flex-col justify-between"
+              >
+                <div>
+                  <div className="flex gap-1 mb-6">
+                    {[...Array(t.stars)].map((_, i) => (
+                      <Star key={i} className="w-4 h-4 fill-[#c29a63] text-[#c29a63]" />
+                    ))}
+                  </div>
+                  <p className="text-[#5c4d40] italic font-light leading-relaxed mb-8">"{t.comment}"</p>
+                </div>
+                <p className="font-heading font-bold text-[#29221c]">— {t.name}</p>
+              </motion.div>
             ))}
           </div>
         </div>
@@ -446,6 +577,7 @@ export default function Home() {
             <motion.div 
               initial={{ opacity: 0, scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
               className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#c29a63]/10 text-[#c29a63] text-[10px] font-bold uppercase tracking-[0.3em] mb-6"
             >
               <Smile className="w-3.5 h-3.5" />
@@ -471,14 +603,25 @@ export default function Home() {
       {/* Map Section */}
       <section className="py-24 px-6 bg-white">
         <div className="max-w-7xl mx-auto">
-          <div className="mb-12">
-             <div className="flex items-center gap-4 mb-4">
+          <motion.div 
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={staggerContainer}
+            className="mb-12"
+          >
+             <motion.div variants={textVariant} className="flex items-center gap-4 mb-4">
               <div className="h-[2px] w-12 bg-[#c29a63]" />
               <span className="text-[#c29a63] font-bold text-xs uppercase tracking-[0.3em]">Visite-nos</span>
-            </div>
-            <h2 className="text-4xl lg:text-5xl font-heading font-bold text-[#29221c] tracking-tight">Onde Estamos</h2>
-          </div>
-          <div className="w-full h-[500px] rounded-[3rem] overflow-hidden shadow-2xl border border-[#ebdabe]/50 group relative">
+            </motion.div>
+            <motion.h2 variants={textVariant} className="text-4xl lg:text-5xl font-heading font-bold text-[#29221c] tracking-tight">Onde Estamos</motion.h2>
+          </motion.div>
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            className="w-full h-[500px] rounded-[3rem] overflow-hidden shadow-2xl border border-[#ebdabe]/50 group relative"
+          >
             <iframe 
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3824.238622159187!2d-50.1477755!3d-16.11585!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x935e4b0000000001%3A0x3b773a4b609deebf!2sDra.%20Maria%20Laura%20%7C%20Odontologia!5e0!3m2!1spt-BR!2sbr!4v1700000000000!5m2!1spt-BR!2sbr" 
               width="100%" 
@@ -489,16 +632,19 @@ export default function Home() {
               className="grayscale-[0.5] group-hover:grayscale-0 transition-all duration-700"
             />
             <div className="absolute bottom-8 left-8 right-8 md:right-auto">
-              <div className="bg-white/90 backdrop-blur-md p-6 rounded-3xl shadow-xl border border-[#ebdabe]/50 max-w-sm">
+              <motion.div 
+                whileHover={{ scale: 1.05 }}
+                className="bg-white/90 backdrop-blur-md p-6 rounded-3xl shadow-xl border border-[#ebdabe]/50 max-w-sm"
+              >
                 <MapPin className="text-[#c29a63] w-6 h-6 mb-3" />
                 <h4 className="font-bold text-[#29221c] mb-1">Dra. Maria Laura | Odontologia</h4>
                 <p className="text-sm text-[#5c4d40]">Av. João Ferreira da Cunha, 470, Centro, Mossâmedes - GO</p>
                 <a href="https://www.google.com/maps/dir/?api=1&destination=Dra.+Maria+Laura+%7C+Odontologia" target="_blank" className="inline-flex items-center gap-2 text-[#c29a63] font-bold text-xs uppercase tracking-widest mt-4 hover:gap-3 transition-all">
                   Como chegar <ArrowRight className="w-4 h-4" />
                 </a>
-              </div>
+              </motion.div>
             </div>
-          </div>
+          </motion.div>
         </div>
       </section>
 
