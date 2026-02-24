@@ -1,9 +1,10 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
-import { ArrowRight, MapPin, Sparkles, Smile, Star, CheckCircle2, ChevronRight, ChevronLeft, Phone, Minus, Plus, X, Menu, Award, Heart, Wind, Coffee, ShieldCheck } from "lucide-react";
+import { ArrowRight, MapPin, Sparkles, Smile, Star, CheckCircle2, ChevronRight, ChevronLeft, Instagram, Phone, Mail, ExternalLink, Award, Heart, Wind, Coffee, ShieldCheck, Plus, Minus, X, Facebook, Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger, SheetClose } from "@/components/ui/sheet";
 
+// Assets
 import dentist1 from "@assets/WhatsApp_Image_2026-02-24_at_12.42.38_(1)_1771948728851.jpeg";
 import dentist2 from "@assets/WhatsApp_Image_2026-02-24_at_12.42.36_1771948728854.jpeg";
 import dentist3 from "@assets/WhatsApp_Image_2026-02-24_at_12.42.35_1771948728854.jpeg";
@@ -14,10 +15,14 @@ import specPeriodontal from "@assets/WhatsApp_Image_2026-02-24_at_13.06.19_17719
 import specRestauracao from "@assets/WhatsApp_Image_2026-02-24_at_13.06.31_1771949220708.jpeg";
 import whatsappIcon from "/assets/whatsapp-custom.png";
 import clinicImg from "@assets/dentista-em-lagoa-santa-scaled_1771954238429.jpg";
+import logoImg from "@assets/WhatsApp_Image_2026-02-24_at_14.00.46_1771955133778.jpeg";
+
+import newLogoImg from "@assets/A8d309b8f7da943c18b43dc818515f3d0u_1771961817737.png";
 
 const WHATSAPP_URL = "https://wa.me/5564981644853?text=Olá,%20Dra.%20Maria%20Laura!%20Gostaria%20de%20conhecer%20os%20serviços%20e%20agendar%20uma%20avaliação.";
 const INSTAGRAM_URL = "https://www.instagram.com/dra.marialauraodontologia/";
 const FACEBOOK_URL = "https://www.facebook.com/people/Maria-Laura-Odontologia/61588240837741/?mibextid=wwXIfr&rdid=MSE1H9VaSlgYIUwR&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F18Nqeg93hG%2F%3Fmibextid%3DwwXIfr%26utm_source%3Dig%26utm_medium%3Dsocial%26utm_content%3Dlink_in_bio";
+const EMAIL = "dramarialaurabarbosacunhaesilv@gmail.com";
 
 const dentistPhotos = [dentist1, dentist2, dentist3, dentist4];
 
@@ -50,32 +55,32 @@ const testimonials = [
 ];
 
 const services = [
-  {
-    title: "Mimetismo Dental & Facetas em Resina",
+  { 
+    title: "Mimetismo Dental & Facetas em Resina", 
     shortDesc: "Você já imaginou transformar seu sorriso sem perder a naturalidade?",
-    fullDesc: "Você já imaginou transformar seu sorriso sem perder a naturalidade?\n\nA Dra. Maria Laura une tecnologia de ponta e sensibilidade artística para criar restaurações que se confundem com dentes naturais. Utilizando técnicas avançadas de estratificação em resina, cada camada é aplicada estrategicamente para reproduzir cor, translucidez, brilho e textura com extrema fidelidade.\n\nO resultado? Um sorriso harmônico, elegante e absolutamente natural — sem aspecto artificial.\n\nAs facetas em resina são ideais para corrigir manchas, fraturas, desalinhamentos leves e diastemas, de forma conservadora e personalizada. Cada detalhe é planejado de acordo com o formato do rosto, proporção dental e expectativa do paciente.\n\nSe o seu sorriso já não representa quem você é hoje, talvez seja o momento de redescobrir sua melhor versão.\n\nAgende sua avaliação e descubra como a estética pode transformar não apenas dentes, mas autoestima e presença.",
+    fullDesc: `Você já imaginou transformar seu sorriso sem perder a naturalidade?\n\nA Dra. Maria Laura une tecnologia de ponta e sensibilidade artística para criar restaurações que se confundem com dentes naturais. Utilizando técnicas avançadas de estratificação em resina, cada camada é aplicada estrategicamente para reproduzir cor, translucidez, brilho e textura com extrema fidelidade.\n\nO resultado? Um sorriso harmônico, elegante e absolutamente natural — sem aspecto artificial.\n\nAs facetas em resina são ideais para corrigir manchas, fraturas, desalinhamentos leves e diastemas, de forma conservadora e personalizada. Cada detalhe é planejado de acordo com o formato do rosto, proporção dental e expectativa do paciente.\n\nSe o seu sorriso já não representa quem você é hoje, talvez seja o momento de redescobrir sua melhor versão.\n\nAgende sua avaliação e descubra como a estética pode transformar não apenas dentes, mas autoestima e presença.`,
     img: specMimetismo,
     icon: <Sparkles className="w-6 h-6" />
   },
-  {
-    title: "Clareamento Dental Estratégico",
+  { 
+    title: "Clareamento Dental Estratégico", 
     shortDesc: "Você quer dentes mais brancos… ou um sorriso realmente impactante?",
-    fullDesc: "Você quer dentes mais brancos… ou um sorriso realmente impactante?\n\nAntes das facetas, existe uma etapa que faz toda a diferença no resultado final: o clareamento estratégico. No é apenas estética — é planejamento inteligente.\n\nAo realizar o clareamento previamente, a Dra. Maria Laura cria a base ideal para alcançar tons mais claros e sofisticados nas facetas, garantindo uma harmonia perfeita entre naturalidade e luminosidade. Isso significa mais liberdade na escolha da cor e um resultado muito mais refinado.\n\nSem essa etapa, o potencial do seu sorriso pode ficar limitado.\nCom ela, o resultado se torna mais claro, mais equilibrado e muito mais impressionante.\n\nSe você busca um sorriso que chame atenção pela elegância — e não pelo exagero — o planejamento começa aqui.\n\nAgende sua avaliação e descubra como cada detalhe pode transformar completamente o seu resultado final.",
+    fullDesc: `Você quer dentes mais brancos… ou um sorriso realmente impactante?\n\nAntes das facetas, existe uma etapa que faz toda a diferença no resultado final: o clareamento estratégico. No é apenas estética — é planejamento inteligente.\n\nAo realizar o clareamento previamente, a Dra. Maria Laura cria a base ideal para alcançar tons mais claros e sofisticados nas facetas, garantindo uma harmonia perfeita entre naturalidade e luminosidade. Isso significa mais liberdade na escolha da cor e um resultado muito mais refinado.\n\nSem essa etapa, o potencial do seu sorriso pode ficar limitado.\nCom ela, o resultado se torna mais claro, mais equilibrado e muito mais impressionante.\n\nSe você busca um sorriso que chame atenção pela elegância — e não pelo exagero — o planejamento começa aqui.\n\nAgende sua avaliação e descubra como cada detalhe pode transformar completamente o seu resultado final.`,
     img: specClareamento,
     icon: <Star className="w-6 h-6" />,
     reverse: true
   },
-  {
-    title: "Saúde Gengival: Estética Branca x Rosa",
+  { 
+    title: "Saúde Gengival: Estética Branca x Rosa", 
     shortDesc: "Você já percebeu que alguns sorrisos são bonitos… mas poucos são realmente sofisticados?",
-    fullDesc: "Você já percebeu que alguns sorrisos são bonitos… mas poucos são realmente sofisticados?\n\nO segredo quase sempre está onde ninguém presta atenção: na gengiva.\n\nNão basta ter dentes claros e alinhados se a moldura não está em equilíbrio. A verdadeira harmonia acontece quando a estética branca (dentes) conversa perfeitamente com a estética rosa (gengiva). É essa proporção que transmite naturalidade, juventude e elegância.\n\nA Dra. Maria Laura realiza um planejamento periodontal personalizado para garantir que a gengiva esteja saudável, simétrica e contornando os dentes na medida exata. Quando necessário, pequenos ajustes estratégicos elevam completamente o padrão do resultado final.\n\nSem esse cuidado, o sorriso pode parecer artificial.\nCom ele, o resultado se torna refinado, harmônico e marcante.\n\nSe você busca um sorriso que impressiona pela naturalidade e não pelo exagero, o equilíbrio começa na base.\n\nAgende sua avaliação e descubra como cada detalhe transforma o todo.",
+    fullDesc: `Você já percebeu que alguns sorrisos são bonitos… mas poucos são realmente sofisticados?\n\nO segredo quase sempre está onde ninguém presta atenção: na gengiva.\n\nNão basta ter dentes claros e alinhados se a moldura não está em equilíbrio. A verdadeira harmonia acontece quando a estética branca (dentes) conversa perfeitamente com a estética rosa (gengiva). É essa proporção que transmite naturalidade, juventude e elegância.\n\nA Dra. Maria Laura realiza um planejamento periodontal personalizado para garantir que a gengiva esteja saudável, simétrica e contornando os dentes na medida exata. Quando necessário, pequenos ajustes estratégicos elevam completamente o padrão do resultado final.\n\nSem esse cuidado, o sorriso pode parecer artificial.\nCom ele, o resultado se torna refinado, harmônico e marcante.\n\nSe você busca um sorriso que impressiona pela naturalidade e não pelo exagero, o equilíbrio começa na base.\n\nAgende sua avaliação e descubra como cada detalhe transforma o todo.`,
     img: specPeriodontal,
     icon: <Smile className="w-6 h-6" />
   },
-  {
-    title: "Restaurações de Alta Performance",
+  { 
+    title: "Restaurações de Alta Performance", 
     shortDesc: "Você confiaria sua saúde bucal a uma restauração que apenas “quebra o galho”?",
-    fullDesc: "Você confiaria sua saúde bucal a uma restauração que apenas “quebra o galho”?\n\nQuando um dente é restaurado da forma correta, você não deve perceber diferença ao sorrir, falar ou mastigar. Ele precisa ter a mesma força, a mesma estética e a mesma naturalidade de um dente saudável.\n\nÉ por isso que utilizamos resinas de última geração e aplicamos o conceito de biomimética — reconstruindo o dente respeitando sua anatomia original, sua resistência e sua função. Cada camada é planejada para devolver não apenas a aparência, mas a performance completa do elemento dental.\n\nO objetivo é simples:\nninguém perceber que houve uma restauração.\n\nMais do que estética, é segurança, durabilidade e saúde a longo prazo.\n\nSe você busca um tratamento que vá além do básico e realmente preserve seu sorriso, a diferença está nos detalhes — e na técnica.\n\nAgende sua avaliação e descubra como uma restauração pode ser invisível aos olhos e poderosa na função.",
+    fullDesc: `Você confiaria sua saúde bucal a uma restauração que apenas “quebra o galho”?\n\nQuando um dente é restaurado da forma correta, você não deve perceber diferença ao sorrir, falar ou mastigar. Ele precisa ter a mesma força, a mesma estética e a mesma naturalidade de um dente saudável.\n\nÉ por isso que utilizamos resinas de última geração e aplicamos o conceito de biomimética — reconstruindo o dente respeitando sua anatomia original, sua resistência e sua função. Cada camada é planejada para devolver não apenas a aparência, mas a performance completa do elemento dental.\n\nO objetivo é simples:\nninguém perceber que houve uma restauração.\n\nMais do que estética, é segurança, durabilidade e saúde a longo prazo.\n\nSe você busca um tratamento que vá além do básico e realmente preserve seu sorriso, a diferença está nos detalhes — e na técnica.\n\nAgende sua avaliação e descubra como uma restauração pode ser invisível aos olhos e poderosa na função.`,
     img: specRestauracao,
     icon: <CheckCircle2 className="w-6 h-6" />,
     reverse: true
@@ -86,24 +91,24 @@ function FAQItem({ question, answer, index }: { question: string, answer: string
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <motion.div
+    <motion.div 
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ delay: index * 0.1 }}
-      className={`group bg-white border ${isOpen ? "border-[#c29a63] shadow-lg shadow-[#c29a63]/5" : "border-[#ebdabe]/50"} rounded-[2rem] overflow-hidden transition-all duration-500`}
+      className={`group bg-white border ${isOpen ? 'border-[#c29a63] shadow-lg shadow-[#c29a63]/5' : 'border-[#ebdabe]/50'} rounded-[2rem] overflow-hidden transition-all duration-500`}
     >
-      <button
+      <button 
         onClick={() => setIsOpen(!isOpen)}
         className="w-full px-8 py-7 flex items-center justify-between text-left transition-colors"
       >
-        <span className={`text-lg font-heading font-bold transition-colors duration-300 ${isOpen ? "text-[#c29a63]" : "text-[#29221c]"}`}>
+        <span className={`text-lg font-heading font-bold transition-colors duration-300 ${isOpen ? 'text-[#c29a63]' : 'text-[#29221c]'}`}>
           {question}
         </span>
-        <div className={`w-8 h-8 rounded-full flex items-center justify-center transition-all duration-500 ${isOpen ? "bg-[#c29a63] text-white rotate-180" : "bg-[#faf8f5] text-[#c29a63]"}`}>
+        <div className={`w-8 h-8 rounded-full flex items-center justify-center transition-all duration-500 ${isOpen ? 'bg-[#c29a63] text-white rotate-180' : 'bg-[#faf8f5] text-[#c29a63]'}`}>
           {isOpen ? <Minus className="w-4 h-4" /> : <Plus className="w-4 h-4" />}
         </div>
       </button>
-
+      
       <AnimatePresence>
         {isOpen && (
           <motion.div
@@ -129,26 +134,26 @@ function ServiceModal({ service, isOpen, onClose }: { service: any, isOpen: bool
     <AnimatePresence>
       {isOpen && (
         <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6">
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
+          <motion.div 
+            initial={{ opacity: 0 }} 
+            animate={{ opacity: 1 }} 
             exit={{ opacity: 0 }}
             onClick={onClose}
             className="absolute inset-0 bg-black/60 backdrop-blur-sm"
           />
-          <motion.div
+          <motion.div 
             initial={{ opacity: 0, scale: 0.9, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.9, y: 20 }}
             className="relative w-full max-w-3xl bg-[#faf8f5] rounded-[3rem] overflow-hidden shadow-2xl max-h-[90vh] overflow-y-auto"
           >
-            <button
+            <button 
               onClick={onClose}
               className="absolute top-6 right-6 z-10 w-10 h-10 rounded-full bg-white/80 backdrop-blur-md border border-[#ebdabe]/50 flex items-center justify-center text-[#29221c] hover:bg-[#c29a63] hover:text-white transition-all shadow-sm"
             >
               <X className="w-5 h-5" />
             </button>
-
+            
             <div className="aspect-video sm:aspect-[21/9] w-full relative">
               <img src={service.img} alt={service.title} className="w-full h-full object-cover" />
               <div className="absolute inset-0 bg-gradient-to-t from-[#faf8f5] via-transparent to-transparent" />
@@ -161,7 +166,7 @@ function ServiceModal({ service, isOpen, onClose }: { service: any, isOpen: bool
                 </div>
                 <h3 className="text-2xl sm:text-3xl font-heading font-bold text-[#29221c]">{service.title}</h3>
               </div>
-
+              
               <div className="space-y-4 text-[#5c4d40] text-lg font-light leading-relaxed whitespace-pre-wrap">
                 {service.fullDesc}
               </div>
@@ -262,17 +267,17 @@ export default function Home() {
           <motion.div initial="hidden" animate="visible" variants={staggerContainer} className="z-10">
             <motion.div variants={textVariant} className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#ebdabe]/40 text-[#a88252] uppercase tracking-[0.3em] mb-8 font-bold text-[11px]">
               <Sparkles className="w-3.5 h-3.5" />
-              <span>Transforme seu <span className="text-[#c29a63]">sorriso</span> com naturalidade e <span className="text-[#c29a63]">precisão</span>.</span>
+              <span>Transforme seu <span className="text-[#c29a63]">sorriso</span> with naturalidade e <span className="text-[#c29a63]">precisão</span>.</span>
             </motion.div>
-
+            
             <motion.h1 variants={textVariant} className="text-5xl lg:text-7xl font-heading font-bold leading-[1.05] mb-8 text-[#29221c] tracking-tight">
               Excelência em cada detalhe do seu <span className="text-[#c29a63]">sorriso</span>.
             </motion.h1>
-
+            
             <motion.p variants={textVariant} className="text-xl text-[#5c4d40] mb-10 leading-relaxed max-w-lg font-light">
               Se você busca um resultado elegante, harmônico e sem aparência artificial, está no lugar certo. Trabalhamos com técnicas modernas de mimetismo dental para criar sorrisos que impressionam pela naturalidade e elevam sua confiança desde o primeiro olhar.
             </motion.p>
-
+            
             <motion.div variants={textVariant} className="flex flex-col sm:flex-row gap-5">
               <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
                 <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
@@ -284,18 +289,18 @@ export default function Home() {
               </a>
             </motion.div>
           </motion.div>
-
+          
           <div className="relative">
-            <motion.div
+            <motion.div 
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 1 }}
               className="relative rounded-[3rem] overflow-hidden aspect-[4/5] shadow-2xl bg-[#ebdabe]/20"
             >
               <AnimatePresence mode="wait">
-                <motion.img
+                <motion.img 
                   key={currentSlide}
-                  src={dentistPhotos[currentSlide]}
+                  src={dentistPhotos[currentSlide]} 
                   initial={{ opacity: 0, scale: 1.05 }}
                   animate={{ opacity: 1, scale: 1 }}
                   exit={{ opacity: 0, scale: 0.95 }}
@@ -322,7 +327,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-20 items-center">
             <div className="order-2 lg:order-1">
-              <motion.div
+              <motion.div 
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true }}
@@ -332,7 +337,7 @@ export default function Home() {
                 <div className="h-[2px] w-12 bg-[#c29a63]" />
                 <span className="text-[#c29a63] font-bold text-xs uppercase tracking-[0.3em]">Ambiente Exclusivo</span>
               </motion.div>
-              <motion.h2
+              <motion.h2 
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true }}
@@ -341,7 +346,7 @@ export default function Home() {
               >
                 Nossa Clínica
               </motion.h2>
-              <motion.p
+              <motion.p 
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true }}
@@ -350,14 +355,14 @@ export default function Home() {
               >
                 Preparamos um espaço focado no seu bem-estar. Nossa clínica oferece um <span className="font-semibold text-[#c29a63]">ambiente organizado, totalmente climatizado</span> e projetado para proporcionar o melhor aconchego durante o seu atendimento.
               </motion.p>
-
+              
               <div className="grid gap-6">
                 {[
                   { icon: <Wind className="w-6 h-6" />, title: "Climatização Total", desc: "Temperatura ideal para o seu máximo conforto." },
                   { icon: <Coffee className="w-6 h-6" />, title: "Melhor Aconchego", desc: "Espaço acolhedor para uma experiência relaxante." },
                   { icon: <ShieldCheck className="w-6 h-6" />, title: "Organização & Biossegurança", desc: "Rigor técnico e organização impecável." }
                 ].map((item, idx) => (
-                  <motion.div
+                  <motion.div 
                     key={idx}
                     initial={{ opacity: 0, x: -30 }}
                     whileInView={{ opacity: 1, x: 0 }}
@@ -377,8 +382,8 @@ export default function Home() {
                 ))}
               </div>
             </div>
-
-            <motion.div
+            
+            <motion.div 
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
@@ -398,7 +403,7 @@ export default function Home() {
       <section id="especialidades" className="py-24 px-6 bg-[#faf8f5]">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-20">
-            <motion.div
+            <motion.div 
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -406,7 +411,7 @@ export default function Home() {
             >
               Especialidades de Luxo
             </motion.div>
-            <motion.h2
+            <motion.h2 
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -415,7 +420,7 @@ export default function Home() {
             >
               Transformação & <span className="text-[#c29a63]">Estética</span>
             </motion.h2>
-            <motion.p
+            <motion.p 
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -428,15 +433,15 @@ export default function Home() {
 
           <div className="space-y-32">
             {services.map((service, idx) => (
-              <motion.div
+              <motion.div 
                 key={idx}
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-100px" }}
-                className={`grid lg:grid-cols-2 gap-16 items-center ${service.reverse ? "lg:flex-row-reverse" : ""}`}
+                className={`grid lg:grid-cols-2 gap-16 items-center ${service.reverse ? 'lg:flex-row-reverse' : ''}`}
               >
-                <div className={`relative ${service.reverse ? "lg:order-2" : ""}`}>
-                  <div className={`absolute -inset-6 bg-[#c29a63]/5 rounded-[4rem] -z-10 transform ${idx % 2 === 0 ? "rotate-2" : "-rotate-2"}`} />
+                <div className={`relative ${service.reverse ? 'lg:order-2' : ''}`}>
+                  <div className={`absolute -inset-6 bg-[#c29a63]/5 rounded-[4rem] -z-10 transform ${idx % 2 === 0 ? 'rotate-2' : '-rotate-2'}`} />
                   <div className="relative rounded-[3.5rem] overflow-hidden aspect-[4/3] shadow-2xl group cursor-pointer" onClick={() => setSelectedService(service)}>
                     <img src={service.img} alt={service.title} className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
                     <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-all duration-500 flex items-center justify-center opacity-0 group-hover:opacity-100">
@@ -447,7 +452,7 @@ export default function Home() {
                   </div>
                 </div>
 
-                <div className={service.reverse ? "lg:order-1" : ""}>
+                <div className={service.reverse ? 'lg:order-1' : ''}>
                   <div className="w-16 h-16 rounded-2xl bg-[#c29a63]/10 flex items-center justify-center text-[#c29a63] mb-8">
                     {service.icon}
                   </div>
@@ -457,9 +462,9 @@ export default function Home() {
                   <p className="text-[#5c4d40] text-lg font-light leading-relaxed mb-10">
                     {service.shortDesc}
                   </p>
-                  <Button
+                  <Button 
                     onClick={() => setSelectedService(service)}
-                    variant="ghost"
+                    variant="ghost" 
                     className="group p-0 h-auto text-[#c29a63] font-bold uppercase tracking-widest text-xs flex items-center gap-3 hover:bg-transparent"
                   >
                     Descobrir mais <ArrowRight className="w-4 h-4 group-hover:translate-x-2 transition-transform" />
@@ -475,7 +480,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-20 items-center">
             <div className="relative">
-              <motion.div
+              <motion.div 
                 initial={{ opacity: 0, x: -50 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
@@ -485,13 +490,13 @@ export default function Home() {
               </motion.div>
               <div className="absolute -top-10 -right-10 w-64 h-64 bg-[#ebdabe]/30 rounded-full blur-3xl -z-10" />
               <div className="absolute -bottom-10 -left-10 w-64 h-64 bg-[#c29a63]/10 rounded-full blur-3xl -z-10" />
-
-              <motion.div
+              
+              <motion.div 
                 initial={{ opacity: 0, scale: 0.8 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.5 }}
-                className="absolute -bottom-8 -right-8 bg-white p-8 rounded-3xl shadow-2xl border border-[#ebdabe]/50 z-20"
+                className="absolute -bottom-8 -right-8 bg-white p-8 rounded-3xl shadow-xl border border-[#ebdabe]/50 z-20"
               >
                 <div className="flex items-center gap-4">
                   <div className="w-12 h-12 rounded-full bg-[#c29a63]/10 flex items-center justify-center text-[#c29a63]">
@@ -506,7 +511,7 @@ export default function Home() {
             </div>
 
             <div>
-              <motion.div
+              <motion.div 
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -516,7 +521,7 @@ export default function Home() {
                 <span className="text-[#c29a63] font-bold text-xs uppercase tracking-[0.3em]">Sobre Mim</span>
               </motion.div>
 
-              <motion.h2
+              <motion.h2 
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -526,7 +531,7 @@ export default function Home() {
                 Dra. Maria Laura
               </motion.h2>
 
-              <motion.div
+              <motion.div 
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -569,7 +574,7 @@ export default function Home() {
 
           <div className="grid md:grid-cols-3 gap-8">
             {testimonials.map((t, idx) => (
-              <motion.div
+              <motion.div 
                 key={idx}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -603,22 +608,22 @@ export default function Home() {
           </div>
 
           <div className="space-y-4">
-            <FAQItem
+            <FAQItem 
               index={0}
               question="O clareamento dental causa sensibilidade?"
               answer="A sensibilidade é uma preocupação comum, mas com as técnicas modernas e produtos de alta qualidade que utilizamos, conseguimos minimizar drasticamente esse desconforto. Realizamos um protocolo de dessensibilização prévio e ajustamos a concentração do gel de acordo com a resposta de cada paciente."
             />
-            <FAQItem
+            <FAQItem 
               index={1}
               question="Quanto tempo duram as facetas em resina?"
               answer="Com os cuidados adequados, as facetas em resina de alta performance podem durar de 5 a 10 anos. A longevidade depende da higiene bucal, hábitos alimentares e visitas regulares para polimento e manutenção. É um tratamento conservador que oferece um excelente custo-benefício."
             />
-            <FAQItem
+            <FAQItem 
               index={2}
               question="O resultado das facetas fica natural?"
               answer="Sim! Esse é o nosso maior diferencial. Utilizamos a técnica de mimetismo dental, onde trabalhamos com diferentes camadas de resina para reproduzir a translucidez, opalescência e textura dos dentes naturais. O objetivo é que ninguém perceba que você realizou um procedimento."
             />
-            <FAQItem
+            <FAQItem 
               index={3}
               question="É necessário desgastar muito o dente?"
               answer="Trabalhamos com a filosofia da Odontologia Minimamente Invasiva. Na maioria dos casos de facetas em resina, o desgaste é mínimo ou até inexistente, preservando ao máximo a estrutura natural do seu dente."
@@ -631,8 +636,8 @@ export default function Home() {
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="bg-[#29221c] rounded-[4rem] p-12 lg:p-24 text-center relative overflow-hidden shadow-2xl">
             <div className="absolute top-0 left-0 w-full h-full opacity-10 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-[#c29a63] via-transparent to-transparent" />
-
-            <motion.div
+            
+            <motion.div 
               initial={{ opacity: 0, scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
@@ -655,12 +660,12 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="h-[450px] w-full relative grayscale-[0.5] hover:grayscale-0 transition-all duration-1000">
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3823.123!2d-49.312!3d-16.689!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTbCsDQxJzIwLjQiUyA0OcKwMTgnNDMuMiJX!5e0!3m2!1spt-BR!2sbr"
-          className="w-full h-full border-0"
-          allowFullScreen
-          loading="lazy"
+      <section className="h-[450px] w-full relative grayscale hover:grayscale-0 transition-all duration-1000 grayscale-[0.5]">
+        <iframe 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3823.123!2d-49.312!3d-16.689!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTbCsDQxJzIwLjQiUyA0OcKwMTgnNDMuMiJX!5e0!3m2!1spt-BR!2sbr" 
+          className="w-full h-full border-0" 
+          allowFullScreen 
+          loading="lazy" 
           referrerPolicy="no-referrer-when-downgrade"
         ></iframe>
         <div className="absolute inset-0 pointer-events-none shadow-[inset_0_0_100px_rgba(0,0,0,0.1)]" />
@@ -702,9 +707,9 @@ export default function Home() {
             <div className="bg-white/40 backdrop-blur-sm border border-[#ebdabe] rounded-3xl p-8 shadow-sm">
               <h4 className="text-[#29221c] font-bold uppercase tracking-widest text-xs mb-8">Navegação</h4>
               <ul className="space-y-4">
-                {["Início", "Serviços", "Clínica", "Sobre Mim", "Depoimentos"].map((item) => (
+                {['Início', 'Serviços', 'Clínica', 'Sobre Mim', 'Depoimentos'].map((item) => (
                   <li key={item}>
-                    <a href={`#${item.toLowerCase().replace(" ", "")}`} className="text-[#8a7a6e] hover:text-[#c29a63] transition-colors text-sm flex items-center gap-2 group">
+                    <a href={`#${item.toLowerCase().replace(' ', '')}`} className="text-[#8a7a6e] hover:text-[#c29a63] transition-colors text-sm flex items-center gap-2 group">
                       <div className="w-1 h-1 rounded-full bg-[#c29a63] opacity-0 group-hover:opacity-100 transition-all" />
                       {item}
                     </a>
@@ -751,10 +756,10 @@ export default function Home() {
         </div>
       </footer>
 
-      <ServiceModal
-        service={selectedService}
-        isOpen={!!selectedService}
-        onClose={() => setSelectedService(null)}
+      <ServiceModal 
+        service={selectedService} 
+        isOpen={!!selectedService} 
+        onClose={() => setSelectedService(null)} 
       />
     </div>
   );
