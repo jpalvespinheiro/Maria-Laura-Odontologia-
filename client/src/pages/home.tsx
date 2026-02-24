@@ -206,7 +206,7 @@ export default function Home() {
     <div className="min-h-screen bg-[#faf8f5] text-[#332b24] overflow-hidden selection:bg-[#d4b98e]/30 font-sans">
       {/* Navigation */}
       <nav className="fixed top-0 w-full z-50 backdrop-blur-md bg-[#faf8f5]/60 border-b border-[#ebdabe]/20 text-[#fffafa]">
-        <div className="max-w-7xl mx-auto px-6 h-24 flex items-center justify-between">
+        <div className="max-w-7xl mx-auto px-6 h-24 flex items-center justify-between text-[#fffafa] bg-[#ffffff00]">
           <div className="flex items-center gap-1 py-4">
             <div className="h-14 w-14 rounded-full overflow-hidden border-2 border-[#a88252]/30 shadow-sm flex-shrink-0 bg-white">
               <img src="/assets/logo.jpg" alt="Logo" className="w-full h-full object-cover" />
