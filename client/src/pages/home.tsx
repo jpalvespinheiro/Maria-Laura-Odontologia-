@@ -203,7 +203,7 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-[#faf8f5] text-[#332b24] overflow-hidden selection:bg-[#d4b98e]/30 font-sans">
       {/* Navigation */}
-      <nav className="fixed top-0 w-full z-50 bg-[#faf8f5]/80 backdrop-blur-md border-b border-[#ebdabe]/30">
+      <nav className="fixed top-0 w-full z-50 bg-[#faf8f5]/80 backdrop-blur-md">
         <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
           <div className="flex items-center gap-3">
              <img src={logoImg} alt="Dra. Maria Laura Logo" className="w-12 h-12 object-contain rounded-full shadow-sm border border-[#ebdabe]/50" />
