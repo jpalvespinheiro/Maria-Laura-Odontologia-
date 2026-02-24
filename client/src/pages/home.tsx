@@ -24,14 +24,14 @@ const EMAIL = "dramarialaurabarbosacunhaesilv@gmail.com";
 
 const dentistPhotos = [dentist1, dentist2, dentist3, dentist4];
 
+const staggerContainer = {
+  hidden: { opacity: 0 },
+  visible: { opacity: 1, transition: { staggerChildren: 0.2 } }
+};
+
 const textVariant = {
   hidden: { opacity: 0, y: 30 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } }
-};
-
-const hoverCard = {
-  initial: { scale: 1 },
-  hover: { scale: 1.02, y: -5, transition: { duration: 0.3 } }
 };
 
 const testimonials = [
