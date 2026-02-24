@@ -31,44 +31,31 @@
   --color-input: hsl(var(--input));
   --color-ring: hsl(var(--ring));
 
-  --font-sans: 'Plus Jakarta Sans', sans-serif;
+  --font-sans: 'Poppins', sans-serif;
   --font-serif: 'Cormorant Garamond', serif;
 }
 
 /* LIGHT MODE - Golden Beige Theme */
 :root {
-  /* Warm, off-white background */
   --background: 40 33% 98%;
-  /* Dark espresso/brown text */
   --foreground: 20 20% 15%;
-
   --card: 0 0% 100%;
   --card-foreground: 20 20% 15%;
-
   --popover: 0 0% 100%;
   --popover-foreground: 20 20% 15%;
-
-  /* Golden/Beige Primary */
   --primary: 38 40% 65%;
   --primary-foreground: 0 0% 100%;
-
-  /* Soft Beige Secondary */
   --secondary: 40 30% 92%;
   --secondary-foreground: 20 20% 15%;
-
   --muted: 40 20% 90%;
   --muted-foreground: 20 10% 45%;
-
   --accent: 38 40% 65%;
   --accent-foreground: 0 0% 100%;
-
   --destructive: 0 84% 60%;
   --destructive-foreground: 0 0% 100%;
-
   --border: 40 20% 85%;
   --input: 40 20% 85%;
   --ring: 38 40% 65%;
-
   --radius: 1rem;
 }
 
