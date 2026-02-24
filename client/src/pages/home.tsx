@@ -206,8 +206,6 @@ export default function Home() {
     <div className="min-h-screen bg-[#faf8f5] text-[#332b24] overflow-hidden selection:bg-[#d4b98e]/30 font-sans">
       {/* Navigation */}
       <nav className="fixed top-0 w-full z-50 bg-[#faf8f5]/80 backdrop-blur-md">
-        <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-        <div className="max-w-7xl mx-auto px-6 h-24 flex items-center justify-between">
           <div className="flex items-center py-4">
             <div className="h-32 w-56 flex items-center justify-center -ml-8 scale-[2.2] transform-gpu origin-left">
               <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
