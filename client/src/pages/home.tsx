@@ -719,11 +719,11 @@ export default function Home() {
               </p>
               <div className="flex items-center gap-4">
                 <div className="flex gap-3">
-                  <a href={INSTAGRAM_URL} target="_blank" className="w-10 h-10 rounded-full bg-white/50 flex items-center justify-center border border-[#a88252]/10 text-[#a88252] hover:bg-[#a88252] hover:text-white transition-all group">
-                    <Instagram className="w-4 h-4 group-hover:scale-110 transition-transform" />
+                  <a href={INSTAGRAM_URL} target="_blank" className="w-10 h-10 rounded-full bg-white/50 flex items-center justify-center border border-[#a88252]/10 hover:bg-[#a88252]/10 transition-all group">
+                    <img src="/assets/instagram-custom.png" alt="Instagram" className="w-6 h-6 object-contain group-hover:scale-110 transition-transform" />
                   </a>
-                  <a href={FACEBOOK_URL} target="_blank" className="w-10 h-10 rounded-full bg-white/50 flex items-center justify-center border border-[#a88252]/10 text-[#a88252] hover:bg-[#a88252] hover:text-white transition-all group">
-                    <Facebook className="w-4 h-4 group-hover:scale-110 transition-transform" />
+                  <a href={FACEBOOK_URL} target="_blank" className="w-10 h-10 rounded-full bg-white/50 flex items-center justify-center border border-[#a88252]/10 hover:bg-[#a88252]/10 transition-all group">
+                    <img src="/assets/facebook-custom.png" alt="Facebook" className="w-6 h-6 object-contain group-hover:scale-110 transition-transform" />
                   </a>
                 </div>
                 <div className="h-8 w-[1px] bg-[#ebdabe] mx-2" />
@@ -758,7 +758,9 @@ export default function Home() {
                   <span className="text-sm">(64) 98164-4853</span>
                 </li>
                 <li className="flex items-center gap-3 text-[#8a7a6e] group">
-                  <Mail className="w-5 h-5 text-[#a88252] shrink-0 group-hover:scale-110 transition-transform" />
+                  <div className="w-5 h-5 flex items-center justify-center shrink-0">
+                    <img src="/assets/gmail-custom.png" alt="Email" className="w-full h-full object-contain group-hover:scale-110 transition-transform" />
+                  </div>
                   <a href="mailto:dramarialaurabarbosacunhaesilv@gmail.com" className="text-sm hover:text-[#a88252] transition-colors truncate">
                     E-mail profissional
                   </a>
