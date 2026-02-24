@@ -1,8 +1,7 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
-import { ArrowRight, MapPin, Sparkles, Smile, Star, CheckCircle2, ChevronRight, ChevronLeft, Instagram, Phone, Mail, ExternalLink, Award, Heart, Wind, Coffee, ShieldCheck } from "lucide-react";
+import { ArrowRight, MapPin, Sparkles, Smile, Star, CheckCircle2, ChevronRight, ChevronLeft, Instagram, Phone, Mail, ExternalLink, Award, Heart, Wind, Coffee, ShieldCheck, Plus, Minus } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 
 // Assets
 import dentist1 from "@assets/WhatsApp_Image_2026-02-24_at_12.42.38_(1)_1771948728851.jpeg";
@@ -15,6 +14,7 @@ import specPeriodontal from "@assets/WhatsApp_Image_2026-02-24_at_13.06.19_17719
 import specRestauracao from "@assets/WhatsApp_Image_2026-02-24_at_13.06.31_1771949220708.jpeg";
 import whatsappIcon from "@assets/icons8-whatsapp-32_1771954618804.png";
 import clinicImg from "@assets/dentista-em-lagoa-santa-scaled_1771954238429.jpg";
+import logoImg from "@assets/WhatsApp_Image_2026-02-24_at_14.00.46_1771955133778.jpeg";
 
 const WHATSAPP_URL = "https://wa.me/5564981644853?text=Olá,%20Dra.%20Maria%20Laura!%20Gostaria%20de%20conhecer%20os%20serviços%20e%20agendar%20uma%20avaliação.";
 
@@ -30,22 +30,45 @@ const staggerContainer = {
   visible: { opacity: 1, transition: { staggerChildren: 0.2 } }
 };
 
-const LogoSVG = () => (
-  <svg width="48" height="48" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" className="drop-shadow-sm">
-    {/* Base Tooth Shape */}
-    <path d="M50 95C30 95 15 80 15 55C15 35 30 25 50 25C70 25 85 35 85 55C85 80 70 95 50 95Z" fill="white" />
-    <path d="M50 95C35 95 25 85 25 65C25 50 30 40 50 40C70 40 75 50 75 65C75 85 65 95 50 95ZM50 45C35 45 30 52 30 65C30 82 38 90 50 90C62 90 70 82 70 65C70 52 65 45 50 45Z" fill="#C29A63" />
-    
-    {/* Crown detail */}
-    <path d="M35 25L40 10L50 20L60 10L65 25H35Z" fill="#C29A63" />
-    <circle cx="40" cy="10" r="2" fill="#C29A63" />
-    <circle cx="50" cy="8" r="3" fill="#C29A63" />
-    <circle cx="60" cy="10" r="2" fill="#C29A63" />
-    
-    {/* Golden detail on the root */}
-    <path d="M30 65C30 80 40 90 50 90C60 90 70 80 70 65H30Z" fill="#C29A63" opacity="0.1" />
-  </svg>
-);
+function FAQItem({ question, answer, index }: { question: string, answer: string, index: number }) {
+  const [isOpen, setIsOpen] = useState(false);
+
+  return (
+    <motion.div 
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ delay: index * 0.1 }}
+      className={`group bg-white border ${isOpen ? 'border-[#c29a63] shadow-lg shadow-[#c29a63]/5' : 'border-[#ebdabe]/50'} rounded-[2rem] overflow-hidden transition-all duration-500`}
+    >
+      <button 
+        onClick={() => setIsOpen(!isOpen)}
+        className="w-full px-8 py-7 flex items-center justify-between text-left transition-colors"
+      >
+        <span className={`text-lg font-heading font-bold transition-colors duration-300 ${isOpen ? 'text-[#c29a63]' : 'text-[#29221c]'}`}>
+          {question}
+        </span>
+        <div className={`w-8 h-8 rounded-full flex items-center justify-center transition-all duration-500 ${isOpen ? 'bg-[#c29a63] text-white rotate-180' : 'bg-[#faf8f5] text-[#c29a63]'}`}>
+          {isOpen ? <Minus className="w-4 h-4" /> : <Plus className="w-4 h-4" />}
+        </div>
+      </button>
+      
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: "auto", opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.4, ease: [0.04, 0.62, 0.23, 0.98] }}
+          >
+            <div className="px-8 pb-8 text-[#5c4d40] font-light leading-relaxed text-base border-t border-[#faf8f5] pt-4">
+              {answer}
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </motion.div>
+  );
+}
 
 export default function Home() {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -67,7 +90,7 @@ export default function Home() {
       <nav className="fixed top-0 w-full z-50 bg-[#faf8f5]/80 backdrop-blur-md border-b border-[#ebdabe]/30">
         <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
           <div className="flex items-center gap-3">
-             <LogoSVG />
+             <img src={logoImg} alt="Dra. Maria Laura Logo" className="w-12 h-12 object-contain rounded-full shadow-sm border border-[#ebdabe]/50" />
              <div className="font-heading text-lg font-bold tracking-tight text-[#29221c]">
               Dra. Maria Laura <span className="text-[#c29a63] font-medium border-l border-[#c29a63]/30 pl-2 ml-1">Odontologia</span>
             </div>
@@ -336,31 +359,35 @@ export default function Home() {
         </div>
       </section>
 
-      {/* FAQ Section */}
-      <section id="faq" className="py-24 px-6 bg-[#faf8f5]">
-        <div className="max-w-4xl mx-auto">
-          <div className="mb-16 text-center">
-            <span className="text-[#c29a63] font-bold text-xs uppercase tracking-[0.3em] block mb-4">Informação</span>
+      {/* FAQ Section - IMPROVED */}
+      <section id="faq" className="py-24 px-6 bg-[#faf8f5] relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-96 h-96 bg-[#c29a63]/5 rounded-full blur-[100px] -z-10" />
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#c29a63]/5 rounded-full blur-[100px] -z-10" />
+        
+        <div className="max-w-4xl mx-auto relative">
+          <div className="mb-20 text-center">
+            <motion.div 
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#c29a63]/10 text-[#c29a63] text-[10px] font-bold uppercase tracking-[0.3em] mb-6"
+            >
+              <Smile className="w-3.5 h-3.5" />
+              <span>Transparência & Cuidado</span>
+            </motion.div>
             <h2 className="text-4xl lg:text-5xl font-heading font-bold text-[#29221c] tracking-tight">Dúvidas Frequentes</h2>
+            <p className="mt-4 text-[#5c4d40] font-light text-lg">Tudo o que você precisa saber para transformar o seu sorriso.</p>
           </div>
 
-          <Accordion type="single" collapsible className="space-y-4">
+          <div className="grid gap-6">
             {[
               { q: "Quanto tempo duram as facetas em resina?", a: "As resinas modernas possuem alta estabilidade de cor e brilho. Com cuidados adequados e polimento semestral, podem durar muitos anos com estética impecável." },
               { q: "O clareamento dental causa sensibilidade?", a: "A sensibilidade é temporária e varia entre pacientes. Utilizamos géis modernos e protocolos dessensibilizantes para garantir uma experiência confortável." },
               { q: "As lentes de contato dental exigem desgaste?", a: "Prezamos pela odontologia minimamente invasiva. Em muitos casos, o desgaste é nulo ou extremamente reduzido, preservando o dente natural." },
               { q: "Qual a importância de tratar a gengiva antes da estética?", a: "A saúde gengival é a base de um sorriso duradouro. Uma gengiva saudável garante simetria e evita complicações futuras nas restaurações estéticas." }
             ].map((faq, i) => (
-              <AccordionItem key={i} value={`item-${i}`} className="bg-white border border-[#ebdabe]/50 rounded-[1.5rem] px-8 overflow-hidden data-[state=open]:border-[#c29a63]/30 transition-all">
-                <AccordionTrigger className="text-[#29221c] font-heading font-bold text-left hover:no-underline py-6">
-                  {faq.q}
-                </AccordionTrigger>
-                <AccordionContent className="text-[#5c4d40] font-light leading-relaxed pb-8 text-base">
-                  {faq.a}
-                </AccordionContent>
-              </AccordionItem>
+              <FAQItem key={i} question={faq.q} answer={faq.a} index={i} />
             ))}
-          </Accordion>
+          </div>
         </div>
       </section>
 
@@ -370,7 +397,7 @@ export default function Home() {
           <div className="grid lg:grid-cols-4 gap-16 mb-24">
             <div className="lg:col-span-2">
               <div className="flex items-center gap-4 mb-8">
-                <LogoSVG />
+                <img src={logoImg} alt="Logo" className="w-16 h-16 object-contain rounded-full shadow-lg border border-white/10" />
                 <div className="font-heading text-2xl font-bold tracking-tight">
                   Dra. Maria Laura <br/><span className="text-[#c29a63] font-medium text-lg">Odontologia</span>
                 </div>
