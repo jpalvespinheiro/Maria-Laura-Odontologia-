@@ -1,6 +1,6 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
-import { ArrowRight, MapPin, Sparkles, Smile, Star, CheckCircle2, ChevronRight, ChevronLeft, Plus, Minus } from "lucide-react";
+import { ArrowRight, MapPin, Sparkles, Smile, Star, CheckCircle2, ChevronRight, ChevronLeft, Instagram, Phone, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 
@@ -49,185 +49,142 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
           <div className="flex items-center gap-2">
              <div className="w-10 h-10 bg-[#c29a63] rounded-lg flex items-center justify-center text-white font-serif text-xl font-bold italic shadow-lg shadow-[#c29a63]/20">ML</div>
-             <div className="font-serif text-xl font-medium tracking-tight text-[#29221c]">
-              Maria Laura <span className="text-[#c29a63]">Odontologia</span>
+             <div className="font-heading text-xl font-bold tracking-tight text-[#29221c]">
+              Maria Laura <span className="text-[#c29a63] font-medium">Odontologia</span>
             </div>
           </div>
-          <div className="hidden md:flex gap-8 text-sm font-medium tracking-wide uppercase">
+          <div className="hidden md:flex gap-8 text-[11px] font-bold tracking-[0.1em] uppercase text-[#5c4d40]">
             <a href="#especialidades" className="hover:text-[#c29a63] transition-colors">Serviços</a>
             <a href="#sobre" className="hover:text-[#c29a63] transition-colors">A Dra.</a>
             <a href="#faq" className="hover:text-[#c29a63] transition-colors">Dúvidas</a>
             <a href="#contato" className="hover:text-[#c29a63] transition-colors">Contato</a>
           </div>
-          <Button className="bg-[#c29a63] hover:bg-[#a88252] text-white rounded-full px-6 transition-all duration-300 shadow-md shadow-[#c29a63]/20 font-medium" data-testid="button-agendar-nav">
-            Agendar Agora
+          <Button className="bg-[#c29a63] hover:bg-[#a88252] text-white rounded-full px-6 transition-all duration-300 shadow-md shadow-[#c29a63]/20 font-heading font-bold text-xs uppercase tracking-widest" data-testid="button-agendar-nav">
+            Agendar Consulta
           </Button>
         </div>
       </nav>
 
-      {/* Hero Section with Carousel */}
-      <section className="relative pt-32 pb-20 lg:pt-40 lg:pb-32 px-6">
-        <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
-          <motion.div 
-            initial="hidden"
-            animate="visible"
-            variants={staggerContainer}
-            className="z-10"
-          >
-            <motion.div variants={fadeIn} className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#ebdabe]/40 text-[#a88252] text-xs font-bold uppercase tracking-widest mb-6">
-              <Sparkles className="w-4 h-4" />
-              <span>Odontologia de Alta Performance</span>
+      {/* Hero Section */}
+      <section className="relative pt-32 pb-20 lg:pt-44 lg:pb-32 px-6">
+        <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
+          <motion.div initial="hidden" animate="visible" variants={staggerContainer} className="z-10">
+            <motion.div variants={fadeIn} className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#ebdabe]/40 text-[#a88252] text-[10px] font-bold uppercase tracking-[0.2em] mb-8">
+              <Sparkles className="w-3.5 h-3.5" />
+              <span>Referência em Estética Dental</span>
             </motion.div>
             
-            <motion.h1 variants={fadeIn} className="text-5xl lg:text-7xl font-serif font-medium leading-[1.1] mb-6 text-[#29221c]">
-              A arte de criar <br/>
-              <span className="italic text-[#c29a63]">sorrisos reais</span>
+            <motion.h1 variants={fadeIn} className="text-5xl lg:text-7xl font-heading font-bold leading-[1.05] mb-8 text-[#29221c] tracking-tight">
+              A ARTE DE <br/>
+              <span className="text-[#c29a63] font-serif italic font-normal">Esculpir</span> SORRISOS
             </motion.h1>
             
-            <motion.p variants={fadeIn} className="text-lg text-[#5c4d40] mb-8 leading-relaxed max-w-lg font-light">
-              Especialista em mimetismo dental e estética avançada. Transformamos sorrisos com técnicas que preservam a naturalidade e a saúde de cada paciente.
+            <motion.p variants={fadeIn} className="text-lg text-[#5c4d40] mb-10 leading-relaxed max-w-lg font-light">
+              Elevando a odontologia ao nível da arte. Especialista em mimetismo dental e harmonia estética para transformar sua autoestima com naturalidade.
             </motion.p>
             
-            <motion.div variants={fadeIn} className="flex flex-col sm:flex-row gap-4">
-              <Button size="lg" className="bg-[#c29a63] hover:bg-[#a88252] text-white rounded-full text-base h-14 px-10 shadow-xl shadow-[#c29a63]/20 font-semibold" data-testid="button-agendar-hero">
-                Falar no WhatsApp
-                <ArrowRight className="ml-2 w-5 h-5" />
+            <motion.div variants={fadeIn} className="flex flex-col sm:flex-row gap-5">
+              <Button size="lg" className="bg-[#c29a63] hover:bg-[#a88252] text-white rounded-full text-sm h-14 px-10 shadow-xl shadow-[#c29a63]/20 font-bold uppercase tracking-widest" data-testid="button-whatsapp-hero">
+                Agendar via WhatsApp
+                <ArrowRight className="ml-2 w-4 h-4" />
               </Button>
             </motion.div>
           </motion.div>
           
-          <div className="relative group">
-            <div className="relative rounded-[2rem] overflow-hidden aspect-[4/5] shadow-2xl bg-[#ebdabe]/20">
+          <div className="relative">
+            <div className="relative rounded-[3rem] overflow-hidden aspect-[4/5] shadow-2xl bg-[#ebdabe]/20">
               <AnimatePresence mode="wait">
                 <motion.img 
                   key={currentSlide}
                   src={dentistPhotos[currentSlide]} 
-                  initial={{ opacity: 0, x: 20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  exit={{ opacity: 0, x: -20 }}
-                  transition={{ duration: 0.8 }}
-                  className="w-full h-full object-cover object-center"
+                  initial={{ opacity: 0, scale: 1.05 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.95 }}
+                  transition={{ duration: 1, ease: "easeInOut" }}
+                  className="w-full h-full object-cover"
                 />
               </AnimatePresence>
-              <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-60" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-40" />
             </div>
 
-            {/* Carousel Controls */}
-            <div className="absolute bottom-6 right-6 flex gap-2 z-20">
-              <button onClick={prevSlide} className="p-3 rounded-full bg-white/20 backdrop-blur-md text-white hover:bg-white/40 transition-all">
-                <ChevronLeft className="w-5 h-5" />
+            <div className="absolute bottom-8 right-8 flex gap-3 z-20">
+              <button onClick={prevSlide} className="w-12 h-12 rounded-full bg-white/10 backdrop-blur-xl text-white border border-white/20 flex items-center justify-center hover:bg-white/20 transition-all">
+                <ChevronLeft className="w-6 h-6" />
               </button>
-              <button onClick={nextSlide} className="p-3 rounded-full bg-white/20 backdrop-blur-md text-white hover:bg-white/40 transition-all">
-                <ChevronRight className="w-5 h-5" />
+              <button onClick={nextSlide} className="w-12 h-12 rounded-full bg-[#c29a63] text-white flex items-center justify-center hover:bg-[#a88252] transition-all shadow-lg shadow-[#c29a63]/40">
+                <ChevronRight className="w-6 h-6" />
               </button>
             </div>
             
-            {/* Slide Indicators */}
-            <div className="absolute bottom-6 left-6 flex gap-1.5 z-20">
-              {dentistPhotos.map((_, i) => (
-                <div key={i} className={`h-1 rounded-full transition-all duration-300 ${i === currentSlide ? "w-8 bg-[#c29a63]" : "w-2 bg-white/40"}`} />
-              ))}
-            </div>
+            <div className="absolute -top-6 -left-6 w-32 h-32 bg-[#ebdabe]/30 rounded-full blur-3xl -z-10" />
           </div>
         </div>
       </section>
 
-      {/* Specialties - High Professional Context */}
+      {/* Services Section */}
       <section id="especialidades" className="py-24 px-6 bg-white">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-20 max-w-3xl mx-auto">
-            <h2 className="text-4xl lg:text-5xl font-serif font-medium mb-6 text-[#29221c]">Excelência Clínica</h2>
-            <p className="text-[#5c4d40] text-lg font-light leading-relaxed">
-              Utilizamos as tecnologias mais avançadas do mercado para garantir que cada procedimento seja indolor, preciso e com estética superior.
-            </p>
+          <div className="mb-24">
+            <div className="flex items-center gap-4 mb-4">
+              <div className="h-[2px] w-12 bg-[#c29a63]" />
+              <span className="text-[#c29a63] font-bold text-xs uppercase tracking-[0.3em]">Serviços Premium</span>
+            </div>
+            <h2 className="text-4xl lg:text-5xl font-heading font-bold text-[#29221c] tracking-tight">Especialidades Clínicas</h2>
           </div>
 
-          <div className="grid gap-24">
-            {/* Spec 1 - Mimetismo */}
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
-              <motion.div initial={{ opacity: 0, x: -40 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="relative rounded-3xl overflow-hidden shadow-2xl">
-                <img src={specMimetismo} alt="Mimetismo Dental" className="w-full h-full object-cover" />
-                <div className="absolute top-4 left-4 bg-white/90 backdrop-blur px-4 py-2 rounded-full text-xs font-bold text-[#c29a63] shadow-sm uppercase tracking-tighter">Caso Real</div>
-              </motion.div>
-              <div className="lg:pl-8">
-                <div className="w-12 h-12 rounded-xl bg-[#c29a63]/10 flex items-center justify-center mb-6">
-                  <Sparkles className="w-6 h-6 text-[#c29a63]" />
-                </div>
-                <h3 className="text-3xl font-serif font-medium mb-6 text-[#29221c]">Mimetismo Dental & Facetas em Resina</h3>
-                <p className="text-[#5c4d40] leading-relaxed mb-6 font-light">
-                  A técnica do mimetismo dental utiliza resinas compostas de altíssima fidelidade para reproduzir as nuances de translucidez, opalescência e textura dos dentes naturais. Diferente das facetas tradicionais, aqui focamos na <strong>estratificação artística</strong> — camada por camada — para que a restauração se torne imperceptível.
-                </p>
-                <ul className="space-y-4 text-[#5c4d40]">
-                  <li className="flex gap-3"><CheckCircle2 className="w-5 h-5 text-[#c29a63] shrink-0" /> <span><strong>Arte Natural:</strong> Materiais que imitam o esmalte humano.</span></li>
-                  <li className="flex gap-3"><CheckCircle2 className="w-5 h-5 text-[#c29a63] shrink-0" /> <span><strong>Correção Funcional:</strong> Ideal para diastemas, dentes desalinhados ou fraturados.</span></li>
-                </ul>
-              </div>
-            </div>
-
-            {/* Spec 2 - Clareamento */}
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
-              <div className="order-2 lg:order-1 lg:pr-8">
-                <div className="w-12 h-12 rounded-xl bg-[#c29a63]/10 flex items-center justify-center mb-6">
-                  <Star className="w-6 h-6 text-[#c29a63]" />
-                </div>
-                <h3 className="text-3xl font-serif font-medium mb-6 text-[#29221c]">Clareamento Dental Personalizado</h3>
-                <p className="text-[#5c4d40] leading-relaxed mb-6 font-light">
-                  O clareamento é a base para qualquer reabilitação estética. Realizamos protocolos controlados que removem pigmentos profundos sem agredir o esmalte. O objetivo é harmonizar a tonalidade antes da aplicação de lentes, permitindo que o resultado final seja mais luminoso e vibrante.
-                </p>
-                <div className="flex gap-8 border-t border-[#ebdabe]/50 pt-6 mt-6">
-                  <div>
-                    <div className="text-2xl font-serif text-[#c29a63]">Seguro</div>
-                    <div className="text-xs uppercase font-bold text-[#5c4d40]/60">Sem Sensibilidade</div>
+          <div className="grid gap-32">
+            {[
+              { 
+                title: "Mimetismo Dental", 
+                desc: "A técnica do mimetismo utiliza resinas compostas de altíssima fidelidade para reproduzir as nuances de translucidez e textura dos dentes originais. Através da estratificação artística, criamos sorrisos que se fundem perfeitamente com a natureza.",
+                img: specMimetismo,
+                icon: <Sparkles className="w-6 h-6" />
+              },
+              { 
+                title: "Clareamento Avançado", 
+                desc: "O clareamento é a base essencial para qualquer transformação estética. Protocolos controlados que removem pigmentos profundos com segurança, garantindo um sorriso luminoso e pronto para receber lentes ou facetas.",
+                img: specClareamento,
+                icon: <Star className="w-6 h-6" />,
+                reverse: true
+              },
+              { 
+                title: "Estética Rosa", 
+                desc: "O equilíbrio entre dentes e gengiva é o segredo da sofisticação. Tratamos o contorno gengival de forma simétrica e saudável, garantindo que o seu sorriso tenha a moldura perfeita e duradoura.",
+                img: specPeriodontal,
+                icon: <Smile className="w-6 h-6" />
+              },
+              { 
+                title: "Restauração Biomimética", 
+                desc: "Restaurações invisíveis que devolvem a força e a função mastigatória sem deixar vestígios. Preservação máxima da estrutura dental aliada à estética absoluta.",
+                img: specRestauracao,
+                icon: <CheckCircle2 className="w-6 h-6" />,
+                reverse: true
+              }
+            ].map((service, idx) => (
+              <div key={idx} className={`grid lg:grid-cols-2 gap-16 items-center ${service.reverse ? 'lg:flex-row-reverse' : ''}`}>
+                <motion.div 
+                  initial={{ opacity: 0, x: service.reverse ? 40 : -40 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  className={`relative group ${service.reverse ? 'lg:order-2' : ''}`}
+                >
+                  <div className="absolute inset-4 border border-white/20 rounded-[2.5rem] z-10 pointer-events-none" />
+                  <div className="rounded-[2.5rem] overflow-hidden shadow-2xl aspect-video lg:aspect-square">
+                    <img src={service.img} alt={service.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
                   </div>
-                  <div>
-                    <div className="text-2xl font-serif text-[#c29a63]">Rápido</div>
-                    <div className="text-xs uppercase font-bold text-[#5c4d40]/60">Resultados Visíveis</div>
+                </motion.div>
+                <div className={`${service.reverse ? 'lg:order-1 lg:pr-12' : 'lg:pl-12'}`}>
+                  <div className="w-14 h-14 rounded-2xl bg-[#c29a63]/10 flex items-center justify-center text-[#c29a63] mb-8">
+                    {service.icon}
                   </div>
+                  <h3 className="text-3xl font-heading font-bold mb-6 text-[#29221c] leading-tight">{service.title}</h3>
+                  <p className="text-[#5c4d40] text-lg font-light leading-relaxed mb-8">{service.desc}</p>
+                  <Button variant="link" className="text-[#c29a63] p-0 font-bold uppercase tracking-widest text-xs flex items-center gap-2 hover:gap-4 transition-all">
+                    Saber mais detalhes <ArrowRight className="w-4 h-4" />
+                  </Button>
                 </div>
               </div>
-              <motion.div initial={{ opacity: 0, x: 40 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="order-1 lg:order-2 relative rounded-3xl overflow-hidden shadow-2xl">
-                <img src={specClareamento} alt="Clareamento Dental" className="w-full h-full object-cover" />
-              </motion.div>
-            </div>
-
-            {/* Spec 3 - Periodontal */}
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
-              <motion.div initial={{ opacity: 0, x: -40 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="relative rounded-3xl overflow-hidden shadow-2xl">
-                <img src={specPeriodontal} alt="Tratamento Periodontal" className="w-full h-full object-cover" />
-              </motion.div>
-              <div className="lg:pl-8">
-                <div className="w-12 h-12 rounded-xl bg-[#c29a63]/10 flex items-center justify-center mb-6">
-                  <Smile className="w-6 h-6 text-[#c29a63]" />
-                </div>
-                <h3 className="text-3xl font-serif font-medium mb-6 text-[#29221c]">Estética Rosa: Saúde Periodontal</h3>
-                <p className="text-[#5c4d40] leading-relaxed mb-6 font-light">
-                  Um sorriso perfeito depende do equilíbrio entre a "estética branca" (dentes) e a "estética rosa" (gengiva). Tratamos a saúde gengival de forma individualizada para garantir que o contorno dos dentes seja simétrico e saudável. Uma gengiva contornada e firme é o que dá sofisticação real ao sorriso.
-                </p>
-                <ul className="space-y-4 text-[#5c4d40]">
-                  <li className="flex gap-3"><CheckCircle2 className="w-5 h-5 text-[#c29a63] shrink-0" /> <span><strong>Simetria Gengival:</strong> Alinhamento perfeito dos tecidos moles.</span></li>
-                  <li className="flex gap-3"><CheckCircle2 className="w-5 h-5 text-[#c29a63] shrink-0" /> <span><strong>Longevidade:</strong> Saúde periodontal é a base para facetas duradouras.</span></li>
-                </ul>
-              </div>
-            </div>
-
-            {/* Spec 4 - Restauração */}
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
-              <div className="order-2 lg:order-1 lg:pr-8">
-                <div className="w-12 h-12 rounded-xl bg-[#c29a63]/10 flex items-center justify-center mb-6">
-                  <CheckCircle2 className="w-6 h-6 text-[#c29a63]" />
-                </div>
-                <h3 className="text-3xl font-serif font-medium mb-6 text-[#29221c]">Restaurações Funcionais e Invisíveis</h3>
-                <p className="text-[#5c4d40] leading-relaxed mb-6 font-light">
-                  A restauração moderna vai além de tapar uma cavidade. Utilizamos resinas biomiméticas que se fundem ao dente original, restaurando a força e a função mastigatória sem deixar vestígios visíveis. É a odontologia preventiva unida à estética absoluta.
-                </p>
-                <div className="p-6 bg-[#faf8f5] rounded-2xl border border-[#ebdabe]/50">
-                   <p className="text-sm italic text-[#5c4d40]">"Trabalho focado na preservação máxima da estrutura dental sadia."</p>
-                </div>
-              </div>
-              <motion.div initial={{ opacity: 0, x: 40 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="order-1 lg:order-2 relative rounded-3xl overflow-hidden shadow-2xl">
-                <img src={specRestauracao} alt="Restauração Simples" className="w-full h-full object-cover" />
-              </motion.div>
-            </div>
+            ))}
           </div>
         </div>
       </section>
@@ -235,140 +192,91 @@ export default function Home() {
       {/* FAQ Section */}
       <section id="faq" className="py-24 px-6 bg-[#faf8f5]">
         <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl lg:text-5xl font-serif font-medium mb-6 text-[#29221c]">Dúvidas Frequentes</h2>
-            <p className="text-[#5c4d40] font-light">As respostas para as principais questões sobre nossos tratamentos.</p>
+          <div className="mb-16 text-center">
+            <span className="text-[#c29a63] font-bold text-xs uppercase tracking-[0.3em] block mb-4">Informação</span>
+            <h2 className="text-4xl lg:text-5xl font-heading font-bold text-[#29221c] tracking-tight">Dúvidas Frequentes</h2>
           </div>
 
           <Accordion type="single" collapsible className="space-y-4">
-            <AccordionItem value="item-1" className="bg-white border border-[#ebdabe]/50 rounded-2xl px-6 overflow-hidden">
-              <AccordionTrigger className="text-[#29221c] font-medium hover:no-underline py-6">
-                Quanto tempo duram as facetas em resina?
-              </AccordionTrigger>
-              <AccordionContent className="text-[#5c4d40] font-light leading-relaxed pb-6">
-                Com bons cuidados de higiene e revisões periódicas, as facetas em resina composta podem durar de 5 a 10 anos. A técnica de estratificação utilizada pela Dra. Maria Laura garante maior estabilidade de cor e brilho ao longo do tempo.
-              </AccordionContent>
-            </AccordionItem>
-
-            <AccordionItem value="item-2" className="bg-white border border-[#ebdabe]/50 rounded-2xl px-6 overflow-hidden">
-              <AccordionTrigger className="text-[#29221c] font-medium hover:no-underline py-6">
-                O clareamento dental causa sensibilidade permanente?
-              </AccordionTrigger>
-              <AccordionContent className="text-[#5c4d40] font-light leading-relaxed pb-6">
-                Não. A sensibilidade é um efeito colateral temporário que ocorre durante o tratamento em alguns pacientes. Utilizamos géis dessensibilizantes de última geração e protocolos personalizados para minimizar qualquer desconforto.
-              </AccordionContent>
-            </AccordionItem>
-
-            <AccordionItem value="item-3" className="bg-white border border-[#ebdabe]/50 rounded-2xl px-6 overflow-hidden">
-              <AccordionTrigger className="text-[#29221c] font-medium hover:no-underline py-6">
-                É necessário desgastar o dente para colocar lentes de contato?
-              </AccordionTrigger>
-              <AccordionContent className="text-[#5c4d40] font-light leading-relaxed pb-6">
-                A Dra. Maria Laura preza pela odontologia minimamente invasiva. Em muitos casos de mimetismo dental com resina, o desgaste é nulo ou extremamente reduzido, preservando quase toda a estrutura natural do dente.
-              </AccordionContent>
-            </AccordionItem>
-
-            <AccordionItem value="item-4" className="bg-white border border-[#ebdabe]/50 rounded-2xl px-6 overflow-hidden">
-              <AccordionTrigger className="text-[#29221c] font-medium hover:no-underline py-6">
-                Por que tratar a gengiva antes da estética?
-              </AccordionTrigger>
-              <AccordionContent className="text-[#5c4d40] font-light leading-relaxed pb-6">
-                Sem uma base saudável, qualquer tratamento estético está fadado ao fracasso. Uma gengiva inflamada pode sangrar, mudar de posição e prejudicar a adesão das facetas, além de comprometer a harmonia visual do sorriso.
-              </AccordionContent>
-            </AccordionItem>
+            {[
+              { q: "As facetas em resina mancham com o tempo?", a: "As resinas modernas possuem alta estabilidade de cor, mas podem sofrer leve alteração dependendo dos hábitos alimentares. Revisões semestrais para polimento mantêm o brilho e a cor original por muito mais tempo." },
+              { q: "O clareamento causa enfraquecimento dos dentes?", a: "Absolutamente não. O clareamento dental é um processo químico que atua nos pigmentos internos do dente, sem remover o esmalte ou alterar a estrutura mineral do dente." },
+              { q: "Dói para colocar lentes de contato dental?", a: "O procedimento é indolor. Quando necessário, utilizamos anestesia local, mas a maioria dos casos de mimetismo dental em resina é tão conservadora que não causa nenhum desconforto." },
+              { q: "Qual a diferença entre faceta e lente de contato?", a: "A diferença principal está na espessura e no nível de desgaste. Lentes de contato são ultrafinas e exigem o mínimo de desgaste dental, enquanto facetas são indicadas para correções de cor e forma mais acentuadas." }
+            ].map((faq, i) => (
+              <AccordionItem key={i} value={`item-${i}`} className="bg-white border border-[#ebdabe]/50 rounded-[1.5rem] px-8 overflow-hidden data-[state=open]:border-[#c29a63]/30 transition-all">
+                <AccordionTrigger className="text-[#29221c] font-heading font-bold text-left hover:no-underline py-6">
+                  {faq.q}
+                </AccordionTrigger>
+                <AccordionContent className="text-[#5c4d40] font-light leading-relaxed pb-8 text-base">
+                  {faq.a}
+                </AccordionContent>
+              </AccordionItem>
+            ))}
           </Accordion>
         </div>
       </section>
 
-      {/* About Section */}
-      <section id="sobre" className="py-24 px-6 relative bg-white">
-        <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
-          <div className="relative">
-             <div className="rounded-[3rem] overflow-hidden aspect-[3/4] shadow-2xl border-8 border-[#faf8f5]">
-               <img src={dentist2} alt="Dra. Maria Laura" className="w-full h-full object-cover" />
-             </div>
-             <div className="absolute -bottom-10 -right-10 w-48 h-48 bg-[#c29a63] rounded-full flex items-center justify-center p-4 shadow-2xl border-4 border-white hidden md:flex">
-                <div className="text-center text-white">
-                  <div className="font-serif text-3xl font-bold italic">Arte</div>
-                  <div className="text-xs uppercase font-bold tracking-widest mt-1">em Odontologia</div>
-                </div>
-             </div>
-          </div>
-          
-          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={staggerContainer}>
-            <h2 className="text-4xl lg:text-5xl font-serif font-medium mb-8 text-[#29221c]">
-              O Compromisso com o <br/><span className="text-[#c29a63] italic">Seu Bem-Estar</span>
-            </h2>
-            <p className="text-[#5c4d40] mb-6 leading-relaxed font-light text-lg">
-              A Dra. Maria Laura Barbosa acredita que cada paciente é único. Sua abordagem combina o vigor da juventude com o rigor técnico de materiais modernos.
-            </p>
-            <p className="text-[#5c4d40] mb-8 leading-relaxed font-light">
-              Localizada no coração de Mossâmedes, sua clínica foi projetada para oferecer uma experiência premium, onde a tecnologia e o conforto se encontram. Aqui, cada detalhe é planejado para que você se sinta seguro e acolhido.
-            </p>
-            
-            <div className="grid grid-cols-2 gap-8 border-t border-[#ebdabe]/50 pt-8">
-              <div>
-                <div className="text-3xl font-serif text-[#c29a63] mb-1">Humanizada</div>
-                <div className="text-xs uppercase font-bold text-[#5c4d40]/60">Atendimento Dedicado</div>
-              </div>
-              <div>
-                <div className="text-3xl font-serif text-[#c29a63] mb-1">Científica</div>
-                <div className="text-xs uppercase font-bold text-[#5c4d40]/60">Protocolos Modernos</div>
-              </div>
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Footer */}
-      <footer id="contato" className="bg-[#29221c] text-[#faf8f5] pt-20 pb-10 px-6 rounded-t-[3rem]">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-16 mb-20">
-            <div>
-              <div className="flex items-center gap-3 mb-8">
-                <div className="w-12 h-12 bg-[#c29a63] rounded-xl flex items-center justify-center text-white font-serif text-2xl font-bold italic">ML</div>
-                <div className="font-serif text-2xl font-medium tracking-tight text-[#c29a63]">
-                  Maria Laura <span className="text-white/40">|</span> Odontologia
+      {/* Footer Section */}
+      <footer id="contato" className="bg-[#1a1612] text-white pt-24 pb-12 rounded-t-[4rem]">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="grid lg:grid-cols-4 gap-16 mb-24">
+            <div className="lg:col-span-2">
+              <div className="flex items-center gap-4 mb-8">
+                <div className="w-14 h-14 bg-[#c29a63] rounded-2xl flex items-center justify-center text-white font-serif text-3xl font-bold italic shadow-xl shadow-[#c29a63]/20">ML</div>
+                <div className="font-heading text-2xl font-bold tracking-tight">
+                  Maria Laura <br/><span className="text-[#c29a63] font-medium text-lg">Odontologia</span>
                 </div>
               </div>
-              <p className="text-white/50 max-w-sm mb-8 leading-relaxed font-light">
-                Transformando sorrisos e devolvendo a autoestima com a delicadeza e a técnica que você merece.
+              <p className="text-white/50 max-w-sm mb-10 leading-relaxed font-light text-lg">
+                Referência em estética avançada e mimetismo dental. Transformando sorrisos com a precisão da ciência e a delicadeza da arte.
               </p>
-              <div className="space-y-4">
-                <a href="https://wa.me/5564981644853" target="_blank" className="flex items-center gap-3 text-white hover:text-[#c29a63] transition-colors">
-                  <div className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center border border-white/10"><CheckCircle2 className="w-5 h-5" /></div>
-                  <span className="font-medium">+55 64 98164-4853</span>
+              <div className="flex gap-4">
+                <a href="https://instagram.com" target="_blank" className="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center border border-white/10 hover:bg-[#c29a63] hover:border-[#c29a63] transition-all group">
+                  <Instagram className="w-5 h-5 group-hover:scale-110 transition-transform" />
+                </a>
+                <a href="https://wa.me/5564981644853" target="_blank" className="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center border border-white/10 hover:bg-[#c29a63] hover:border-[#c29a63] transition-all group">
+                  <Phone className="w-5 h-5 group-hover:scale-110 transition-transform" />
+                </a>
+                <a href="mailto:contato@marialaura.com" className="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center border border-white/10 hover:bg-[#c29a63] hover:border-[#c29a63] transition-all group">
+                  <Mail className="w-5 h-5 group-hover:scale-110 transition-transform" />
                 </a>
               </div>
             </div>
             
-            <div>
-              <h3 className="font-serif text-2xl mb-8 flex items-center gap-3">
-                <MapPin className="text-[#c29a63]" /> Nossa Localização
-              </h3>
-              <div className="bg-white/5 p-8 rounded-[2rem] border border-white/10 mb-8 backdrop-blur-sm">
-                <p className="text-white/70 leading-relaxed font-light">
-                  Av. João Ferreira da Cunha, N°: 470<br/>
-                  Centro, Mossâmedes - GO<br/>
-                  76150-000, Brazil
-                </p>
+            <div className="lg:col-span-2">
+              <div className="flex items-center gap-3 mb-8">
+                <MapPin className="text-[#c29a63] w-6 h-6" />
+                <h3 className="font-heading font-bold text-xl uppercase tracking-widest">Localização</h3>
               </div>
-              
-              <div className="w-full h-56 bg-white/5 rounded-[2rem] overflow-hidden relative border border-white/10 grayscale contrast-125">
-                <iframe 
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3824.238622159187!2d-50.1477755!3d-16.11585!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x935e4b0000000001%3A0x3b773a4b609deebf!2sDra.%20Maria%20Laura%20%7C%20Odontologia!5e0!3m2!1spt-BR!2sbr!4v1700000000000!5m2!1spt-BR!2sbr" 
-                  width="100%" 
-                  height="100%" 
-                  style={{ border: 0 }} 
-                  allowFullScreen 
-                  loading="lazy" 
-                />
+              <div className="grid md:grid-cols-2 gap-10">
+                <div className="bg-white/5 p-8 rounded-[2.5rem] border border-white/10 backdrop-blur-sm">
+                  <p className="text-white/70 leading-relaxed font-light text-base">
+                    Av. João Ferreira da Cunha, 470<br/>
+                    Centro, Mossâmedes - GO<br/>
+                    76150-000, Brasil
+                  </p>
+                </div>
+                <div className="w-full h-full min-h-[150px] bg-white/5 rounded-[2.5rem] overflow-hidden relative border border-white/10 grayscale opacity-60 hover:opacity-100 transition-opacity">
+                  <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3824.238622159187!2d-50.1477755!3d-16.11585!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x935e4b0000000001%3A0x3b773a4b609deebf!2sDra.%20Maria%20Laura%20%7C%20Odontologia!5e0!3m2!1spt-BR!2sbr!4v1700000000000!5m2!1spt-BR!2sbr" 
+                    width="100%" 
+                    height="100%" 
+                    style={{ border: 0 }} 
+                    allowFullScreen 
+                    loading="lazy" 
+                  />
+                </div>
               </div>
             </div>
           </div>
           
-          <div className="border-t border-white/10 pt-10 text-center text-white/30 text-xs tracking-widest uppercase">
-            <p>© {new Date().getFullYear()} Dra. Maria Laura Barbosa | Cirurgiã Dentista</p>
+          <div className="border-t border-white/10 pt-10 flex flex-col md:flex-row justify-between items-center gap-6">
+            <p className="text-white/20 text-[10px] uppercase font-bold tracking-[0.2em]">© {new Date().getFullYear()} Dra. Maria Laura Barbosa | Odontologia</p>
+            <div className="flex gap-8 text-white/20 text-[10px] uppercase font-bold tracking-[0.2em]">
+              <a href="#" className="hover:text-[#c29a63]">Políticas</a>
+              <a href="#" className="hover:text-[#c29a63]">Termos</a>
+            </div>
           </div>
         </div>
       </footer>
