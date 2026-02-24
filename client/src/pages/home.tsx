@@ -699,8 +699,8 @@ export default function Home() {
       <footer id="contato" className="bg-[#1a1612] text-white pt-24 pb-12 rounded-t-[4rem]">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid lg:grid-cols-4 gap-8 mb-24">
-            {/* Branding Card */}
-            <div className="lg:col-span-2 bg-white/5 border border-white/10 rounded-3xl p-8 backdrop-blur-sm">
+            {/* Branding - No Card */}
+            <div className="lg:col-span-2 pr-8">
               <div className="flex items-center gap-1 mb-6">
                 <div className="h-14 w-14 rounded-full overflow-hidden border-2 border-[#a88252]/30 shadow-sm flex-shrink-0 bg-white">
                   <img src="/assets/logo.jpg" alt="Logo" className="w-full h-full object-cover" />
