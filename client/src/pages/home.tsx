@@ -1,26 +1,23 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
-import { ArrowRight, MapPin, Sparkles, Smile, Star, CheckCircle2, ChevronRight, ChevronLeft, Instagram, Phone, Mail, ExternalLink } from "lucide-react";
+import { ArrowRight, MapPin, Sparkles, Smile, Star, CheckCircle2, ChevronRight, ChevronLeft, Instagram, Phone, Mail, ExternalLink, Award, Heart } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 
-// Dentist Photos
+// Assets
 import dentist1 from "@assets/WhatsApp_Image_2026-02-24_at_12.42.38_(1)_1771948728851.jpeg";
 import dentist2 from "@assets/WhatsApp_Image_2026-02-24_at_12.42.36_1771948728854.jpeg";
 import dentist3 from "@assets/WhatsApp_Image_2026-02-24_at_12.42.35_1771948728854.jpeg";
 import dentist4 from "@assets/WhatsApp_Image_2026-02-24_at_12.42.37_1771948728853.jpeg";
-
-// Specialty Photos
 import specMimetismo from "@assets/WhatsApp_Image_2026-02-24_at_13.05.38_1771949220712.jpeg";
 import specClareamento from "@assets/WhatsApp_Image_2026-02-24_at_13.06.05_1771949220711.jpeg";
 import specPeriodontal from "@assets/WhatsApp_Image_2026-02-24_at_13.06.19_1771949220710.jpeg";
 import specRestauracao from "@assets/WhatsApp_Image_2026-02-24_at_13.06.31_1771949220708.jpeg";
-
-// New Assets
 import whatsappIcon from "@assets/whatsapp_4008228_1771950564376.png";
-import teethLogo from "@assets/teeth_16255989_1771950564377.png";
+import toothCrownLogo from "@assets/WhatsApp_Image_2026-02-24_at_14.00.46_1771953908609.jpeg";
 
 const dentistPhotos = [dentist1, dentist2, dentist3, dentist4];
+const WHATSAPP_URL = "https://wa.me/5564981644853?text=Olá,%20Dra.%20Maria%20Laura!%20Gostaria%20de%20conhecer%20os%20serviços%20e%20agendar%20uma%20avaliação.";
 
 const fadeIn = {
   hidden: { opacity: 0, y: 20 },
@@ -52,20 +49,22 @@ export default function Home() {
       <nav className="fixed top-0 w-full z-50 bg-[#faf8f5]/80 backdrop-blur-md border-b border-[#ebdabe]/30">
         <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
           <div className="flex items-center gap-3">
-             <img src={teethLogo} alt="Logo" className="w-10 h-10 object-contain drop-shadow-sm" />
-             <div className="font-heading text-xl font-bold tracking-tight text-[#29221c]">
-              Maria Laura <span className="text-[#c29a63] font-medium">Odontologia</span>
+             <img src={toothCrownLogo} alt="Logo" className="w-12 h-12 object-contain rounded-full shadow-sm" />
+             <div className="font-heading text-lg font-bold tracking-tight text-[#29221c]">
+              Dra. Maria Laura <span className="text-[#c29a63] font-medium border-l border-[#c29a63]/30 pl-2 ml-1">Odontologia</span>
             </div>
           </div>
           <div className="hidden md:flex gap-8 text-[11px] font-bold tracking-[0.1em] uppercase text-[#5c4d40]">
             <a href="#especialidades" className="hover:text-[#c29a63] transition-colors">Serviços</a>
-            <a href="#sobre" className="hover:text-[#c29a63] transition-colors">A Dra.</a>
+            <a href="#sobre" className="hover:text-[#c29a63] transition-colors">Sobre Mim</a>
             <a href="#faq" className="hover:text-[#c29a63] transition-colors">Dúvidas</a>
             <a href="#contato" className="hover:text-[#c29a63] transition-colors">Contato</a>
           </div>
-          <Button className="bg-[#c29a63] hover:bg-[#a88252] text-white rounded-full px-6 transition-all duration-300 shadow-md shadow-[#c29a63]/20 font-heading font-bold text-xs uppercase tracking-widest" data-testid="button-agendar-nav">
-            Agendar Agora
-          </Button>
+          <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
+            <Button className="bg-[#c29a63] hover:bg-[#a88252] text-white rounded-full px-6 transition-all duration-300 shadow-md shadow-[#c29a63]/20 font-heading font-bold text-xs uppercase tracking-widest" data-testid="button-agendar-nav">
+              Agendar Agora
+            </Button>
+          </a>
         </div>
       </nav>
 
@@ -88,11 +87,13 @@ export default function Home() {
             </motion.p>
             
             <motion.div variants={fadeIn} className="flex flex-col sm:flex-row gap-5">
-              <Button size="lg" className="bg-[#c29a63] hover:bg-[#a88252] text-white rounded-full text-base h-16 px-10 shadow-xl shadow-[#c29a63]/20 font-bold uppercase tracking-widest flex items-center gap-3" data-testid="button-whatsapp-hero">
-                <img src={whatsappIcon} alt="WhatsApp" className="w-6 h-6 object-contain" />
-                Agendar via WhatsApp
-                <ArrowRight className="w-5 h-5" />
-              </Button>
+              <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
+                <Button size="lg" className="w-full bg-[#c29a63] hover:bg-[#a88252] text-white rounded-full text-base h-16 px-10 shadow-xl shadow-[#c29a63]/20 font-bold uppercase tracking-widest flex items-center gap-3" data-testid="button-whatsapp-hero">
+                  <img src={whatsappIcon} alt="WhatsApp" className="w-6 h-6 object-contain" />
+                  Agendar via WhatsApp
+                  <ArrowRight className="w-5 h-5" />
+                </Button>
+              </a>
             </motion.div>
           </motion.div>
           
@@ -124,7 +125,70 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Services Section - Improved Detailed View */}
+      {/* Sobre a Dra Section */}
+      <section id="sobre" className="py-24 px-6 bg-[#fdfbf9]">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <motion.div 
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="relative"
+            >
+              <div className="absolute -top-10 -left-10 w-40 h-40 bg-[#c29a63]/5 rounded-full blur-3xl -z-10" />
+              <div className="rounded-[3rem] overflow-hidden shadow-2xl aspect-[4/5] border-8 border-white">
+                <img src={dentist1} alt="Dra. Maria Laura" className="w-full h-full object-cover" />
+              </div>
+              <div className="absolute -bottom-6 -right-6 bg-white p-6 rounded-3xl shadow-xl border border-[#ebdabe]/30">
+                <div className="flex items-center gap-3 mb-2">
+                  <div className="w-10 h-10 rounded-full bg-[#c29a63]/10 flex items-center justify-center text-[#c29a63]">
+                    <Award className="w-5 h-5" />
+                  </div>
+                  <div>
+                    <p className="text-[10px] font-bold uppercase tracking-widest text-[#a88252]">Inscrição Profissional</p>
+                    <p className="font-heading font-bold text-[#29221c]">CRO-GO 25701</p>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+
+            <motion.div 
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+            >
+              <div className="flex items-center gap-4 mb-6">
+                <div className="h-[2px] w-12 bg-[#c29a63]" />
+                <span className="text-[#c29a63] font-bold text-xs uppercase tracking-[0.3em]">A Doutora</span>
+              </div>
+              <h2 className="text-4xl lg:text-5xl font-heading font-bold text-[#29221c] mb-8 leading-tight">Sobre mim</h2>
+              <div className="space-y-6 text-[#5c4d40] text-lg font-light leading-relaxed">
+                <p>
+                  Olá, eu sou a <span className="text-[#29221c] font-bold">Dra. Maria Laura</span>.
+                </p>
+                <p>
+                  Sou Cirurgiã-Dentista formada pelo Centro Universitário Unibras Montes Belos (UniBras). Minha trajetória é marcada pelo constante aperfeiçoamento e um profundo perfeccionismo, especialmente voltado para <span className="text-[#c29a63] font-semibold">Facetas e Lentes em Resinas Compostas</span>.
+                </p>
+                <p>
+                  Me considero uma entusiasta na arte dental, onde busco sempre resultados com extrema naturalidade, respeitando a essência de cada sorriso. Acredito que a odontologia estética vai além da técnica; é sobre devolver confiança e harmonia através de um olhar artístico e delicado.
+                </p>
+              </div>
+              <div className="mt-10 grid grid-cols-2 gap-6">
+                <div className="flex items-start gap-3">
+                  <Heart className="w-5 h-5 text-[#c29a63] mt-1" />
+                  <p className="text-sm font-medium text-[#29221c]">Atendimento <br/>Humanizado</p>
+                </div>
+                <div className="flex items-start gap-3">
+                  <Sparkles className="w-5 h-5 text-[#c29a63] mt-1" />
+                  <p className="text-sm font-medium text-[#29221c]">Foco em <br/>Naturalidade</p>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Services Section */}
       <section id="especialidades" className="py-24 px-6 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="mb-24">
@@ -182,9 +246,6 @@ export default function Home() {
                   </div>
                   <h3 className="text-3xl font-heading font-bold mb-6 text-[#29221c] leading-tight">{service.title}</h3>
                   <p className="text-[#5c4d40] text-lg font-light leading-relaxed mb-8">{service.desc}</p>
-                  <Button variant="link" className="text-[#c29a63] p-0 font-bold uppercase tracking-widest text-xs flex items-center gap-2 hover:gap-4 transition-all">
-                    Saber mais detalhes <ArrowRight className="w-4 h-4" />
-                  </Button>
                 </div>
               </div>
             ))}
@@ -226,19 +287,19 @@ export default function Home() {
           <div className="grid lg:grid-cols-4 gap-16 mb-24">
             <div className="lg:col-span-2">
               <div className="flex items-center gap-4 mb-8">
-                <img src={teethLogo} alt="Logo" className="w-12 h-12 object-contain filter invert brightness-100" />
+                <img src={toothCrownLogo} alt="Logo" className="w-16 h-16 object-contain rounded-full shadow-lg" />
                 <div className="font-heading text-2xl font-bold tracking-tight">
-                  Maria Laura <br/><span className="text-[#c29a63] font-medium text-lg">Odontologia</span>
+                  Dra. Maria Laura <br/><span className="text-[#c29a63] font-medium text-lg">Odontologia</span>
                 </div>
               </div>
               <p className="text-white/50 max-w-sm mb-10 leading-relaxed font-light text-lg">
-                Dra. Maria Laura | Odontologia preza pela ARTE natural e sofisticação no sorriso.
+                Referência em facetas e lentes em resinas compostas com foco em naturalidade e arte dental.
               </p>
               <div className="flex gap-4">
                 <a href="#" className="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center border border-white/10 hover:bg-[#c29a63] hover:border-[#c29a63] transition-all group">
                   <Instagram className="w-5 h-5 group-hover:scale-110 transition-transform" />
                 </a>
-                <a href="https://wa.me/5564981644853" target="_blank" className="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center border border-white/10 hover:bg-[#c29a63] hover:border-[#c29a63] transition-all group">
+                <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center border border-white/10 hover:bg-[#c29a63] hover:border-[#c29a63] transition-all group">
                   <Phone className="w-5 h-5 group-hover:scale-110 transition-transform" />
                 </a>
               </div>
