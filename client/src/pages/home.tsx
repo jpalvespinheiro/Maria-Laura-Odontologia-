@@ -400,10 +400,6 @@ export default function Home() {
                 </g>
               </svg>
             </div>
-            <div className="h-12 w-[1.5px] bg-[#c29a63]/30 mx-2" />
-            <span className="font-heading text-4xl font-bold tracking-tight text-[#29221c]">
-              Odontologia
-            </span>
           </div>
           <div className="hidden md:flex gap-8 text-[11px] font-normal tracking-[0.1em] uppercase text-[#5c4d40]">
             <a href="#especialidades" className="hover:text-[#c29a63] transition-colors">Serviços</a>
