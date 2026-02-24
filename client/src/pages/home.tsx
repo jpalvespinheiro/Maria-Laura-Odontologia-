@@ -207,8 +207,9 @@ export default function Home() {
       {/* Navigation */}
       <nav className="fixed top-0 w-full z-50 bg-[#faf8f5]/80 backdrop-blur-md">
         <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-          <div className="flex items-center gap-8 py-6">
-            <div className="h-28 w-48 flex items-center justify-center -ml-4 scale-150 transform-gpu origin-left">
+        <div className="max-w-7xl mx-auto px-6 h-24 flex items-center justify-between">
+          <div className="flex items-center py-4">
+            <div className="h-32 w-56 flex items-center justify-center -ml-8 scale-[2.2] transform-gpu origin-left">
               <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 1024.000000 1024.000000"
                 preserveAspectRatio="xMidYMid meet"
