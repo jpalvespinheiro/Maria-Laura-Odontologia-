@@ -221,9 +221,12 @@ export default function Home() {
 
           <div className="flex items-center gap-4">
             <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="hidden md:block">
-              <Button className="bg-[#c29a63] hover:bg-[#a88252] text-white rounded-full px-6 transition-all duration-300 shadow-md shadow-[#c29a63]/20 font-heading font-bold text-xs uppercase tracking-widest flex items-center gap-2" data-testid="button-fale-conosco-nav">
-                <Phone className="w-4 h-4" />
-                Fale Conosco
+              <Button className="relative group overflow-hidden bg-[#c29a63] hover:bg-[#a88252] text-white rounded-full px-8 h-12 transition-all duration-500 shadow-lg shadow-[#c29a63]/20 font-heading font-bold text-xs uppercase tracking-[0.2em] flex items-center gap-3 border border-white/10" data-testid="button-fale-conosco-nav">
+                <span className="relative z-10 flex items-center gap-2">
+                  <Phone className="w-3.5 h-3.5 group-hover:rotate-12 transition-transform duration-300" />
+                  Fale Conosco
+                </span>
+                <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000" />
               </Button>
             </a>
 
