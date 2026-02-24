@@ -17,6 +17,8 @@ import whatsappIcon from "@assets/icons8-whatsapp-32_1771954618804.png";
 import clinicImg from "@assets/dentista-em-lagoa-santa-scaled_1771954238429.jpg";
 import logoImg from "@assets/WhatsApp_Image_2026-02-24_at_14.00.46_1771955133778.jpeg";
 
+import newLogoImg from "@assets/A8d309b8f7da943c18b43dc818515f3d0u_1771961817737.png";
+
 const WHATSAPP_URL = "https://wa.me/5564981644853?text=Olá,%20Dra.%20Maria%20Laura!%20Gostaria%20de%20conhecer%20os%20serviços%20e%20agendar%20uma%20avaliação.";
 const INSTAGRAM_URL = "https://www.instagram.com/dra.marialauraodontologia/";
 const FACEBOOK_URL = "https://www.facebook.com/people/Maria-Laura-Odontologia/61588240837741/?mibextid=wwXIfr&rdid=MSE1H9VaSlgYIUwR&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F18Nqeg93hG%2F%3Fmibextid%3DwwXIfr%26utm_source%3Dig%26utm_medium%3Dsocial%26utm_content%3Dlink_in_bio";
@@ -206,9 +208,9 @@ export default function Home() {
       <nav className="fixed top-0 w-full z-50 bg-[#faf8f5]/80 backdrop-blur-md">
         <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
           <div className="flex items-center gap-3">
-             <img src={logoImg} alt="Dra. Maria Laura Logo" className="w-12 h-12 object-contain rounded-full shadow-sm border border-[#ebdabe]/50" />
-             <div className="font-heading text-lg font-bold tracking-tight text-[#29221c]">
-              Dra. Maria Laura <span className="text-[#c29a63] font-medium border-l border-[#c29a63]/30 pl-2 ml-1">Odontologia</span>
+             <img src={newLogoImg} alt="Dra. Maria Laura Logo" className="h-14 w-auto object-contain" />
+             <div className="font-heading text-lg font-bold tracking-tight text-[#29221c] border-l border-[#c29a63]/30 pl-3">
+              Odontologia
             </div>
           </div>
           <div className="hidden md:flex gap-8 text-[11px] font-normal tracking-[0.1em] uppercase text-[#5c4d40]">
@@ -692,9 +694,9 @@ export default function Home() {
           <div className="grid lg:grid-cols-4 gap-16 mb-24">
             <div className="lg:col-span-2">
               <div className="flex items-center gap-4 mb-8">
-                <img src={logoImg} alt="Logo" className="w-16 h-16 object-contain rounded-full shadow-lg border border-white/10" />
-                <div className="font-heading text-2xl font-bold tracking-tight">
-                  Dra. Maria Laura <br/><span className="text-[#c29a63] font-medium text-lg">Odontologia</span>
+                <img src={newLogoImg} alt="Logo" className="h-20 w-auto object-contain" />
+                <div className="font-heading text-2xl font-bold tracking-tight border-l border-white/20 pl-4">
+                  Odontologia
                 </div>
               </div>
               <p className="text-white/50 max-w-sm mb-10 leading-relaxed font-light text-lg">
