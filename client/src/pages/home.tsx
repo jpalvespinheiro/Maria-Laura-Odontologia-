@@ -208,7 +208,7 @@ export default function Home() {
       <nav className="fixed top-0 w-full z-50 bg-[#faf8f5]/80 backdrop-blur-md">
         <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
           <div className="flex items-center gap-3">
-             <img src={newLogoImg} alt="Dra. Maria Laura Logo" className="h-14 w-auto object-contain" />
+             <img src={newLogoImg} alt="Dra. Maria Laura Logo" className="h-14 w-auto object-contain mix-blend-multiply contrast-125 brightness-90" />
              <div className="font-heading text-lg font-bold tracking-tight text-[#29221c] border-l border-[#c29a63]/30 pl-3">
               Odontologia
             </div>
@@ -694,7 +694,7 @@ export default function Home() {
           <div className="grid lg:grid-cols-4 gap-16 mb-24">
             <div className="lg:col-span-2">
               <div className="flex items-center gap-4 mb-8">
-                <img src={newLogoImg} alt="Logo" className="h-20 w-auto object-contain" />
+                <img src={newLogoImg} alt="Logo" className="h-20 w-auto object-contain brightness-0 invert" />
                 <div className="font-heading text-2xl font-bold tracking-tight border-l border-white/20 pl-4">
                   Odontologia
                 </div>
