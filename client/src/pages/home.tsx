@@ -13,7 +13,7 @@ import specMimetismo from "@assets/WhatsApp_Image_2026-02-24_at_13.05.38_1771949
 import specClareamento from "@assets/WhatsApp_Image_2026-02-24_at_13.06.05_1771949220711.jpeg";
 import specPeriodontal from "@assets/WhatsApp_Image_2026-02-24_at_13.06.19_1771949220710.jpeg";
 import specRestauracao from "@assets/WhatsApp_Image_2026-02-24_at_13.06.31_1771949220708.jpeg";
-import whatsappIcon from "/assets/whatsapp-icon.png";
+import whatsappIcon from "/assets/whatsapp-custom.png";
 import clinicImg from "@assets/dentista-em-lagoa-santa-scaled_1771954238429.jpg";
 import logoImg from "@assets/WhatsApp_Image_2026-02-24_at_14.00.46_1771955133778.jpeg";
 
@@ -176,7 +176,7 @@ function ServiceModal({ service, isOpen, onClose }: { service: any, isOpen: bool
                 <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
                   <Button size="lg" className="bg-[#c29a63] hover:bg-[#a88252] text-white rounded-full px-8 shadow-xl shadow-[#c29a63]/20 font-bold uppercase tracking-widest flex items-center gap-2">
                     Agendar via WhatsApp
-                    <img src="/assets/whatsapp-icon.png" alt="" className="w-5 h-5 brightness-0 invert" />
+                    <img src={whatsappIcon} alt="" className="w-5 h-5" />
                   </Button>
                 </a>
               </div>
@@ -284,7 +284,7 @@ export default function Home() {
                 <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                   <Button size="lg" className="w-full sm:w-auto bg-[#c29a63] hover:bg-[#a88252] text-white rounded-full text-sm h-14 px-8 shadow-xl shadow-[#c29a63]/20 font-normal uppercase tracking-widest flex items-center justify-center gap-3" data-testid="button-whatsapp-hero">
                     Agendar via WhatsApp
-                    <img src="/assets/whatsapp-icon.png" alt="WhatsApp" className="w-6 h-6 object-contain brightness-0 invert" />
+                    <img src={whatsappIcon} alt="WhatsApp" className="w-6 h-6 object-contain" />
                   </Button>
                 </motion.div>
               </a>
@@ -773,12 +773,7 @@ export default function Home() {
           </div>
 
           <div className="pt-10 flex flex-col md:flex-row items-center justify-between gap-4 text-[#8a7a6e]/40 text-[10px] uppercase font-bold tracking-[0.3em]">
-            <div className="flex flex-col gap-1">
-              <p>© {new Date().getFullYear()} DRA. MARIA LAURA BARBOSA | LUXO & ODONTOLOGIA</p>
-              <a href="https://www.flaticon.com/br/icones-gratis/whatsapp" title="whatsapp ícones" target="_blank" rel="noopener noreferrer" className="hover:text-[#a88252] transition-colors lowercase font-normal tracking-normal">
-                Whatsapp ícones criados por Freepik - Flaticon
-              </a>
-            </div>
+            <p>© {new Date().getFullYear()} DRA. MARIA LAURA BARBOSA | LUXO & ODONTOLOGIA</p>
             <div className="flex items-center gap-2">
               <span>Desenvolvido por</span>
               <span className="text-[#a88252] text-xs">Ethos Desenvolvimento de Software</span>
