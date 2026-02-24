@@ -221,7 +221,7 @@ export default function Home() {
             </div>
           </div>
           <div className="hidden md:flex gap-8 text-[11px] font-normal tracking-[0.1em] uppercase text-[#5c4d40]">
-            <a href="#especialidades" className="hover:text-[#c29a63] transition-colors">Serviços</a>
+            <a href="#especialidades" className="hover:text-[#c29a63] transition-colors text-[13px]">Serviços</a>
             <a href="#clinica" className="hover:text-[#c29a63] transition-colors">Clínica</a>
             <a href="#sobre" className="hover:text-[#c29a63] transition-colors">Sobre Mim</a>
             <a href="#depoimentos" className="hover:text-[#c29a63] transition-colors">Depoimentos</a>
