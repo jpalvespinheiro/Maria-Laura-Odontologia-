@@ -696,7 +696,7 @@ export default function Home() {
         </div>
       </section>
       {/* Footer Section */}
-      <footer id="contato" className="bg-[#f2ede4] text-[#5c4d40] pt-24 pb-12 rounded-t-[4rem] border-t border-[#ebdabe]">
+      <footer id="contato" className="bg-[#faf8f5] text-[#5c4d40] pt-24 pb-12 border-t border-[#ebdabe]">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid lg:grid-cols-4 gap-8 mb-24">
             {/* Branding - No Card */}
