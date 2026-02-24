@@ -215,7 +215,7 @@ export default function Home() {
               <span className="font-heading text-base md:text-lg font-medium tracking-tight text-[#29221c] leading-none antialiased">
                 Dra. Maria Laura
               </span>
-              <span className="font-heading text-sm md:text-base font-normal text-[#a88252] mt-1 antialiased">
+              <span className="font-heading md:text-base text-[#a88252] mt-1 antialiased text-[15px] font-medium">
                 Odontologia
               </span>
             </div>
