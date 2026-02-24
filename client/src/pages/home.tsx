@@ -213,14 +213,13 @@ export default function Home() {
             </div>
             <div className="flex flex-col">
               <span className="font-heading text-lg md:text-xl font-bold tracking-tight text-[#29221c] leading-tight">
-                Dra. Maria Laura
-              </span>
-              <span className="font-heading text-[10px] md:text-xs font-medium tracking-[0.2em] uppercase text-[#c29a63]">
-                Odontologia
+                Dra. Maria Laura | <span className="text-[#ebdabe] brightness-75">Odontologia</span>
               </span>
             </div>
           </div>
           <div className="hidden md:flex gap-8 text-[11px] font-normal tracking-[0.1em] uppercase text-[#5c4d40]">
+            <a href="#especialidades" className="hover:text-[#c29a63] transition-colors">Serviços</a>
+            <a href="#clinica" className="hover:text-[#c29a63] transition-colors">Clínica</a>
             <a href="#sobre" className="hover:text-[#c29a63] transition-colors">Sobre Mim</a>
             <a href="#depoimentos" className="hover:text-[#c29a63] transition-colors">Depoimentos</a>
           </div>
