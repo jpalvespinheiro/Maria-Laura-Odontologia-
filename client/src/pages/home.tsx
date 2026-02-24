@@ -464,7 +464,7 @@ export default function Home() {
                 </motion.div>
                 <motion.div whileHover={{ y: -5, scale: 1.02 }} className="flex items-start gap-3 p-4 bg-white rounded-2xl shadow-sm border border-[#ebdabe]/20 transition-all">
                   <Smile className="w-5 h-5 text-[#c29a63] mt-1" />
-                  <p className="text-sm font-medium text-[#29221c]">Atendimento especializado <br/>com crianças</p>
+                  <p className="text-sm font-medium text-[#29221c]">Eleva qualidade de vida <br/>e autoestima</p>
                 </motion.div>
                 <motion.div whileHover={{ y: -5, scale: 1.02 }} className="flex items-start gap-3 p-4 bg-white rounded-2xl shadow-sm border border-[#ebdabe]/20 transition-all">
                   <Award className="w-5 h-5 text-[#c29a63] mt-1" />
