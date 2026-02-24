@@ -696,7 +696,7 @@ export default function Home() {
         </div>
       </section>
       {/* Footer Section */}
-      <footer id="contato" className="bg-[#fdfcfb] text-[#5c4d40] pt-24 pb-12 rounded-t-[4rem] border-t border-[#ebdabe]/50">
+      <footer id="contato" className="bg-[#f2ede4] text-[#5c4d40] pt-24 pb-12 rounded-t-[4rem] border-t border-[#ebdabe]">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid lg:grid-cols-4 gap-8 mb-24">
             {/* Branding - No Card */}
@@ -719,15 +719,15 @@ export default function Home() {
               </p>
               <div className="flex items-center gap-4">
                 <div className="flex gap-3">
-                  <a href={INSTAGRAM_URL} target="_blank" className="w-10 h-10 rounded-full bg-[#a88252]/5 flex items-center justify-center border border-[#a88252]/10 text-[#a88252] hover:bg-[#a88252] hover:text-white transition-all group">
+                  <a href={INSTAGRAM_URL} target="_blank" className="w-10 h-10 rounded-full bg-white/50 flex items-center justify-center border border-[#a88252]/10 text-[#a88252] hover:bg-[#a88252] hover:text-white transition-all group">
                     <Instagram className="w-4 h-4 group-hover:scale-110 transition-transform" />
                   </a>
-                  <a href={FACEBOOK_URL} target="_blank" className="w-10 h-10 rounded-full bg-[#a88252]/5 flex items-center justify-center border border-[#a88252]/10 text-[#a88252] hover:bg-[#a88252] hover:text-white transition-all group">
+                  <a href={FACEBOOK_URL} target="_blank" className="w-10 h-10 rounded-full bg-white/50 flex items-center justify-center border border-[#a88252]/10 text-[#a88252] hover:bg-[#a88252] hover:text-white transition-all group">
                     <Facebook className="w-4 h-4 group-hover:scale-110 transition-transform" />
                   </a>
                 </div>
                 <div className="h-8 w-[1px] bg-[#ebdabe] mx-2" />
-                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#a88252]/5 border border-[#a88252]/10 text-[#a88252] text-[9px] font-bold uppercase tracking-[0.2em]">
+                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/50 border border-[#a88252]/10 text-[#a88252] text-[9px] font-bold uppercase tracking-[0.2em]">
                   <Sparkles className="w-3 h-3" />
                   <span>A cada sorriso uma história</span>
                 </div>
@@ -735,7 +735,7 @@ export default function Home() {
             </div>
 
             {/* Navigation Card */}
-            <div className="bg-white border border-[#ebdabe]/50 rounded-3xl p-8 shadow-sm">
+            <div className="bg-white/40 backdrop-blur-sm border border-[#ebdabe] rounded-3xl p-8 shadow-sm">
               <h4 className="font-bold text-lg mb-6 text-[#a88252]">Navegação</h4>
               <ul className="space-y-4">
                 <li><a href="#especialidades" className="text-[#8a7a6e] hover:text-[#a88252] transition-colors flex items-center gap-2 group text-sm"><div className="w-1 h-1 rounded-full bg-[#a88252] opacity-0 group-hover:opacity-100 transition-opacity" /> Serviços</a></li>
@@ -746,7 +746,7 @@ export default function Home() {
             </div>
 
             {/* Contact Card */}
-            <div className="bg-white border border-[#ebdabe]/50 rounded-3xl p-8 shadow-sm">
+            <div className="bg-white/40 backdrop-blur-sm border border-[#ebdabe] rounded-3xl p-8 shadow-sm">
               <h4 className="font-bold text-lg mb-6 text-[#a88252]">Contato</h4>
               <ul className="space-y-4">
                 <li className="flex items-start gap-3 text-[#8a7a6e] group">
