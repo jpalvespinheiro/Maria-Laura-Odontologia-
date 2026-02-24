@@ -208,9 +208,6 @@ export default function Home() {
       <nav className="fixed top-0 w-full z-50 bg-[#faf8f5]/80 backdrop-blur-md">
         <div className="max-w-7xl mx-auto px-6 h-24 flex items-center justify-between">
           <div className="flex items-center gap-3 py-4">
-            <div className="h-14 w-14 rounded-full overflow-hidden border-2 border-[#c29a63]/20 shadow-sm flex-shrink-0 bg-white">
-              <img src="/assets/logo.jpg" alt="Logo" className="w-full h-full object-cover" />
-          <div className="flex items-center gap-3 py-4">
             <div className="h-14 w-14 rounded-full overflow-hidden border-2 border-[#a88252]/30 shadow-sm flex-shrink-0 bg-white">
               <img src="/assets/logo.jpg" alt="Logo" className="w-full h-full object-cover" />
             </div>
@@ -223,6 +220,8 @@ export default function Home() {
               </span>
             </div>
           </div>
+          <div className="hidden md:flex gap-8 text-[11px] font-normal tracking-[0.1em] uppercase text-[#5c4d40]">
+            <a href="#especialidades" className="hover:text-[#c29a63] transition-colors">Serviços</a>
             <a href="#clinica" className="hover:text-[#c29a63] transition-colors">Clínica</a>
             <a href="#sobre" className="hover:text-[#c29a63] transition-colors">Sobre Mim</a>
             <a href="#depoimentos" className="hover:text-[#c29a63] transition-colors">Depoimentos</a>
