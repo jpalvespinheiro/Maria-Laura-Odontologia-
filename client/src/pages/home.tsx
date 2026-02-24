@@ -1,6 +1,6 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
-import { ArrowRight, MapPin, Sparkles, Smile, Star, CheckCircle2, ChevronRight, ChevronLeft, Phone, Mail, Wind, Coffee, ShieldCheck, Plus, Minus, X, Menu, Award, Instagram, Facebook } from "lucide-react";
+import { ArrowRight, MapPin, Sparkles, Smile, Star, CheckCircle2, ChevronRight, ChevronLeft, Phone, Mail, Wind, Coffee, ShieldCheck, Plus, Minus, X, Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger, SheetClose } from "@/components/ui/sheet";
 
@@ -14,8 +14,6 @@ import specPeriodontal from "@assets/WhatsApp_Image_2026-02-24_at_13.06.19_17719
 import specRestauracao from "@assets/WhatsApp_Image_2026-02-24_at_13.06.31_1771949220708.jpeg";
 import whatsappIcon from "/assets/whatsapp-custom.png";
 import clinicImg from "@assets/dentista-em-lagoa-santa-scaled_1771954238429.jpg";
-
-import newLogoImg from "@assets/A8d309b8f7da943c18b43dc818515f3d0u_1771961817737.png";
 
 const WHATSAPP_URL = "https://wa.me/5564981644853?text=Olá,%20Dra.%20Maria%20Laura!%20Gostaria%20de%20conhecer%20os%20serviços%20e%20agendar%20uma%20avaliação.";
 const INSTAGRAM_URL = "https://www.instagram.com/dra.marialauraodontologia/";
@@ -205,7 +203,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-6 h-24 flex items-center justify-between text-[#fffafa] bg-[#ffffff00]">
           <div className="flex items-center gap-1 py-4">
             <div className="h-14 w-14 rounded-full overflow-hidden border-2 border-[#a88252]/30 shadow-sm flex-shrink-0 bg-white">
-              <img src={newLogoImg} alt="Logo" className="w-full h-full object-cover" />
+              <img src="/assets/logo.jpg" alt="Logo" className="w-full h-full object-cover" />
             </div>
             <div className="flex flex-col items-start -space-y-1">
               <span className="text-base md:text-lg font-normal tracking-tighter text-[#5c4d40] leading-none antialiased">
@@ -591,7 +589,7 @@ export default function Home() {
             <div className="lg:col-span-2 space-y-8">
               <div className="flex items-center gap-4">
                 <div className="h-16 w-16 rounded-full overflow-hidden border-2 border-[#a88252]/30 bg-white">
-                  <img src={newLogoImg} alt="Logo" className="w-full h-full object-cover" />
+                  <img src="/assets/logo.jpg" alt="Logo" className="w-full h-full object-cover" />
                 </div>
                 <div className="flex flex-col">
                   <span className="text-xl font-normal tracking-tighter text-[#5c4d40]">Dra. Maria Laura</span>
