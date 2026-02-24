@@ -698,9 +698,10 @@ export default function Home() {
       {/* Footer Section */}
       <footer id="contato" className="bg-[#1a1612] text-white pt-24 pb-12 rounded-t-[4rem]">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="grid lg:grid-cols-4 gap-16 mb-24">
-            <div className="lg:col-span-2">
-              <div className="flex items-center gap-1 mb-8">
+          <div className="grid lg:grid-cols-4 gap-8 mb-24">
+            {/* Branding Card */}
+            <div className="lg:col-span-2 bg-white/5 border border-white/10 rounded-3xl p-8 backdrop-blur-sm">
+              <div className="flex items-center gap-1 mb-6">
                 <div className="h-14 w-14 rounded-full overflow-hidden border-2 border-[#a88252]/30 shadow-sm flex-shrink-0 bg-white">
                   <img src="/assets/logo.jpg" alt="Logo" className="w-full h-full object-cover" />
                 </div>
@@ -713,55 +714,58 @@ export default function Home() {
                   </span>
                 </div>
               </div>
-              <p className="text-white/50 max-w-sm mb-10 leading-relaxed font-light text-lg">
+              <p className="text-white/50 text-lg font-light leading-relaxed mb-8 max-w-md">
                 Excelência em odontologia estética com foco em naturalidade e bem-estar. A cada sorriso, uma nova história.
               </p>
-              <div className="mb-10">
-                <div className="inline-flex items-center gap-2 px-6 py-2 rounded-full bg-white/5 border border-white/10 text-[#c29a63] text-[10px] font-bold uppercase tracking-[0.3em] shadow-lg">
-                  <Sparkles className="w-3.5 h-3.5" />
-                  <span>A cada sorriso uma história.</span>
+              <div className="flex items-center gap-4">
+                <div className="flex gap-3">
+                  <a href={INSTAGRAM_URL} target="_blank" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center border border-white/10 hover:bg-[#c29a63] hover:border-[#c29a63] transition-all group">
+                    <Instagram className="w-4 h-4 group-hover:scale-110 transition-transform" />
+                  </a>
+                  <a href={FACEBOOK_URL} target="_blank" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center border border-white/10 hover:bg-[#c29a63] hover:border-[#c29a63] transition-all group">
+                    <Facebook className="w-4 h-4 group-hover:scale-110 transition-transform" />
+                  </a>
                 </div>
-              </div>
-              <div className="flex gap-4">
-                <a href={INSTAGRAM_URL} target="_blank" className="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center border border-white/10 hover:bg-[#c29a63] hover:border-[#c29a63] transition-all group">
-                  <Instagram className="w-5 h-5 group-hover:scale-110 transition-transform" />
-                </a>
-                <a href={FACEBOOK_URL} target="_blank" className="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center border border-white/10 hover:bg-[#c29a63] hover:border-[#c29a63] transition-all group">
-                  <Facebook className="w-5 h-5 group-hover:scale-110 transition-transform" />
-                </a>
+                <div className="h-8 w-[1px] bg-white/10 mx-2" />
+                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 text-[#c29a63] text-[9px] font-bold uppercase tracking-[0.2em]">
+                  <Sparkles className="w-3 h-3" />
+                  <span>A cada sorriso uma história</span>
+                </div>
               </div>
             </div>
 
-            <div>
-              <h4 className="font-bold text-lg mb-8">Navegação</h4>
+            {/* Navigation Card */}
+            <div className="bg-white/5 border border-white/10 rounded-3xl p-8 backdrop-blur-sm">
+              <h4 className="font-bold text-lg mb-6 text-[#c29a63]">Navegação</h4>
               <ul className="space-y-4">
-                <li><a href="#especialidades" className="text-[#a0948c] hover:text-[#c29a63] transition-colors">Serviços</a></li>
-                <li><a href="#clinica" className="text-[#a0948c] hover:text-[#c29a63] transition-colors">Clínica</a></li>
-                <li><a href="#sobre" className="text-[#a0948c] hover:text-[#c29a63] transition-colors">Sobre Mim</a></li>
-                <li><a href="#depoimentos" className="text-[#a0948c] hover:text-[#c29a63] transition-colors">Depoimentos</a></li>
+                <li><a href="#especialidades" className="text-white/60 hover:text-white transition-colors flex items-center gap-2 group"><div className="w-1 h-1 rounded-full bg-[#c29a63] opacity-0 group-hover:opacity-100 transition-opacity" /> Serviços</a></li>
+                <li><a href="#clinica" className="text-white/60 hover:text-white transition-colors flex items-center gap-2 group"><div className="w-1 h-1 rounded-full bg-[#c29a63] opacity-0 group-hover:opacity-100 transition-opacity" /> Clínica</a></li>
+                <li><a href="#sobre" className="text-white/60 hover:text-white transition-colors flex items-center gap-2 group"><div className="w-1 h-1 rounded-full bg-[#c29a63] opacity-0 group-hover:opacity-100 transition-opacity" /> Sobre Mim</a></li>
+                <li><a href="#depoimentos" className="text-white/60 hover:text-white transition-colors flex items-center gap-2 group"><div className="w-1 h-1 rounded-full bg-[#c29a63] opacity-0 group-hover:opacity-100 transition-opacity" /> Depoimentos</a></li>
               </ul>
             </div>
 
-            <div>
-              <h4 className="font-bold text-lg mb-8">Contato</h4>
+            {/* Contact Card */}
+            <div className="bg-white/5 border border-white/10 rounded-3xl p-8 backdrop-blur-sm">
+              <h4 className="font-bold text-lg mb-6 text-[#c29a63]">Contato</h4>
               <ul className="space-y-4">
-                <li className="flex items-start gap-3 text-[#a0948c]">
-                  <MapPin className="w-5 h-5 text-[#c29a63] shrink-0" />
-                  <span>Av. João Ferreira da Cunha, 470, Centro, Mossâmedes - GO</span>
+                <li className="flex items-start gap-3 text-white/60 group">
+                  <MapPin className="w-5 h-5 text-[#c29a63] shrink-0 group-hover:scale-110 transition-transform" />
+                  <span className="text-sm leading-relaxed">Av. João Ferreira da Cunha, 470, Centro, Mossâmedes - GO</span>
                 </li>
-                <li className="flex items-center gap-3 text-[#a0948c]">
-                  <Phone className="w-5 h-5 text-[#c29a63] shrink-0" />
-                  <span>(64) 98164-4853</span>
+                <li className="flex items-center gap-3 text-white/60 group">
+                  <Phone className="w-5 h-5 text-[#c29a63] shrink-0 group-hover:scale-110 transition-transform" />
+                  <span className="text-sm">(64) 98164-4853</span>
                 </li>
-                <li className="flex items-center gap-3 text-[#a0948c]">
-                  <Mail className="w-5 h-5 text-[#c29a63] shrink-0" />
-                  <a href="mailto:dramarialaurabarbosacunhaesilv@gmail.com" className="hover:text-white transition-colors truncate">
-                    dramarialaurabarbosacunhaesilv@gmail.com
+                <li className="flex items-center gap-3 text-white/60 group">
+                  <Mail className="w-5 h-5 text-[#c29a63] shrink-0 group-hover:scale-110 transition-transform" />
+                  <a href="mailto:dramarialaurabarbosacunhaesilv@gmail.com" className="text-sm hover:text-white transition-colors truncate">
+                    E-mail profissional
                   </a>
                 </li>
                 <li className="pt-4">
-                  <a href="https://g.page/r/YOUR_GOOGLE_REVIEW_ID/review" target="_blank" className="inline-flex items-center gap-2 text-[#c29a63] font-bold text-xs uppercase tracking-widest hover:gap-3 transition-all">
-                    Avaliar no Google <ArrowRight className="w-4 h-4" />
+                  <a href="https://g.page/r/YOUR_GOOGLE_REVIEW_ID/review" target="_blank" className="flex items-center justify-center gap-2 w-full py-3 rounded-xl bg-[#c29a63]/10 border border-[#c29a63]/20 text-[#c29a63] font-bold text-[10px] uppercase tracking-widest hover:bg-[#c29a63] hover:text-white transition-all">
+                    Avaliar no Google <ArrowRight className="w-3 h-3" />
                   </a>
                 </li>
               </ul>
