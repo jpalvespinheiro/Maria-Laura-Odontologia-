@@ -206,6 +206,7 @@ export default function Home() {
     <div className="min-h-screen bg-[#faf8f5] text-[#332b24] overflow-hidden selection:bg-[#d4b98e]/30 font-sans">
       {/* Navigation */}
       <nav className="fixed top-0 w-full z-50 bg-[#faf8f5]/80 backdrop-blur-md">
+        <div className="max-w-7xl mx-auto px-6 h-24 flex items-center justify-between">
           <div className="flex items-center py-4">
             <div className="h-32 w-56 flex items-center justify-center -ml-8 scale-[2.2] transform-gpu origin-left">
               <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
@@ -398,10 +399,6 @@ export default function Home() {
                 </g>
               </svg>
             </div>
-            <div className="h-12 w-[1.5px] bg-[#c29a63]/30 mx-2" />
-            <span className="font-heading text-4xl font-bold tracking-tight text-[#29221c]">
-              Odontologia
-            </span>
           </div>
           <div className="hidden md:flex gap-8 text-[11px] font-normal tracking-[0.1em] uppercase text-[#5c4d40]">
             <a href="#especialidades" className="hover:text-[#c29a63] transition-colors">Serviços</a>
