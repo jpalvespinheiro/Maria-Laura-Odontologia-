@@ -208,9 +208,18 @@ export default function Home() {
       <nav className="fixed top-0 w-full z-50 bg-[#faf8f5]/80 backdrop-blur-md">
         <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
           <div className="flex items-center gap-3">
-             <img src={newLogoImg} alt="Dra. Maria Laura Logo" className="h-14 w-auto object-contain mix-blend-multiply contrast-125 brightness-90" />
-             <div className="font-heading text-lg font-bold tracking-tight text-[#29221c] border-l border-[#c29a63]/30 pl-3">
-              Odontologia
+            <div className="relative h-14 w-14 flex items-center justify-center">
+              <svg viewBox="0 0 100 100" className="w-full h-full fill-none stroke-[#c29a63] stroke-[1.5]" xmlns="http://www.w3.org/2000/svg">
+                <path d="M50 20 C35 20 25 30 25 45 C25 65 50 85 50 85 C50 85 75 65 75 45 C75 30 65 20 50 20" className="opacity-20" />
+                <path d="M30 40 Q30 25 50 25 Q70 25 70 40 Q70 55 50 75 Q30 55 30 40" />
+                <path d="M45 45 L50 55 L55 45" strokeLinecap="round" strokeLinejoin="round" />
+                <path d="M20 50 Q15 35 25 25" strokeDasharray="2 2" opacity="0.5" />
+                <path d="M80 50 Q85 35 75 25" strokeDasharray="2 2" opacity="0.5" />
+              </svg>
+            </div>
+            <div className="flex flex-col">
+              <span className="font-heading text-lg font-bold tracking-tighter text-[#29221c] leading-none">Dra. Maria Laura</span>
+              <span className="text-[10px] uppercase tracking-[0.3em] text-[#c29a63] font-medium mt-1">Odontologia</span>
             </div>
           </div>
           <div className="hidden md:flex gap-8 text-[11px] font-normal tracking-[0.1em] uppercase text-[#5c4d40]">
@@ -693,10 +702,18 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid lg:grid-cols-4 gap-16 mb-24">
             <div className="lg:col-span-2">
-              <div className="flex items-center gap-4 mb-8">
-                <img src={newLogoImg} alt="Logo" className="h-20 w-auto object-contain brightness-0 invert" />
-                <div className="font-heading text-2xl font-bold tracking-tight border-l border-white/20 pl-4">
-                  Odontologia
+              <div className="flex items-center gap-4 mb-8 text-white">
+                <div className="relative h-16 w-16 flex items-center justify-center">
+                  <svg viewBox="0 0 100 100" className="w-full h-full fill-none stroke-white stroke-[1.5]" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M30 40 Q30 25 50 25 Q70 25 70 40 Q70 55 50 75 Q30 55 30 40" />
+                    <path d="M45 45 L50 55 L55 45" strokeLinecap="round" strokeLinejoin="round" />
+                    <path d="M20 50 Q15 35 25 25" strokeDasharray="2 2" opacity="0.3" />
+                    <path d="M80 50 Q85 35 75 25" strokeDasharray="2 2" opacity="0.3" />
+                  </svg>
+                </div>
+                <div className="flex flex-col">
+                  <span className="font-heading text-2xl font-bold tracking-tighter leading-none">Dra. Maria Laura</span>
+                  <span className="text-xs uppercase tracking-[0.4em] text-[#c29a63] font-medium mt-2">Odontologia</span>
                 </div>
               </div>
               <p className="text-white/50 max-w-sm mb-10 leading-relaxed font-light text-lg">
