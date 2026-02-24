@@ -212,19 +212,19 @@ export default function Home() {
               <img src="/assets/logo.jpg" alt="Logo" className="w-full h-full object-cover" />
             </div>
             <div className="flex flex-col items-center">
-              <span className="font-heading text-base md:text-lg font-medium tracking-tight text-[#29221c] leading-none antialiased">
+              <span className="text-base md:text-lg font-normal tracking-[0.1em] text-[#5c4d40] leading-none antialiased">
                 Dra. Maria Laura
               </span>
-              <span className="font-heading md:text-base text-[#a88252] mt-1 antialiased text-[15px] font-medium">
+              <span className="text-sm md:text-base font-normal text-[#a88252] mt-1 antialiased">
                 Odontologia
               </span>
             </div>
           </div>
           <div className="hidden md:flex gap-8 text-[11px] font-normal tracking-[0.1em] uppercase text-[#5c4d40]">
-            <a href="#especialidades" className="hover:text-[#c29a63] transition-colors text-[13px] text-[#1f1f1f]">Serviços</a>
-            <a href="#clinica" className="hover:text-[#c29a63] transition-colors text-[13px] text-[#1f1f1f]">Clínica</a>
-            <a href="#sobre" className="hover:text-[#c29a63] transition-colors text-[13px] text-[#1f1f1f]">Sobre Mim</a>
-            <a href="#depoimentos" className="hover:text-[#c29a63] transition-colors text-[13px] text-[#1f1f1f]">Depoimentos</a>
+            <a href="#especialidades" className="hover:text-[#c29a63] transition-colors text-[13px] text-[#5c4d40]">Serviços</a>
+            <a href="#clinica" className="hover:text-[#c29a63] transition-colors text-[13px] text-[#5c4d40]">Clínica</a>
+            <a href="#sobre" className="hover:text-[#c29a63] transition-colors text-[13px] text-[#5c4d40]">Sobre Mim</a>
+            <a href="#depoimentos" className="hover:text-[#c29a63] transition-colors text-[13px] text-[#5c4d40]">Depoimentos</a>
           </div>
 
           <div className="flex items-center gap-4">
