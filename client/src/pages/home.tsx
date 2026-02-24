@@ -354,7 +354,7 @@ export default function Home() {
                 variants={textVariant}
                 className="text-[#5c4d40] text-lg font-light leading-relaxed mb-10"
               >
-                Preparamos um espaço focado no seu bem-estar. Nossa clínica oferece um <span className="text-[#29221c] font-semibold">ambiente organizado, totalmente climatizado</span> e projetado para proporcionar o melhor aconchego durante o seu atendimento.
+                Preparamos um espaço focado no seu bem-estar. Nossa clínica oferece um <span className="font-semibold text-[#c29a63]">ambiente organizado, totalmente climatizado</span> e projetado para proporcionar o melhor aconchego durante o seu atendimento.
               </motion.p>
               
               <div className="grid gap-6">
