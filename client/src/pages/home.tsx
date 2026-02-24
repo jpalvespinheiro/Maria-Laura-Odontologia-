@@ -1,6 +1,6 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
-import { ArrowRight, MapPin, Sparkles, Smile, Star, CheckCircle2, ChevronRight, ChevronLeft, Instagram, Phone, Mail, ExternalLink, Award, Heart } from "lucide-react";
+import { ArrowRight, MapPin, Sparkles, Smile, Star, CheckCircle2, ChevronRight, ChevronLeft, Instagram, Phone, Mail, ExternalLink, Award, Heart, Wind, Coffee, ShieldCheck } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 
@@ -14,10 +14,11 @@ import specClareamento from "@assets/WhatsApp_Image_2026-02-24_at_13.06.05_17719
 import specPeriodontal from "@assets/WhatsApp_Image_2026-02-24_at_13.06.19_1771949220710.jpeg";
 import specRestauracao from "@assets/WhatsApp_Image_2026-02-24_at_13.06.31_1771949220708.jpeg";
 import whatsappIcon from "@assets/whatsapp_4008228_1771950564376.png";
-import toothCrownLogo from "@assets/WhatsApp_Image_2026-02-24_at_14.00.46_1771953908609.jpeg";
+import clinicImg from "@assets/dentista-em-lagoa-santa-scaled_1771954238429.jpg";
+
+const WHATSAPP_URL = "https://wa.me/5564981644853?text=Olá,%20Dra.%20Maria%20Laura!%20Gostaria%20de%20conhecer%20os%20serviços%20e%20agendar%20uma%20avaliação.";
 
 const dentistPhotos = [dentist1, dentist2, dentist3, dentist4];
-const WHATSAPP_URL = "https://wa.me/5564981644853?text=Olá,%20Dra.%20Maria%20Laura!%20Gostaria%20de%20conhecer%20os%20serviços%20e%20agendar%20uma%20avaliação.";
 
 const fadeIn = {
   hidden: { opacity: 0, y: 20 },
@@ -28,6 +29,16 @@ const staggerContainer = {
   hidden: { opacity: 0 },
   visible: { opacity: 1, transition: { staggerChildren: 0.2 } }
 };
+
+const LogoSVG = () => (
+  <svg width="48" height="48" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" className="drop-shadow-sm">
+    <path d="M50 95C65 95 80 85 80 60C80 40 70 30 50 30C30 30 20 40 20 60C20 85 35 95 50 95Z" fill="white" />
+    <path d="M50 95C35 95 25 85 25 65C25 50 30 40 50 40C70 40 75 50 75 65C75 85 65 95 50 95ZM50 45C35 45 30 52 30 65C30 82 38 90 50 90C62 90 70 82 70 65C70 52 65 45 50 45Z" fill="#C29A63" />
+    <path d="M50 80C50 80 45 70 45 60C45 50 50 45 50 45C50 45 55 50 55 60C55 70 50 80 50 80Z" fill="#C29A63" opacity="0.3" />
+    <path d="M35 15L40 25H30L35 15ZM50 10L55 22H45L50 10ZM65 15L70 25H60L65 15ZM28 22L32 30H24L28 22ZM72 22L76 30H68L72 22Z" fill="#C29A63" />
+    <circle cx="50" cy="30" r="15" fill="#C29A63" opacity="0.1" />
+  </svg>
+);
 
 export default function Home() {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -49,19 +60,20 @@ export default function Home() {
       <nav className="fixed top-0 w-full z-50 bg-[#faf8f5]/80 backdrop-blur-md border-b border-[#ebdabe]/30">
         <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
           <div className="flex items-center gap-3">
-             <img src={toothCrownLogo} alt="Logo" className="w-12 h-12 object-contain rounded-full shadow-sm" />
+             <LogoSVG />
              <div className="font-heading text-lg font-bold tracking-tight text-[#29221c]">
               Dra. Maria Laura <span className="text-[#c29a63] font-medium border-l border-[#c29a63]/30 pl-2 ml-1">Odontologia</span>
             </div>
           </div>
           <div className="hidden md:flex gap-8 text-[11px] font-bold tracking-[0.1em] uppercase text-[#5c4d40]">
             <a href="#especialidades" className="hover:text-[#c29a63] transition-colors">Serviços</a>
+            <a href="#clinica" className="hover:text-[#c29a63] transition-colors">Clínica</a>
             <a href="#sobre" className="hover:text-[#c29a63] transition-colors">Sobre Mim</a>
             <a href="#faq" className="hover:text-[#c29a63] transition-colors">Dúvidas</a>
-            <a href="#contato" className="hover:text-[#c29a63] transition-colors">Contato</a>
           </div>
           <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
-            <Button className="bg-[#c29a63] hover:bg-[#a88252] text-white rounded-full px-6 transition-all duration-300 shadow-md shadow-[#c29a63]/20 font-heading font-bold text-xs uppercase tracking-widest" data-testid="button-agendar-nav">
+            <Button className="bg-[#c29a63] hover:bg-[#a88252] text-white rounded-full px-6 transition-all duration-300 shadow-md shadow-[#c29a63]/20 font-heading font-bold text-xs uppercase tracking-widest flex items-center gap-2" data-testid="button-agendar-nav">
+              <img src={whatsappIcon} alt="" className="w-4 h-4 brightness-0 invert" />
               Agendar Agora
             </Button>
           </a>
@@ -121,6 +133,71 @@ export default function Home() {
                 <ChevronRight className="w-6 h-6" />
               </button>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Clínica Section */}
+      <section id="clinica" className="py-24 px-6 bg-white">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid lg:grid-cols-2 gap-20 items-center">
+            <motion.div 
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="order-2 lg:order-1"
+            >
+              <div className="flex items-center gap-4 mb-6">
+                <div className="h-[2px] w-12 bg-[#c29a63]" />
+                <span className="text-[#c29a63] font-bold text-xs uppercase tracking-[0.3em]">Ambiente Exclusivo</span>
+              </div>
+              <h2 className="text-4xl lg:text-5xl font-heading font-bold text-[#29221c] mb-8 leading-tight">Nossa Clínica</h2>
+              <p className="text-[#5c4d40] text-lg font-light leading-relaxed mb-10">
+                Preparamos um espaço focado no seu bem-estar. Nossa clínica oferece um <span className="text-[#29221c] font-semibold">ambiente organizado, totalmente climatizado</span> e projetado para proporcionar o melhor aconchego durante o seu atendimento.
+              </p>
+              
+              <div className="grid gap-6">
+                <div className="flex items-center gap-4 bg-[#faf8f5] p-5 rounded-2xl border border-[#ebdabe]/30">
+                  <div className="w-12 h-12 rounded-xl bg-white flex items-center justify-center text-[#c29a63] shadow-sm">
+                    <Wind className="w-6 h-6" />
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-[#29221c]">Climatização Total</h4>
+                    <p className="text-sm text-[#5c4d40]">Temperatura ideal para o seu máximo conforto.</p>
+                  </div>
+                </div>
+                <div className="flex items-center gap-4 bg-[#faf8f5] p-5 rounded-2xl border border-[#ebdabe]/30">
+                  <div className="w-12 h-12 rounded-xl bg-white flex items-center justify-center text-[#c29a63] shadow-sm">
+                    <Coffee className="w-6 h-6" />
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-[#29221c]">Melhor Aconchego</h4>
+                    <p className="text-sm text-[#5c4d40]">Espaço acolhedor para uma experiência relaxante.</p>
+                  </div>
+                </div>
+                <div className="flex items-center gap-4 bg-[#faf8f5] p-5 rounded-2xl border border-[#ebdabe]/30">
+                  <div className="w-12 h-12 rounded-xl bg-white flex items-center justify-center text-[#c29a63] shadow-sm">
+                    <ShieldCheck className="w-6 h-6" />
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-[#29221c]">Organização & Biossegurança</h4>
+                    <p className="text-sm text-[#5c4d40]">Rigor técnico e organização impecável.</p>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+            
+            <motion.div 
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              className="order-1 lg:order-2 relative"
+            >
+              <div className="absolute -inset-4 border border-[#c29a63]/20 rounded-[3.5rem] -z-10" />
+              <div className="rounded-[3rem] overflow-hidden shadow-2xl aspect-video lg:aspect-[4/5]">
+                <img src={clinicImg} alt="Ambiente da Clínica" className="w-full h-full object-cover transition-transform duration-700 hover:scale-105" />
+              </div>
+            </motion.div>
           </div>
         </div>
       </section>
@@ -287,7 +364,7 @@ export default function Home() {
           <div className="grid lg:grid-cols-4 gap-16 mb-24">
             <div className="lg:col-span-2">
               <div className="flex items-center gap-4 mb-8">
-                <img src={toothCrownLogo} alt="Logo" className="w-16 h-16 object-contain rounded-full shadow-lg" />
+                <LogoSVG />
                 <div className="font-heading text-2xl font-bold tracking-tight">
                   Dra. Maria Laura <br/><span className="text-[#c29a63] font-medium text-lg">Odontologia</span>
                 </div>
