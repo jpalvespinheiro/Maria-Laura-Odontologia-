@@ -212,7 +212,7 @@ export default function Home() {
               Dra. Maria Laura <span className="text-[#c29a63] font-medium border-l border-[#c29a63]/30 pl-2 ml-1">Odontologia</span>
             </div>
           </div>
-          <div className="hidden md:flex gap-8 text-[11px] font-bold tracking-[0.1em] uppercase text-[#5c4d40]">
+          <div className="hidden md:flex gap-8 text-[11px] font-normal tracking-[0.1em] uppercase text-[#5c4d40]">
             <a href="#especialidades" className="hover:text-[#c29a63] transition-colors">Serviços</a>
             <a href="#clinica" className="hover:text-[#c29a63] transition-colors">Clínica</a>
             <a href="#sobre" className="hover:text-[#c29a63] transition-colors">Sobre Mim</a>
@@ -256,6 +256,9 @@ export default function Home() {
       <section className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 px-6">
         <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
           <motion.div initial="hidden" animate="visible" variants={staggerContainer} className="z-10">
+            <motion.p variants={textVariant} className="text-[#c29a63] font-heading font-medium italic text-xl mb-4">
+              A cada sorriso uma história
+            </motion.p>
             <motion.div variants={textVariant} className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#ebdabe]/40 text-[#a88252] text-[10px] font-bold uppercase tracking-[0.3em] mb-8">
               <Sparkles className="w-3.5 h-3.5" />
               <span>Transforme seu <span className="text-[#c29a63]">sorriso</span> com naturalidade e <span className="text-[#c29a63]">precisão</span>.</span>
@@ -538,10 +541,10 @@ export default function Home() {
               <Star className="w-3.5 h-3.5" />
               <span>Depoimentos Reais</span>
             </motion.div>
-            <h2 className="text-4xl lg:text-5xl font-heading font-bold text-[#29221c] tracking-tight">O que dizem nossos pacientes</h2>
+            <h2 className="text-4xl lg:text-5xl font-heading font-bold text-[#29221c] tracking-tight">Feedback de Clientes</h2>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-3 gap-8 mb-20">
             {testimonials.map((t, idx) => (
               <motion.div 
                 key={idx}
@@ -564,6 +567,42 @@ export default function Home() {
               </motion.div>
             ))}
           </div>
+
+          {/* Feedback Form */}
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="max-w-2xl mx-auto bg-white p-8 sm:p-12 rounded-[3rem] border border-[#ebdabe]/30 shadow-xl"
+          >
+            <div className="text-center mb-10">
+              <h3 className="text-2xl font-heading font-bold text-[#29221c] mb-2">Deixe sua avaliação</h3>
+              <p className="text-[#5c4d40] font-light">Sua opinião é muito importante para nós.</p>
+            </div>
+            <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
+              <div className="grid sm:grid-cols-2 gap-6">
+                <div className="space-y-2">
+                  <label className="text-xs font-bold uppercase tracking-widest text-[#a88252] ml-2">Seu Nome</label>
+                  <input type="text" placeholder="Ex: Maria Silva" className="w-full h-14 bg-[#faf8f5] border border-[#ebdabe]/50 rounded-2xl px-6 focus:outline-none focus:border-[#c29a63] transition-all" />
+                </div>
+                <div className="space-y-2">
+                  <label className="text-xs font-bold uppercase tracking-widest text-[#a88252] ml-2">Avaliação</label>
+                  <div className="flex items-center h-14 bg-[#faf8f5] border border-[#ebdabe]/50 rounded-2xl px-6 gap-2">
+                    {[1, 2, 3, 4, 5].map((s) => (
+                      <Star key={s} className="w-5 h-5 text-[#c29a63] cursor-pointer hover:fill-[#c29a63]" />
+                    ))}
+                  </div>
+                </div>
+              </div>
+              <div className="space-y-2">
+                <label className="text-xs font-bold uppercase tracking-widest text-[#a88252] ml-2">Seu Comentário</label>
+                <textarea rows={4} placeholder="Conte-nos como foi sua experiência..." className="w-full bg-[#faf8f5] border border-[#ebdabe]/50 rounded-2xl px-6 py-4 focus:outline-none focus:border-[#c29a63] transition-all resize-none"></textarea>
+              </div>
+              <Button className="w-full bg-[#c29a63] hover:bg-[#a88252] text-white rounded-full h-14 font-bold uppercase tracking-widest transition-all shadow-lg shadow-[#c29a63]/20">
+                Enviar Avaliação
+              </Button>
+            </form>
+          </motion.div>
         </div>
       </section>
 
