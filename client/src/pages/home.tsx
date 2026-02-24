@@ -1,6 +1,6 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
-import { ArrowRight, MapPin, Sparkles, Smile, Star, CheckCircle2, ChevronRight, ChevronLeft, Instagram, Phone, Mail, ExternalLink, Award, Heart, Wind, Coffee, ShieldCheck, Plus, Minus, X } from "lucide-react";
+import { ArrowRight, MapPin, Sparkles, Smile, Star, CheckCircle2, ChevronRight, ChevronLeft, Instagram, Phone, Mail, ExternalLink, Award, Heart, Wind, Coffee, ShieldCheck, Plus, Minus, X, Facebook } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 // Assets
@@ -17,6 +17,9 @@ import clinicImg from "@assets/dentista-em-lagoa-santa-scaled_1771954238429.jpg"
 import logoImg from "@assets/WhatsApp_Image_2026-02-24_at_14.00.46_1771955133778.jpeg";
 
 const WHATSAPP_URL = "https://wa.me/5564981644853?text=Olá,%20Dra.%20Maria%20Laura!%20Gostaria%20de%20conhecer%20os%20serviços%20e%20agendar%20uma%20avaliação.";
+const INSTAGRAM_URL = "https://www.instagram.com/dra.marialauraodontologia/";
+const FACEBOOK_URL = "https://www.facebook.com/people/Maria-Laura-Odontologia/61588240837741/?mibextid=wwXIfr&rdid=MSE1H9VaSlgYIUwR&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F18Nqeg93hG%2F%3Fmibextid%3DwwXIfr%26utm_source%3Dig%26utm_medium%3Dsocial%26utm_content%3Dlink_in_bio";
+const EMAIL = "dramarialaurabarbosacunhaesilv@gmail.com";
 
 const dentistPhotos = [dentist1, dentist2, dentist3, dentist4];
 
@@ -211,7 +214,7 @@ export default function Home() {
           <motion.div initial="hidden" animate="visible" variants={staggerContainer} className="z-10">
             <motion.div variants={fadeIn} className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#ebdabe]/40 text-[#a88252] text-[10px] font-bold uppercase tracking-[0.3em] mb-8">
               <Sparkles className="w-3.5 h-3.5" />
-              <span>Referência em Estética Dental</span>
+              <span>Transforme seu <span className="text-[#c29a63]">sorriso</span> com naturalidade e <span className="text-[#c29a63]">precisão</span>.</span>
             </motion.div>
             
             <motion.h1 variants={fadeIn} className="text-5xl lg:text-7xl font-heading font-bold leading-[1.05] mb-8 text-[#29221c] tracking-tight">
@@ -220,7 +223,7 @@ export default function Home() {
             </motion.h1>
             
             <motion.p variants={fadeIn} className="text-xl text-[#5c4d40] mb-10 leading-relaxed max-w-lg font-light">
-              Elevando a odontologia ao nível da arte. Especialista em mimetismo dental e harmonia estética para transformar sua autoestima com naturalidade.
+              Se você busca um resultado elegante, harmônico e sem aparência artificial, está no lugar certo. Trabalhamos com técnicas modernas de mimetismo dental para criar sorrisos que impressionam pela naturalidade e elevam sua confiança desde o primeiro olhar.
             </motion.p>
             
             <motion.div variants={fadeIn} className="flex flex-col sm:flex-row gap-5">
@@ -466,6 +469,40 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Map Section */}
+      <section className="py-24 px-6 bg-white">
+        <div className="max-w-7xl mx-auto">
+          <div className="mb-12">
+             <div className="flex items-center gap-4 mb-4">
+              <div className="h-[2px] w-12 bg-[#c29a63]" />
+              <span className="text-[#c29a63] font-bold text-xs uppercase tracking-[0.3em]">Visite-nos</span>
+            </div>
+            <h2 className="text-4xl lg:text-5xl font-heading font-bold text-[#29221c] tracking-tight">Onde Estamos</h2>
+          </div>
+          <div className="w-full h-[500px] rounded-[3rem] overflow-hidden shadow-2xl border border-[#ebdabe]/50 group relative">
+            <iframe 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3824.238622159187!2d-50.1477755!3d-16.11585!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x935e4b0000000001%3A0x3b773a4b609deebf!2sDra.%20Maria%20Laura%20%7C%20Odontologia!5e0!3m2!1spt-BR!2sbr!4v1700000000000!5m2!1spt-BR!2sbr" 
+              width="100%" 
+              height="100%" 
+              style={{ border: 0 }} 
+              allowFullScreen 
+              loading="lazy" 
+              className="grayscale-[0.5] group-hover:grayscale-0 transition-all duration-700"
+            />
+            <div className="absolute bottom-8 left-8 right-8 md:right-auto">
+              <div className="bg-white/90 backdrop-blur-md p-6 rounded-3xl shadow-xl border border-[#ebdabe]/50 max-w-sm">
+                <MapPin className="text-[#c29a63] w-6 h-6 mb-3" />
+                <h4 className="font-bold text-[#29221c] mb-1">Dra. Maria Laura | Odontologia</h4>
+                <p className="text-sm text-[#5c4d40]">Av. João Ferreira da Cunha, 470, Centro, Mossâmedes - GO</p>
+                <a href="https://www.google.com/maps/dir/?api=1&destination=Dra.+Maria+Laura+%7C+Odontologia" target="_blank" className="inline-flex items-center gap-2 text-[#c29a63] font-bold text-xs uppercase tracking-widest mt-4 hover:gap-3 transition-all">
+                  Como chegar <ArrowRight className="w-4 h-4" />
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Footer Section */}
       <footer id="contato" className="bg-[#1a1612] text-white pt-24 pb-12 rounded-t-[4rem]">
         <div className="max-w-7xl mx-auto px-6">
@@ -481,11 +518,14 @@ export default function Home() {
                 Referência em facetas e lentes em resinas compostas com foco em naturalidade e arte dental.
               </p>
               <div className="flex gap-4">
-                <a href="#" className="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center border border-white/10 hover:bg-[#c29a63] hover:border-[#c29a63] transition-all group">
+                <a href={INSTAGRAM_URL} target="_blank" className="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center border border-white/10 hover:bg-[#c29a63] hover:border-[#c29a63] transition-all group">
                   <Instagram className="w-5 h-5 group-hover:scale-110 transition-transform" />
                 </a>
-                <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center border border-white/10 hover:bg-[#c29a63] hover:border-[#c29a63] transition-all group">
-                  <Phone className="w-5 h-5 group-hover:scale-110 transition-transform" />
+                <a href={FACEBOOK_URL} target="_blank" className="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center border border-white/10 hover:bg-[#c29a63] hover:border-[#c29a63] transition-all group">
+                  <Facebook className="w-5 h-5 group-hover:scale-110 transition-transform" />
+                </a>
+                <a href={`mailto:${EMAIL}`} className="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center border border-white/10 hover:bg-[#c29a63] hover:border-[#c29a63] transition-all group">
+                  <Mail className="w-5 h-5 group-hover:scale-110 transition-transform" />
                 </a>
               </div>
             </div>
@@ -493,32 +533,32 @@ export default function Home() {
             <div className="lg:col-span-2">
               <div className="flex items-center gap-3 mb-8">
                 <MapPin className="text-[#c29a63] w-6 h-6" />
-                <h3 className="font-heading font-bold text-xl uppercase tracking-widest text-[#c29a63]">Localização</h3>
+                <h3 className="font-heading font-bold text-xl uppercase tracking-widest text-[#c29a63]">Contatos</h3>
               </div>
               <div className="grid md:grid-cols-2 gap-10">
                 <div className="bg-white/5 p-8 rounded-[2.5rem] border border-white/10 backdrop-blur-sm">
-                  <p className="text-white/70 leading-relaxed font-light text-base mb-6">
-                    Av. João Ferreira da Cunha, 470<br/>
-                    Centro, Mossâmedes - GO<br/>
-                    76150-000, Brasil
-                  </p>
+                   <div className="space-y-4 mb-6">
+                    <div className="flex items-center gap-3">
+                      <Mail className="w-4 h-4 text-[#c29a63]" />
+                      <span className="text-sm text-white/70 break-all">{EMAIL}</span>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <Phone className="w-4 h-4 text-[#c29a63]" />
+                      <span className="text-sm text-white/70">(64) 98164-4853</span>
+                    </div>
+                  </div>
                   <a 
                     href="https://www.google.com/maps/place/Dra.+Maria+Laura+%7C+Odontologia/@-16.11585,-50.1477755,17z/data=!4m6!3m5!1s0x935e4b0000000001:0x3b773a4b609deebf!8m2!3d-16.11585!4d-50.1477755!16s%2Fg%2F11vkx_494q" 
                     target="_blank" 
                     className="flex items-center gap-2 text-[#c29a63] font-bold text-xs uppercase tracking-widest hover:text-white transition-all group"
                   >
-                    Avaliar no Google <ExternalLink className="w-3 h-3 group-hover:translate-x-1" />
+                    Avalie no Google <ExternalLink className="w-3 h-3 group-hover:translate-x-1" />
                   </a>
                 </div>
-                <div className="w-full h-full min-h-[150px] bg-white/5 rounded-[2.5rem] overflow-hidden relative border border-white/10 grayscale opacity-40 hover:opacity-100 transition-all duration-1000">
-                  <iframe 
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3824.238622159187!2d-50.1477755!3d-16.11585!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x935e4b0000000001%3A0x3b773a4b609deebf!2sDra.%20Maria%20Laura%20%7C%20Odontologia!5e0!3m2!1spt-BR!2sbr!4v1700000000000!5m2!1spt-BR!2sbr" 
-                    width="100%" 
-                    height="100%" 
-                    style={{ border: 0 }} 
-                    allowFullScreen 
-                    loading="lazy" 
-                  />
+                <div className="bg-white/5 p-8 rounded-[2.5rem] border border-white/10 backdrop-blur-sm flex flex-col justify-center items-center text-center">
+                  <p className="text-xs font-bold uppercase tracking-widest text-white/30 mb-2">Desenvolvido por</p>
+                  <p className="text-[#c29a63] font-heading font-bold text-lg">Ethos</p>
+                  <p className="text-white/50 text-[10px] uppercase tracking-tighter">Desenvolvimento de Software</p>
                 </div>
               </div>
             </div>
