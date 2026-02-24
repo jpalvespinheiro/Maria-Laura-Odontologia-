@@ -13,7 +13,7 @@ import specMimetismo from "@assets/WhatsApp_Image_2026-02-24_at_13.05.38_1771949
 import specClareamento from "@assets/WhatsApp_Image_2026-02-24_at_13.06.05_1771949220711.jpeg";
 import specPeriodontal from "@assets/WhatsApp_Image_2026-02-24_at_13.06.19_1771949220710.jpeg";
 import specRestauracao from "@assets/WhatsApp_Image_2026-02-24_at_13.06.31_1771949220708.jpeg";
-import whatsappIcon from "@assets/whatsapp_4008228_1771950564376.png";
+import whatsappIcon from "@assets/icons8-whatsapp-32_1771954618804.png";
 import clinicImg from "@assets/dentista-em-lagoa-santa-scaled_1771954238429.jpg";
 
 const WHATSAPP_URL = "https://wa.me/5564981644853?text=Olá,%20Dra.%20Maria%20Laura!%20Gostaria%20de%20conhecer%20os%20serviços%20e%20agendar%20uma%20avaliação.";
@@ -32,11 +32,18 @@ const staggerContainer = {
 
 const LogoSVG = () => (
   <svg width="48" height="48" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" className="drop-shadow-sm">
-    <path d="M50 95C65 95 80 85 80 60C80 40 70 30 50 30C30 30 20 40 20 60C20 85 35 95 50 95Z" fill="white" />
+    {/* Base Tooth Shape */}
+    <path d="M50 95C30 95 15 80 15 55C15 35 30 25 50 25C70 25 85 35 85 55C85 80 70 95 50 95Z" fill="white" />
     <path d="M50 95C35 95 25 85 25 65C25 50 30 40 50 40C70 40 75 50 75 65C75 85 65 95 50 95ZM50 45C35 45 30 52 30 65C30 82 38 90 50 90C62 90 70 82 70 65C70 52 65 45 50 45Z" fill="#C29A63" />
-    <path d="M50 80C50 80 45 70 45 60C45 50 50 45 50 45C50 45 55 50 55 60C55 70 50 80 50 80Z" fill="#C29A63" opacity="0.3" />
-    <path d="M35 15L40 25H30L35 15ZM50 10L55 22H45L50 10ZM65 15L70 25H60L65 15ZM28 22L32 30H24L28 22ZM72 22L76 30H68L72 22Z" fill="#C29A63" />
-    <circle cx="50" cy="30" r="15" fill="#C29A63" opacity="0.1" />
+    
+    {/* Crown detail */}
+    <path d="M35 25L40 10L50 20L60 10L65 25H35Z" fill="#C29A63" />
+    <circle cx="40" cy="10" r="2" fill="#C29A63" />
+    <circle cx="50" cy="8" r="3" fill="#C29A63" />
+    <circle cx="60" cy="10" r="2" fill="#C29A63" />
+    
+    {/* Golden detail on the root */}
+    <path d="M30 65C30 80 40 90 50 90C60 90 70 80 70 65H30Z" fill="#C29A63" opacity="0.1" />
   </svg>
 );
 
@@ -72,9 +79,9 @@ export default function Home() {
             <a href="#faq" className="hover:text-[#c29a63] transition-colors">Dúvidas</a>
           </div>
           <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
-            <Button className="bg-[#c29a63] hover:bg-[#a88252] text-white rounded-full px-6 transition-all duration-300 shadow-md shadow-[#c29a63]/20 font-heading font-bold text-xs uppercase tracking-widest flex items-center gap-2" data-testid="button-agendar-nav">
-              <img src={whatsappIcon} alt="" className="w-4 h-4 brightness-0 invert" />
-              Agendar Agora
+            <Button className="bg-[#c29a63] hover:bg-[#a88252] text-white rounded-full px-6 transition-all duration-300 shadow-md shadow-[#c29a63]/20 font-heading font-bold text-xs uppercase tracking-widest flex items-center gap-2" data-testid="button-fale-conosco-nav">
+              <Phone className="w-4 h-4" />
+              Fale Conosco
             </Button>
           </a>
         </div>
@@ -101,9 +108,8 @@ export default function Home() {
             <motion.div variants={fadeIn} className="flex flex-col sm:flex-row gap-5">
               <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
                 <Button size="lg" className="w-full bg-[#c29a63] hover:bg-[#a88252] text-white rounded-full text-base h-16 px-10 shadow-xl shadow-[#c29a63]/20 font-bold uppercase tracking-widest flex items-center gap-3" data-testid="button-whatsapp-hero">
-                  <img src={whatsappIcon} alt="WhatsApp" className="w-6 h-6 object-contain" />
                   Agendar via WhatsApp
-                  <ArrowRight className="w-5 h-5" />
+                  <img src={whatsappIcon} alt="WhatsApp" className="w-6 h-6 object-contain" />
                 </Button>
               </a>
             </motion.div>
@@ -399,7 +405,7 @@ export default function Home() {
                     target="_blank" 
                     className="flex items-center gap-2 text-[#c29a63] font-bold text-xs uppercase tracking-widest hover:text-white transition-all group"
                   >
-                    Avaliar no Google <ExternalLink className="w-3 h-3 group-hover:translate-x-1" />
+                    Avalie-nos no Google <ExternalLink className="w-3 h-3 group-hover:translate-x-1" />
                   </a>
                 </div>
                 <div className="w-full h-full min-h-[150px] bg-white/5 rounded-[2.5rem] overflow-hidden relative border border-white/10 grayscale opacity-40 hover:opacity-100 transition-all duration-1000">
