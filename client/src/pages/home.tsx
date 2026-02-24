@@ -696,7 +696,7 @@ export default function Home() {
         </div>
       </section>
       {/* Footer Section */}
-      <footer id="contato" className="bg-[#faf8f5] text-[#5c4d40] pt-24 pb-12 border-t border-[#ebdabe]">
+      <footer id="contato" className="bg-[#faf8f5] text-[#5c4d40] pt-24 pb-12">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid lg:grid-cols-4 gap-8 mb-24">
             {/* Branding - No Card */}
@@ -772,7 +772,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="border-t border-[#ebdabe]/50 pt-10 flex flex-col md:flex-row items-center justify-between gap-4 text-[#8a7a6e]/40 text-[10px] uppercase font-bold tracking-[0.3em]">
+          <div className="pt-10 flex flex-col md:flex-row items-center justify-between gap-4 text-[#8a7a6e]/40 text-[10px] uppercase font-bold tracking-[0.3em]">
             <p>© {new Date().getFullYear()} DRA. MARIA LAURA BARBOSA | LUXO & ODONTOLOGIA</p>
             <div className="flex items-center gap-2">
               <span>Desenvolvido por</span>
