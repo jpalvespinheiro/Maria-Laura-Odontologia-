@@ -4,7 +4,6 @@ import { ArrowRight, MapPin, Sparkles, Smile, Star, CheckCircle2, ChevronRight, 
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger, SheetClose } from "@/components/ui/sheet";
 
-// Assets
 import dentist1 from "@assets/WhatsApp_Image_2026-02-24_at_12.42.38_(1)_1771948728851.jpeg";
 import dentist2 from "@assets/WhatsApp_Image_2026-02-24_at_12.42.36_1771948728854.jpeg";
 import dentist3 from "@assets/WhatsApp_Image_2026-02-24_at_12.42.35_1771948728854.jpeg";
@@ -16,7 +15,6 @@ import specRestauracao from "@assets/WhatsApp_Image_2026-02-24_at_13.06.31_17719
 import whatsappIcon from "/assets/whatsapp-custom.png";
 import clinicImg from "@assets/dentista-em-lagoa-santa-scaled_1771954238429.jpg";
 import logoImg from "@assets/WhatsApp_Image_2026-02-24_at_14.00.46_1771955133778.jpeg";
-
 import newLogoImg from "@assets/A8d309b8f7da943c18b43dc818515f3d0u_1771961817737.png";
 
 const WHATSAPP_URL = "https://wa.me/5564981644853?text=Olá,%20Dra.%20Maria%20Laura!%20Gostaria%20de%20conhecer%20os%20serviços%20e%20agendar%20uma%20avaliação.";
@@ -204,7 +202,6 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-[#faf8f5] text-[#332b24] overflow-hidden selection:bg-[#d4b98e]/30 font-sans">
-      {/* Navigation */}
       <nav className="fixed top-0 w-full z-50 backdrop-blur-md bg-[#faf8f5]/60 border-b border-[#ebdabe]/20 text-[#fffafa]">
         <div className="max-w-7xl mx-auto px-6 h-24 flex items-center justify-between text-[#fffafa] bg-[#ffffff00]">
           <div className="flex items-center gap-1 py-4">
@@ -262,7 +259,7 @@ export default function Home() {
           </div>
         </div>
       </nav>
-      {/* Hero Section */}
+
       <section className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 px-6">
         <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
           <motion.div initial="hidden" animate="visible" variants={staggerContainer} className="z-10">
@@ -323,7 +320,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-      {/* Clínica Section */}
+
       <section id="clinica" className="py-24 px-6 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-20 items-center">
@@ -391,325 +388,228 @@ export default function Home() {
               className="order-1 lg:order-2 relative"
             >
               <div className="absolute -inset-4 border border-[#c29a63]/20 rounded-[3.5rem] -z-10" />
-              <div className="rounded-[3rem] overflow-hidden shadow-2xl aspect-video lg:aspect-[4/5]">
-                <motion.img 
-                  src={clinicImg} 
-                  alt="Ambiente da Clínica" 
-                  whileHover={{ scale: 1.05 }}
-                  transition={{ duration: 0.7 }}
-                  className="w-full h-full object-cover" 
-                />
+              <img src={clinicImg} alt="Ambiente da Clínica" className="rounded-[3rem] shadow-2xl w-full aspect-[4/5] object-cover" />
+              <div className="absolute -bottom-6 -left-6 bg-[#c29a63] text-white p-8 rounded-3xl shadow-xl hidden sm:block">
+                <p className="text-4xl font-heading font-bold">100%</p>
+                <p className="text-xs uppercase tracking-widest font-bold opacity-80">Ambiente Climatizado</p>
               </div>
             </motion.div>
           </div>
         </div>
       </section>
-      {/* Sobre a Dra Section */}
-      <section id="sobre" className="py-24 px-6 bg-[#fdfbf9]">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <motion.div 
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              className="relative"
-            >
-              <div className="absolute -top-10 -left-10 w-40 h-40 bg-[#c29a63]/5 rounded-full blur-3xl -z-10" />
-              <div className="rounded-[3rem] overflow-hidden shadow-2xl aspect-[4/5] border-8 border-white">
-                <img src={dentist1} alt="Dra. Maria Laura" className="w-full h-full object-cover" />
-              </div>
-              <div className="absolute -bottom-6 -right-6 bg-white p-6 rounded-3xl shadow-xl border border-[#ebdabe]/30">
-                <div className="flex items-center gap-3 mb-2">
-                  <div className="w-10 h-10 rounded-full bg-[#c29a63]/10 flex items-center justify-center text-[#c29a63]">
-                    <Award className="w-5 h-5" />
-                  </div>
-                  <div>
-                    <p className="text-[10px] font-bold uppercase tracking-widest text-[#a88252]">Inscrição Profissional</p>
-                    <p className="font-heading font-bold text-[#29221c]">CRO-GO 25701</p>
-                  </div>
-                </div>
-              </div>
-            </motion.div>
 
-            <motion.div 
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              variants={staggerContainer}
-            >
-              <motion.div variants={textVariant} className="flex items-center gap-4 mb-6">
-                <div className="h-[2px] w-12 bg-[#c29a63]" />
-                <span className="text-[#c29a63] font-bold text-xs uppercase tracking-[0.3em]">A Doutora</span>
-              </motion.div>
-              <motion.h2 variants={textVariant} className="text-4xl lg:text-5xl font-heading font-bold text-[#29221c] mb-8 leading-tight">Sobre mim</motion.h2>
-              <motion.div variants={textVariant} className="space-y-6 text-[#5c4d40] text-lg font-light leading-relaxed">
-                <p>
-                  Olá, eu sou a <span className="text-[#29221c] font-bold">Dra. Maria Laura</span>.
-                </p>
-                <p>
-                  Sou Cirurgiã-Dentista formada pelo Centro Universitário Unibras Montes Belos (UniBras). Minha trajetória é marcada pelo constante aperfeiçoamento e um profundo perfeccionismo, especialmente voltado para <span className="text-[#c29a63] font-semibold">Facetas e Lentes em Resinas Compostas</span>.
-                </p>
-                <p>
-                  Me considero uma entusiasta na arte dental, onde busco sempre resultados com extrema naturalidade, respeitando a essência de cada sorriso. Acredito que a odontologia estética vai além da técnica; é sobre devolver confiança e harmonia através de um olhar artístico e delicado.
-                </p>
-              </motion.div>
-              <motion.div variants={textVariant} className="mt-10 grid grid-cols-2 gap-6">
-                <motion.div whileHover={{ y: -5, scale: 1.02 }} className="flex items-start gap-3 p-4 bg-white rounded-2xl shadow-sm border border-[#ebdabe]/20 transition-all">
-                  <Heart className="w-5 h-5 text-[#c29a63] mt-1" />
-                  <p className="text-sm font-medium text-[#29221c]">Atendimento <br/>Humanizado</p>
-                </motion.div>
-                <motion.div whileHover={{ y: -5, scale: 1.02 }} className="flex items-start gap-3 p-4 bg-white rounded-2xl shadow-sm border border-[#ebdabe]/20 transition-all">
-                  <Sparkles className="w-5 h-5 text-[#c29a63] mt-1" />
-                  <p className="text-sm font-medium text-[#29221c]">Foco em <br/>Naturalidade</p>
-                </motion.div>
-                <motion.div whileHover={{ y: -5, scale: 1.02 }} className="flex items-start gap-3 p-4 bg-white rounded-2xl shadow-sm border border-[#ebdabe]/20 transition-all">
-                  <Smile className="w-5 h-5 text-[#c29a63] mt-1" />
-                  <p className="text-sm font-medium text-[#29221c]">Eleva qualidade de vida <br/>e autoestima</p>
-                </motion.div>
-                <motion.div whileHover={{ y: -5, scale: 1.02 }} className="flex items-start gap-3 p-4 bg-white rounded-2xl shadow-sm border border-[#ebdabe]/20 transition-all">
-                  <Award className="w-5 h-5 text-[#c29a63] mt-1" />
-                  <p className="text-sm font-medium text-[#29221c]">Cirurgiã <br/>Dentista</p>
-                </motion.div>
-              </motion.div>
-            </motion.div>
-          </div>
-        </div>
-      </section>
-      {/* Services Section */}
-      <section id="especialidades" className="py-24 px-6 bg-white">
+      <section id="especialidades" className="py-32 px-6">
         <div className="max-w-7xl mx-auto">
-          <motion.div 
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={staggerContainer}
-            className="mb-24"
-          >
-            <motion.div variants={textVariant} className="flex items-center gap-4 mb-4">
-              <div className="h-[2px] w-12 bg-[#c29a63]" />
-              <span className="text-[#c29a63] font-bold text-xs uppercase tracking-[0.3em]">Serviços Especializados</span>
+          <div className="text-center max-w-3xl mx-auto mb-20">
+            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="inline-flex items-center gap-2 px-4 py-1 rounded-full bg-[#ebdabe]/40 text-[#a88252] uppercase tracking-[0.3em] mb-6 font-bold text-[10px]">
+              <Sparkles className="w-3.5 h-3.5" />
+              <span>Nossas Especialidades</span>
             </motion.div>
-            <motion.h2 variants={textVariant} className="text-4xl lg:text-5xl font-heading font-bold text-[#29221c] tracking-tight">O Que Fazemos de Melhor</motion.h2>
-          </motion.div>
+            <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }} className="text-4xl lg:text-6xl font-heading font-bold text-[#29221c] mb-6">
+              Excelência em <span className="text-[#c29a63]">Estética Dental</span>.
+            </motion.h2>
+          </div>
 
           <div className="grid gap-32">
             {services.map((service, idx) => (
-              <div key={idx} className={`grid lg:grid-cols-2 gap-16 items-center ${service.reverse ? 'lg:flex-row-reverse' : ''}`}>
-                <motion.div 
-                  initial={{ opacity: 0, x: service.reverse ? 40 : -40 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  className={`relative group ${service.reverse ? 'lg:order-2' : ''}`}
-                >
-                  <div className="absolute inset-4 border border-white/20 rounded-[2.5rem] z-10 pointer-events-none" />
-                  <div className="rounded-[2.5rem] overflow-hidden shadow-2xl aspect-video lg:aspect-square">
-                    <motion.img 
-                      src={service.img} 
-                      alt={service.title} 
-                      whileHover={{ scale: 1.1 }}
-                      transition={{ duration: 0.7 }}
-                      className="w-full h-full object-cover" 
-                    />
+              <motion.div 
+                key={idx}
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-100px" }}
+                className={`flex flex-col ${service.reverse ? 'lg:flex-row-reverse' : 'lg:flex-row'} items-center gap-16 lg:gap-24`}
+              >
+                <div className="flex-1 relative group">
+                  <div className={`absolute -inset-4 border-2 border-[#c29a63]/10 rounded-[3rem] transition-all duration-500 group-hover:-inset-2 group-hover:border-[#c29a63]/30`} />
+                  <div className="relative rounded-[2.5rem] overflow-hidden shadow-2xl aspect-[4/3]">
+                    <img src={service.img} alt={service.title} className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
+                    <div className="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors duration-500" />
                   </div>
-                </motion.div>
-                <motion.div 
-                  initial="hidden"
-                  whileInView="visible"
-                  viewport={{ once: true }}
-                  variants={staggerContainer}
-                  className={`${service.reverse ? 'lg:order-1 lg:pr-12' : 'lg:pl-12'}`}
-                >
-                  <motion.div variants={textVariant} className="w-14 h-14 rounded-2xl bg-[#c29a63]/10 flex items-center justify-center text-[#c29a63] mb-8">
+                </div>
+                
+                <div className="flex-1 space-y-8">
+                  <div className="w-16 h-16 rounded-2xl bg-[#c29a63]/10 flex items-center justify-center text-[#c29a63]">
                     {service.icon}
-                  </motion.div>
-                  <motion.h3 variants={textVariant} className="text-3xl font-heading font-bold mb-6 text-[#29221c] leading-tight">{service.title}</motion.h3>
-                  <motion.p variants={textVariant} className="text-[#5c4d40] text-lg font-light leading-relaxed mb-8">{service.shortDesc}</motion.p>
-                  <motion.div variants={textVariant}>
-                    <Button 
-                      variant="link" 
-                      onClick={() => setSelectedService(service)}
-                      className="text-[#c29a63] p-0 font-bold uppercase tracking-widest text-xs flex items-center gap-2 hover:gap-4 transition-all"
-                    >
-                      Saber mais detalhes <ArrowRight className="w-4 h-4" />
-                    </Button>
-                  </motion.div>
-                </motion.div>
-              </div>
+                  </div>
+                  <h3 className="text-3xl lg:text-4xl font-heading font-bold text-[#29221c] leading-tight">{service.title}</h3>
+                  <p className="text-xl text-[#5c4d40] font-light leading-relaxed">
+                    {service.shortDesc}
+                  </p>
+                  <Button 
+                    variant="link" 
+                    className="p-0 h-auto text-[#c29a63] font-bold uppercase tracking-[0.2em] text-xs flex items-center gap-2 group"
+                    onClick={() => setSelectedService(service)}
+                  >
+                    Ver detalhes do tratamento
+                    <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-2" />
+                  </Button>
+                </div>
+              </motion.div>
             ))}
           </div>
         </div>
       </section>
-      {/* Testimonials Section */}
-      <section id="depoimentos" className="py-24 px-6 bg-[#fdfbf9]">
+
+      <section id="sobre" className="py-32 px-6 bg-white relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-1/3 h-full bg-[#faf8f5]/50 -skew-x-12 translate-x-1/2" />
+        <div className="max-w-7xl mx-auto relative z-10">
+          <div className="grid lg:grid-cols-2 gap-20 items-center">
+            <motion.div initial={{ opacity: 0, x: -50 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
+              <div className="relative">
+                <div className="absolute -top-6 -left-6 w-32 h-32 bg-[#c29a63]/10 rounded-full blur-3xl" />
+                <div className="relative rounded-[3rem] overflow-hidden shadow-2xl aspect-[4/5] border-[12px] border-[#faf8f5]">
+                  <img src={dentist1} alt="Dra. Maria Laura" className="w-full h-full object-cover" />
+                </div>
+                <div className="absolute -bottom-8 -right-8 bg-white p-6 rounded-3xl shadow-xl border border-[#ebdabe]/30">
+                  <div className="flex items-center gap-3 mb-2">
+                    <Award className="w-5 h-5 text-[#c29a63]" />
+                    <span className="font-bold text-[#29221c] text-sm">CRO-GO 25701</span>
+                  </div>
+                  <p className="text-[#5c4d40] text-xs uppercase tracking-widest font-medium">Excelência Comprovada</p>
+                </div>
+              </div>
+            </motion.div>
+            
+            <div className="space-y-8">
+              <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
+                <span className="text-[#c29a63] font-bold text-xs uppercase tracking-[0.3em]">Propósito & Arte</span>
+                <h2 className="text-4xl lg:text-6xl font-heading font-bold text-[#29221c] mt-4 mb-8">Dra. Maria Laura</h2>
+                <div className="space-y-6 text-lg text-[#5c4d40] font-light leading-relaxed">
+                  <p>
+                    Minha missão vai além de cuidar de dentes. Acredito que a odontologia é uma forma de arte capaz de devolver a confiança e a presença de cada paciente.
+                  </p>
+                  <p>
+                    Com foco total em <span className="font-semibold text-[#c29a63]">Mimetismo Dental e Facetas em Resina</span>, dedico meu olhar artístico para criar sorrisos que não parecem ter sido "feitos", mas que se integram perfeitamente à face, respeitando a anatomia e a naturalidade de cada sorriso.
+                  </p>
+                  <p>
+                    Cada planejamento é único, focado nos mínimos detalhes para que o resultado final seja sofisticado, harmônico e, acima de tudo, autêntico.
+                  </p>
+                </div>
+                
+                <div className="pt-10 flex flex-wrap gap-8">
+                  <div className="flex flex-col gap-1">
+                    <span className="text-3xl font-heading font-bold text-[#29221c]">5.0</span>
+                    <div className="flex gap-1">
+                      {[1,2,3,4,5].map(i => <Star key={i} className="w-3.5 h-3.5 fill-[#c29a63] text-[#c29a63]" />)}
+                    </div>
+                    <span className="text-[10px] uppercase tracking-widest text-[#5c4d40] font-bold mt-1">Avaliação Google</span>
+                  </div>
+                </div>
+              </motion.div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="depoimentos" className="py-32 px-6 bg-[#faf8f5]">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-20">
-            <motion.div 
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#c29a63]/10 text-[#c29a63] text-[10px] font-bold uppercase tracking-[0.3em] mb-6"
-            >
-              <Star className="w-3.5 h-3.5" />
-              <span>Depoimentos Reais</span>
-            </motion.div>
-            <h2 className="text-4xl lg:text-5xl font-heading font-bold text-[#29221c] tracking-tight">Feedback de Clientes</h2>
+            <h2 className="text-4xl lg:text-5xl font-heading font-bold text-[#29221c]">O que dizem nossos <span className="text-[#c29a63]">pacientes</span></h2>
           </div>
-
-          <div className="grid md:grid-cols-3 gap-8 mb-20">
-            {testimonials.map((t, idx) => (
+          
+          <div className="grid md:grid-cols-3 gap-8">
+            {testimonials.map((t, i) => (
               <motion.div 
-                key={idx}
+                key={i}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: idx * 0.2 }}
-                whileHover={{ y: -10, backgroundColor: "#fff", borderColor: "#c29a63" }}
-                className="bg-white p-10 rounded-[2.5rem] border-2 border-[#ebdabe] shadow-sm transition-all flex flex-col justify-between"
+                transition={{ delay: i * 0.1 }}
+                className="bg-white p-10 rounded-[2.5rem] shadow-sm border border-[#ebdabe]/30 relative group hover:shadow-xl transition-all duration-500"
               >
-                <div>
-                  <div className="flex gap-1 mb-6">
-                    {[...Array(t.stars)].map((_, i) => (
-                      <Star key={i} className="w-4 h-4 fill-[#c29a63] text-[#c29a63]" />
-                    ))}
-                  </div>
-                  <p className="text-[#5c4d40] italic font-light leading-relaxed mb-8">"{t.comment}"</p>
+                <div className="flex gap-1 mb-6">
+                  {[...Array(t.stars)].map((_, i) => (
+                    <Star key={i} className="w-4 h-4 fill-[#c29a63] text-[#c29a63]" />
+                  ))}
                 </div>
-                <p className="font-heading font-bold text-[#29221c]">— {t.name}</p>
+                <p className="text-[#5c4d40] font-light leading-relaxed mb-8 italic">"{t.comment}"</p>
+                <div className="flex items-center gap-4">
+                  <div className="w-10 h-10 rounded-full bg-[#c29a63]/10 flex items-center justify-center text-[#c29a63] font-bold text-sm">
+                    {t.name[0]}
+                  </div>
+                  <span className="font-bold text-[#29221c]">{t.name}</span>
+                </div>
+                <Heart className="absolute top-10 right-10 w-8 h-8 text-[#c29a63]/5 group-hover:text-[#c29a63]/10 transition-colors" />
               </motion.div>
             ))}
           </div>
-
-          {/* Feedback Form */}
-          <motion.div 
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="max-w-2xl mx-auto bg-white p-8 sm:p-12 rounded-[3rem] border border-[#ebdabe]/30 shadow-xl"
-          >
-            <div className="text-center mb-10">
-              <h3 className="text-2xl font-heading font-bold text-[#29221c] mb-2">Deixe sua avaliação</h3>
-              <p className="text-[#5c4d40] font-light">Sua opinião é muito importante para nós.</p>
-            </div>
-            <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
-              <div className="grid sm:grid-cols-2 gap-6">
-                <div className="space-y-2">
-                  <label className="text-xs font-bold uppercase tracking-widest text-[#a88252] ml-2">Seu Nome</label>
-                  <input type="text" placeholder="Ex: Maria Silva" className="w-full h-14 bg-[#faf8f5] border border-[#ebdabe]/50 rounded-2xl px-6 focus:outline-none focus:border-[#c29a63] transition-all" />
-                </div>
-                <div className="space-y-2">
-                  <label className="text-xs font-bold uppercase tracking-widest text-[#a88252] ml-2">Avaliação</label>
-                  <div className="flex items-center h-14 bg-[#faf8f5] border border-[#ebdabe]/50 rounded-2xl px-6 gap-2">
-                    {[1, 2, 3, 4, 5].map((s) => (
-                      <Star key={s} className="w-5 h-5 text-[#c29a63] cursor-pointer hover:fill-[#c29a63]" />
-                    ))}
-                  </div>
-                </div>
-              </div>
-              <div className="space-y-2">
-                <label className="text-xs font-bold uppercase tracking-widest text-[#a88252] ml-2">Seu Comentário</label>
-                <textarea rows={4} placeholder="Conte-nos como foi sua experiência..." className="w-full bg-[#faf8f5] border border-[#ebdabe]/50 rounded-2xl px-6 py-4 focus:outline-none focus:border-[#c29a63] transition-all resize-none"></textarea>
-              </div>
-              <Button className="w-full bg-[#c29a63] hover:bg-[#a88252] text-white rounded-full h-14 font-bold uppercase tracking-widest transition-all shadow-lg shadow-[#c29a63]/20">
-                Enviar Avaliação
-              </Button>
-            </form>
-          </motion.div>
         </div>
       </section>
-      {/* FAQ Section */}
-      <section id="faq" className="py-24 px-6 bg-[#faf8f5] relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-96 h-96 bg-[#c29a63]/5 rounded-full blur-[100px] -z-10" />
-        <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#c29a63]/5 rounded-full blur-[100px] -z-10" />
-        
-        <div className="max-w-4xl mx-auto relative">
-          <div className="mb-20 text-center">
-            <motion.div 
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#c29a63]/10 text-[#c29a63] text-[10px] font-bold uppercase tracking-[0.3em] mb-6"
-            >
-              <Smile className="w-3.5 h-3.5" />
-              <span>Transparência & Cuidado</span>
-            </motion.div>
-            <h2 className="text-4xl lg:text-5xl font-heading font-bold text-[#29221c] tracking-tight">Dúvidas Frequentes</h2>
-            <p className="mt-4 text-[#5c4d40] font-light text-lg">Tudo o que você precisa saber para transformar o seu sorriso.</p>
-          </div>
 
-          <div className="grid gap-6">
-            {[
-              { q: "Quanto tempo duram as facetas em resina?", a: "As resinas modernas possuem alta estabilidade de cor e brilho. Com cuidados adequados e polimento semestral, podem durar muitos anos com estética impecável." },
-              { q: "O clareamento dental causa sensibilidade?", a: "A sensibilidade é temporária e varia entre pacientes. Utilizamos géis modernos e protocolos dessensibilizantes para garantir uma experiência confortável." },
-              { q: "As lentes de contato dental exigem desgaste?", a: "Prezamos pela odontologia minimamente invasiva. Em muitos casos, o desgaste é nulo ou extremamente reduzido, preservando o dente natural." },
-              { q: "Qual a importância de tratar a gengiva antes da estética?", a: "A saúde gengival é a base de um sorriso duradouro. Uma gengiva saudável garante simetria e evita complicações futuras nas restaurações estéticas." }
-            ].map((faq, i) => (
-              <FAQItem key={i} question={faq.q} answer={faq.a} index={i} />
-            ))}
+      <section className="py-32 px-6 bg-white">
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-16">
+            <span className="text-[#c29a63] font-bold text-xs uppercase tracking-[0.3em]">Transparência</span>
+            <h2 className="text-4xl lg:text-5xl font-heading font-bold text-[#29221c] mt-4">Dúvidas Frequentes</h2>
           </div>
-        </div>
-      </section>
-      {/* Map Section */}
-      <section className="py-24 px-6 bg-white">
-        <div className="max-w-7xl mx-auto">
-          <motion.div 
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={staggerContainer}
-            className="mb-12"
-          >
-             <motion.div variants={textVariant} className="flex items-center gap-4 mb-4">
-              <div className="h-[2px] w-12 bg-[#c29a63]" />
-              <span className="text-[#c29a63] font-bold text-xs uppercase tracking-[0.3em]">Visite-nos</span>
-            </motion.div>
-            <motion.h2 variants={textVariant} className="text-4xl lg:text-5xl font-heading font-bold text-[#29221c] tracking-tight">Onde Estamos</motion.h2>
-          </motion.div>
-          <motion.div 
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            className="w-full h-[500px] rounded-[3rem] overflow-hidden shadow-2xl border border-[#ebdabe]/50 group relative"
-          >
-            <iframe 
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3824.238622159187!2d-50.1477755!3d-16.11585!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x935e4b0000000001%3A0x3b773a4b609deebf!2sDra.%20Maria%20Laura%20%7C%20Odontologia!5e0!3m2!1spt-BR!2sbr!4v1700000000000!5m2!1spt-BR!2sbr" 
-              width="100%" 
-              height="100%" 
-              style={{ border: 0 }} 
-              allowFullScreen 
-              loading="lazy" 
-              className="grayscale-[0.5] group-hover:grayscale-0 transition-all duration-700"
+          <div className="space-y-4">
+            <FAQItem 
+              index={0}
+              question="Quanto tempo dura o tratamento com facetas em resina?" 
+              answer="A durabilidade das facetas em resina depende diretamente dos cuidados do paciente e da manutenção periódica. Em média, com bons hábitos de higiene e visitas regulares ao dentista, elas podem durar entre 5 a 10 anos, podendo ser renovadas ou reparadas conforme necessário."
             />
-            <div className="absolute bottom-8 left-8 right-8 md:right-auto">
-              <motion.div 
-                whileHover={{ scale: 1.05 }}
-                className="bg-white/90 backdrop-blur-md p-6 rounded-3xl shadow-xl border border-[#ebdabe]/50 max-w-sm"
-              >
-                <MapPin className="text-[#c29a63] w-6 h-6 mb-3" />
-                <h4 className="font-bold text-[#29221c] mb-1">Dra. Maria Laura | Odontologia</h4>
-                <p className="text-sm text-[#5c4d40]">Av. João Ferreira da Cunha, 470, Centro, Mossâmedes - GO</p>
-                <a href="https://www.google.com/maps/dir/?api=1&destination=Dra.+Maria+Laura+%7C+Odontologia" target="_blank" className="inline-flex items-center gap-2 text-[#c29a63] font-bold text-xs uppercase tracking-widest mt-4 hover:gap-3 transition-all">
-                  Como chegar <ArrowRight className="w-4 h-4" />
-                </a>
-              </motion.div>
-            </div>
-          </motion.div>
+            <FAQItem 
+              index={1}
+              question="As facetas em resina mancham com facilidade?" 
+              answer="As resinas modernas de alta performance têm uma excelente estabilidade de cor. No entanto, assim como os dentes naturais, elas podem sofrer leves pigmentações ao longo do tempo se houver consumo excessivo de corantes (café, vinho, tabaco). Realizamos um polimento especializado em consulta de manutenção para devolver o brilho original sempre que necessário."
+            />
+            <FAQItem 
+              index={2}
+              question="É necessário desgastar os dentes para fazer o tratamento?" 
+              answer="Na grande maioria dos casos, o tratamento com facetas em resina é minimamente invasivo ou até mesmo aditivo (sem desgaste). Nossa prioridade é sempre preservar a estrutura natural do dente, realizando apenas os ajustes necessários para garantir o encaixe perfeito e a naturalidade estética."
+            />
+            <FAQItem 
+              index={3}
+              question="O procedimento causa dor ou sensibilidade?" 
+              answer="O tratamento é indolor. Como trabalhamos de forma conservadora na estrutura dental, a maioria dos pacientes não relata sensibilidade durante ou após o procedimento. Quando necessário, utilizamos técnicas de conforto para garantir uma experiência totalmente tranquila."
+            />
+          </div>
         </div>
       </section>
-      {/* Footer Section */}
-      <footer id="contato" className="bg-[#faf8f5] text-[#5c4d40] pt-24 pb-12">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="grid lg:grid-cols-4 gap-8 mb-24">
-            {/* Branding - No Card */}
-            <div className="lg:col-span-2 pr-8">
-              <div className="flex items-center gap-1 mb-6">
+
+      <section className="py-24 px-6 bg-[#faf8f5]">
+        <div className="max-w-7xl mx-auto">
+          <div className="bg-[#c29a63] rounded-[4rem] p-12 lg:p-24 overflow-hidden relative shadow-2xl shadow-[#c29a63]/20">
+            <div className="absolute top-0 right-0 w-1/2 h-full bg-black/5 -skew-x-12 translate-x-1/4" />
+            <div className="relative z-10 grid lg:grid-cols-2 gap-16 items-center">
+              <div className="text-white space-y-8">
+                <h2 className="text-4xl lg:text-6xl font-heading font-bold leading-tight">Pronta para redescobrir sua melhor versão?</h2>
+                <p className="text-xl text-white/80 font-light leading-relaxed">
+                  Não deixe para depois o sorriso que você pode ter hoje. Agende sua avaliação e vamos planejar juntos o sorriso dos seus sonhos.
+                </p>
+                <div className="flex flex-col sm:flex-row gap-6">
+                  <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
+                    <Button size="lg" className="bg-white text-[#c29a63] hover:bg-[#faf8f5] rounded-full h-16 px-10 font-bold uppercase tracking-widest shadow-xl flex items-center gap-3">
+                      Agendar Avaliação
+                      <img src={whatsappIcon} alt="" className="w-6 h-6" />
+                    </Button>
+                  </a>
+                </div>
+              </div>
+              <div className="hidden lg:block relative">
+                <div className="absolute inset-0 bg-white/10 rounded-full blur-3xl animate-pulse" />
+                <div className="relative rounded-[3rem] overflow-hidden aspect-square border-8 border-white/20">
+                  <img src={dentist2} alt="Dra. Maria Laura" className="w-full h-full object-cover" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <footer className="bg-[#faf8f5] pt-32 pb-12 px-6">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid lg:grid-cols-4 gap-12 mb-20">
+            <div className="lg:col-span-2">
+              <div className="flex items-center gap-1 py-4 mb-8">
                 <div className="h-14 w-14 rounded-full overflow-hidden border-2 border-[#a88252]/30 shadow-sm flex-shrink-0 bg-white">
                   <img src="/assets/logo.jpg" alt="Logo" className="w-full h-full object-cover" />
                 </div>
                 <div className="flex flex-col items-start -space-y-1">
-                  <span className="text-base md:text-lg font-normal tracking-tighter text-[#5c4d40] leading-none antialiased">
+                  <span className="text-lg font-normal tracking-tighter text-[#5c4d40] leading-none antialiased">
                     Dra. Maria Laura
                   </span>
-                  <span className="text-sm md:text-base font-normal tracking-tighter text-[#a88252] antialiased">
+                  <span className="text-base font-normal tracking-tighter text-[#a88252] antialiased">
                     Odontologia
                   </span>
                 </div>
@@ -734,24 +634,40 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Navigation Card */}
             <div className="bg-white/40 backdrop-blur-sm border border-[#ebdabe] rounded-3xl p-8 shadow-sm">
-              <h4 className="font-bold text-lg mb-6 text-[#a88252]">Navegação</h4>
+              <h4 className="font-heading font-bold text-[#29221c] uppercase tracking-widest text-xs mb-8 flex items-center gap-2">
+                <div className="w-1.5 h-1.5 rounded-full bg-[#c29a63]" />
+                Navegação
+              </h4>
               <ul className="space-y-4">
-                <li><a href="#especialidades" className="text-[#8a7a6e] hover:text-[#a88252] transition-colors flex items-center gap-2 group text-sm"><div className="w-1 h-1 rounded-full bg-[#a88252] opacity-0 group-hover:opacity-100 transition-opacity" /> Serviços</a></li>
-                <li><a href="#clinica" className="text-[#8a7a6e] hover:text-[#a88252] transition-colors flex items-center gap-2 group text-sm"><div className="w-1 h-1 rounded-full bg-[#a88252] opacity-0 group-hover:opacity-100 transition-opacity" /> Clínica</a></li>
-                <li><a href="#sobre" className="text-[#8a7a6e] hover:text-[#a88252] transition-colors flex items-center gap-2 group text-sm"><div className="w-1 h-1 rounded-full bg-[#a88252] opacity-0 group-hover:opacity-100 transition-opacity" /> Sobre Mim</a></li>
-                <li><a href="#depoimentos" className="text-[#8a7a6e] hover:text-[#a88252] transition-colors flex items-center gap-2 group text-sm"><div className="w-1 h-1 rounded-full bg-[#a88252] opacity-0 group-hover:opacity-100 transition-opacity" /> Depoimentos</a></li>
+                <li><a href="#especialidades" className="text-[#8a7a6e] hover:text-[#c29a63] transition-colors text-sm flex items-center gap-2 group">
+                  <div className="w-1 h-1 rounded-full bg-[#c29a63] opacity-0 group-hover:opacity-100 transition-all" />
+                  Serviços
+                </a></li>
+                <li><a href="#clinica" className="text-[#8a7a6e] hover:text-[#c29a63] transition-colors text-sm flex items-center gap-2 group">
+                  <div className="w-1 h-1 rounded-full bg-[#c29a63] opacity-0 group-hover:opacity-100 transition-all" />
+                  Clínica
+                </a></li>
+                <li><a href="#sobre" className="text-[#8a7a6e] hover:text-[#c29a63] transition-colors text-sm flex items-center gap-2 group">
+                  <div className="w-1 h-1 rounded-full bg-[#c29a63] opacity-0 group-hover:opacity-100 transition-all" />
+                  Sobre Mim
+                </a></li>
+                <li><a href="#depoimentos" className="text-[#8a7a6e] hover:text-[#c29a63] transition-colors text-sm flex items-center gap-2 group">
+                  <div className="w-1 h-1 rounded-full bg-[#c29a63] opacity-0 group-hover:opacity-100 transition-all" />
+                  Depoimentos
+                </a></li>
               </ul>
             </div>
 
-            {/* Contact Card */}
             <div className="bg-white/40 backdrop-blur-sm border border-[#ebdabe] rounded-3xl p-8 shadow-sm">
-              <h4 className="font-bold text-lg mb-6 text-[#a88252]">Contato</h4>
-              <ul className="space-y-4">
-                <li className="flex items-start gap-3 text-[#8a7a6e] group">
-                  <MapPin className="w-5 h-5 text-[#a88252] shrink-0 group-hover:scale-110 transition-transform" />
-                  <span className="text-sm leading-relaxed">Av. João Ferreira da Cunha, 470, Centro, Mossâmedes - GO</span>
+              <h4 className="font-heading font-bold text-[#29221c] uppercase tracking-widest text-xs mb-8 flex items-center gap-2">
+                <div className="w-1.5 h-1.5 rounded-full bg-[#c29a63]" />
+                Contato
+              </h4>
+              <ul className="space-y-6">
+                <li className="flex items-start gap-3 text-[#8a7a6e]">
+                  <MapPin className="w-5 h-5 text-[#a88252] shrink-0" />
+                  <span className="text-sm">Rua João de Araújo, 485<br />Ed. Millenium - sala 405<br />Quirinópolis-GO</span>
                 </li>
                 <li className="flex items-center gap-3 text-[#8a7a6e] group">
                   <Phone className="w-5 h-5 text-[#a88252] shrink-0 group-hover:scale-110 transition-transform" />
@@ -774,7 +690,19 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="pt-10 flex flex-col md:flex-row items-center justify-between gap-4 text-[#8a7a6e]/40 text-[10px] uppercase font-bold tracking-[0.3em]">
+          <div className="w-full h-[400px] rounded-[3rem] overflow-hidden border border-[#ebdabe] shadow-lg mb-20 bg-white">
+            <iframe 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3780.880461875323!2d-50.4501338!3d-18.4435887!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x940866989495146d%3A0xc49666c8b438595b!2sR.%20Jo%C3%A3o%20de%20Ara%C3%BAjo%2C%20485%20-%20Centro%2C%20Quirin%C3%B3polis%20-%20GO%2C%2075860-000!5e0!3m2!1spt-BR!2sbr!4v1700000000000!5m2!1spt-BR!2sbr" 
+              width="100%" 
+              height="100%" 
+              style={{ border: 0 }} 
+              allowFullScreen 
+              loading="lazy" 
+              referrerPolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
+
+          <div className="pt-10 border-t border-[#ebdabe]/50 flex flex-col md:flex-row items-center justify-between gap-4 text-[#8a7a6e]/40 text-[10px] uppercase font-bold tracking-[0.3em]">
             <p>© {new Date().getFullYear()} DRA. MARIA LAURA BARBOSA | LUXO & ODONTOLOGIA</p>
             <div className="flex items-center gap-2">
               <span>Desenvolvido por</span>
@@ -783,7 +711,6 @@ export default function Home() {
           </div>
         </div>
       </footer>
-      {/* Service Modal */}
       <ServiceModal 
         service={selectedService} 
         isOpen={!!selectedService} 
