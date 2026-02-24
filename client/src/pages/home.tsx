@@ -202,7 +202,6 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-[#faf8f5] text-[#332b24] overflow-hidden selection:bg-[#d4b98e]/30 font-sans">
-      
       {/* Navigation */}
       <nav className="fixed top-0 w-full z-50 bg-[#faf8f5]/80 backdrop-blur-md border-b border-[#ebdabe]/30">
         <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
@@ -222,7 +221,7 @@ export default function Home() {
           <div className="flex items-center gap-4">
             <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="hidden md:block">
               <Button className="relative group overflow-hidden bg-[#c29a63] hover:bg-[#a88252] text-white rounded-full px-8 h-12 transition-all duration-500 shadow-lg shadow-[#c29a63]/20 font-heading font-bold text-xs uppercase tracking-[0.2em] flex items-center gap-3 border border-white/10" data-testid="button-fale-conosco-nav">
-                <span className="relative z-10 flex items-center gap-2">
+                <span className="relative z-10 flex items-center gap-2 text-[14px]">
                   <Phone className="w-3.5 h-3.5 group-hover:rotate-12 transition-transform duration-300" />
                   Fale Conosco
                 </span>
@@ -254,7 +253,6 @@ export default function Home() {
           </div>
         </div>
       </nav>
-
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 px-6">
         <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
@@ -316,7 +314,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
       {/* Clínica Section */}
       <section id="clinica" className="py-24 px-6 bg-white">
         <div className="max-w-7xl mx-auto">
@@ -398,7 +395,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
       {/* Sobre a Dra Section */}
       <section id="sobre" className="py-24 px-6 bg-[#fdfbf9]">
         <div className="max-w-7xl mx-auto">
@@ -462,7 +458,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
       {/* Services Section */}
       <section id="especialidades" className="py-24 px-6 bg-white">
         <div className="max-w-7xl mx-auto">
@@ -527,7 +522,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
       {/* Testimonials Section */}
       <section id="depoimentos" className="py-24 px-6 bg-[#fdfbf9]">
         <div className="max-w-7xl mx-auto">
@@ -605,7 +599,6 @@ export default function Home() {
           </motion.div>
         </div>
       </section>
-
       {/* FAQ Section */}
       <section id="faq" className="py-24 px-6 bg-[#faf8f5] relative overflow-hidden">
         <div className="absolute top-0 right-0 w-96 h-96 bg-[#c29a63]/5 rounded-full blur-[100px] -z-10" />
@@ -638,7 +631,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
       {/* Map Section */}
       <section className="py-24 px-6 bg-white">
         <div className="max-w-7xl mx-auto">
@@ -686,7 +678,6 @@ export default function Home() {
           </motion.div>
         </div>
       </section>
-
       {/* Footer Section */}
       <footer id="contato" className="bg-[#1a1612] text-white pt-24 pb-12 rounded-t-[4rem]">
         <div className="max-w-7xl mx-auto px-6">
@@ -762,7 +753,6 @@ export default function Home() {
           </div>
         </div>
       </footer>
-
       {/* Service Modal */}
       <ServiceModal 
         service={selectedService} 
