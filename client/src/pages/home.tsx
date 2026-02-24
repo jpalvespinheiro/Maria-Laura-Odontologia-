@@ -211,11 +211,11 @@ export default function Home() {
             <div className="h-14 w-14 rounded-full overflow-hidden border-2 border-[#a88252]/30 shadow-sm flex-shrink-0 bg-white">
               <img src="/assets/logo.jpg" alt="Logo" className="w-full h-full object-cover" />
             </div>
-            <div className="flex flex-col items-center">
-              <span className="text-base md:text-lg font-normal tracking-[0.1em] text-[#5c4d40] leading-none antialiased">
+            <div className="flex flex-col items-center -space-y-1">
+              <span className="text-base md:text-lg font-normal tracking-tighter text-[#5c4d40] leading-none antialiased">
                 Dra. Maria Laura
               </span>
-              <span className="text-sm md:text-base font-normal text-[#a88252] mt-1 antialiased">
+              <span className="text-sm md:text-base font-normal tracking-tighter text-[#a88252] antialiased">
                 Odontologia
               </span>
             </div>
