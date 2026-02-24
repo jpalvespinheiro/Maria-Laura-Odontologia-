@@ -212,8 +212,8 @@ export default function Home() {
               <img src="/assets/logo.jpg" alt="Logo" className="w-full h-full object-cover" />
             </div>
             <div className="flex flex-col">
-              <span className="font-heading text-lg md:text-xl font-bold tracking-tight text-[#29221c] leading-tight">
-                Dra. Maria Laura | <span className="text-[#ebdabe] brightness-75">Odontologia</span>
+              <span className="font-heading text-lg md:text-xl font-medium tracking-tighter text-[#29221c] leading-tight">
+                Dra. Maria Laura <span className="text-[#c29a63] mx-0.5">|</span> <span className="text-[#c29a63]">Odontologia</span>
               </span>
             </div>
           </div>
