@@ -256,9 +256,6 @@ export default function Home() {
       <section className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 px-6">
         <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
           <motion.div initial="hidden" animate="visible" variants={staggerContainer} className="z-10">
-            <motion.p variants={textVariant} className="text-[#c29a63] font-heading font-medium italic text-xl mb-4">
-              A cada sorriso uma história
-            </motion.p>
             <motion.div variants={textVariant} className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#ebdabe]/40 text-[#a88252] text-[10px] font-bold uppercase tracking-[0.3em] mb-8">
               <Sparkles className="w-3.5 h-3.5" />
               <span>Transforme seu <span className="text-[#c29a63]">sorriso</span> com naturalidade e <span className="text-[#c29a63]">precisão</span>.</span>
@@ -701,6 +698,12 @@ export default function Home() {
               <p className="text-white/50 max-w-sm mb-10 leading-relaxed font-light text-lg">
                 Referência em facetas e lentes em resinas compostas com foco em naturalidade e arte dental.
               </p>
+              <div className="mb-10">
+                <div className="inline-flex items-center gap-2 px-6 py-2 rounded-full bg-white/5 border border-white/10 text-[#c29a63] text-[10px] font-bold uppercase tracking-[0.3em] shadow-lg">
+                  <Sparkles className="w-3.5 h-3.5" />
+                  <span>A cada sorriso uma história.</span>
+                </div>
+              </div>
               <div className="flex gap-4">
                 <a href={INSTAGRAM_URL} target="_blank" className="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center border border-white/10 hover:bg-[#c29a63] hover:border-[#c29a63] transition-all group">
                   <Instagram className="w-5 h-5 group-hover:scale-110 transition-transform" />
