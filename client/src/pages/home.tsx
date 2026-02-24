@@ -1,6 +1,6 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
-import { ArrowRight, MapPin, Sparkles, Smile, Star, CheckCircle2, ChevronRight, ChevronLeft, Instagram, Phone, Mail, ExternalLink, Award, Heart, Wind, Coffee, ShieldCheck, Plus, Minus } from "lucide-react";
+import { ArrowRight, MapPin, Sparkles, Smile, Star, CheckCircle2, ChevronRight, ChevronLeft, Instagram, Phone, Mail, ExternalLink, Award, Heart, Wind, Coffee, ShieldCheck, Plus, Minus, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 // Assets
@@ -29,6 +29,39 @@ const staggerContainer = {
   hidden: { opacity: 0 },
   visible: { opacity: 1, transition: { staggerChildren: 0.2 } }
 };
+
+const services = [
+  { 
+    title: "Mimetismo Dental & Facetas em Resina", 
+    shortDesc: "Você já imaginou transformar seu sorriso sem perder a naturalidade?",
+    fullDesc: `Você já imaginou transformar seu sorriso sem perder a naturalidade?\n\nA Dra. Maria Laura une tecnologia de ponta e sensibilidade artística para criar restaurações que se confundem com dentes naturais. Utilizando técnicas avançadas de estratificação em resina, cada camada é aplicada estrategicamente para reproduzir cor, translucidez, brilho e textura com extrema fidelidade.\n\nO resultado? Um sorriso harmônico, elegante e absolutamente natural — sem aspecto artificial.\n\nAs facetas em resina são ideais para corrigir manchas, fraturas, desalinhamentos leves e diastemas, de forma conservadora e personalizada. Cada detalhe é planejado de acordo com o formato do rosto, proporção dental e expectativa do paciente.\n\nSe o seu sorriso já não representa quem você é hoje, talvez seja o momento de redescobrir sua melhor versão.\n\nAgende sua avaliação e descubra como a estética pode transformar não apenas dentes, mas autoestima e presença.`,
+    img: specMimetismo,
+    icon: <Sparkles className="w-6 h-6" />
+  },
+  { 
+    title: "Clareamento Dental Estratégico", 
+    shortDesc: "Você quer dentes mais brancos… ou um sorriso realmente impactante?",
+    fullDesc: `Você quer dentes mais brancos… ou um sorriso realmente impactante?\n\nAntes das facetas, existe uma etapa que faz toda a diferença no resultado final: o clareamento estratégico. Não é apenas estética — é planejamento inteligente.\n\nAo realizar o clareamento previamente, a Dra. Maria Laura cria a base ideal para alcançar tons mais claros e sofisticados nas facetas, garantindo uma harmonia perfeita entre naturalidade e luminosidade. Isso significa mais liberdade na escolha da cor e um resultado muito mais refinado.\n\nSem essa etapa, o potencial do seu sorriso pode ficar limitado.\nCom ela, o resultado se torna mais claro, mais equilibrado e muito mais impressionante.\n\nSe você busca um sorriso que chame atenção pela elegância — e não pelo exagero — o planejamento começa aqui.\n\nAgende sua avaliação e descubra como cada detalhe pode transformar completamente o seu resultado final.`,
+    img: specClareamento,
+    icon: <Star className="w-6 h-6" />,
+    reverse: true
+  },
+  { 
+    title: "Saúde Gengival: Estética Branca x Rosa", 
+    shortDesc: "Você já percebeu que alguns sorrisos são bonitos… mas poucos são realmente sofisticados?",
+    fullDesc: `Você já percebeu que alguns sorrisos são bonitos… mas poucos são realmente sofisticados?\n\nO segredo quase sempre está onde ninguém presta atenção: na gengiva.\n\nNão basta ter dentes claros e alinhados se a moldura não está em equilíbrio. A verdadeira harmonia acontece quando a estética branca (dentes) conversa perfeitamente com a estética rosa (gengiva). É essa proporção que transmite naturalidade, juventude e elegância.\n\nA Dra. Maria Laura realiza um planejamento periodontal personalizado para garantir que a gengiva esteja saudável, simétrica e contornando os dentes na medida exata. Quando necessário, pequenos ajustes estratégicos elevam completamente o padrão do resultado final.\n\nSem esse cuidado, o sorriso pode parecer artificial.\nCom ele, o resultado se torna refinado, harmônico e marcante.\n\nSe você busca um sorriso que impressiona pela naturalidade e não pelo exagero, o equilíbrio começa na base.\n\nAgende sua avaliação e descubra como cada detalhe transforma o todo.`,
+    img: specPeriodontal,
+    icon: <Smile className="w-6 h-6" />
+  },
+  { 
+    title: "Restaurações de Alta Performance", 
+    shortDesc: "Você confiaria sua saúde bucal a uma restauração que apenas “quebra o galho”?",
+    fullDesc: `Você confiaria sua saúde bucal a uma restauração que apenas “quebra o galho”?\n\nQuando um dente é restaurado da forma correta, você não deve perceber diferença ao sorrir, falar ou mastigar. Ele precisa ter a mesma força, a mesma estética e a mesma naturalidade de um dente saudável.\n\nÉ por isso que utilizamos resinas de última geração e aplicamos o conceito de biomimética — reconstruindo o dente respeitando sua anatomia original, sua resistência e sua função. Cada camada é planejada para devolver não apenas a aparência, mas a performance completa do elemento dental.\n\nO objetivo é simples:\nninguém perceber que houve uma restauração.\n\nMais do que estética, é segurança, durabilidade e saúde a longo prazo.\n\nSe você busca um tratamento que vá além do básico e realmente preserve seu sorriso, a diferença está nos detalhes — e na técnica.\n\nAgende sua avaliação e descubra como uma restauração pode ser invisível aos olhos e poderosa na função.`,
+    img: specRestauracao,
+    icon: <CheckCircle2 className="w-6 h-6" />,
+    reverse: true
+  }
+];
 
 function FAQItem({ question, answer, index }: { question: string, answer: string, index: number }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -70,8 +103,70 @@ function FAQItem({ question, answer, index }: { question: string, answer: string
   );
 }
 
+function ServiceModal({ service, isOpen, onClose }: { service: any, isOpen: boolean, onClose: () => void }) {
+  if (!service) return null;
+
+  return (
+    <AnimatePresence>
+      {isOpen && (
+        <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6">
+          <motion.div 
+            initial={{ opacity: 0 }} 
+            animate={{ opacity: 1 }} 
+            exit={{ opacity: 0 }}
+            onClick={onClose}
+            className="absolute inset-0 bg-black/60 backdrop-blur-sm"
+          />
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.9, y: 20 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            exit={{ opacity: 0, scale: 0.9, y: 20 }}
+            className="relative w-full max-w-3xl bg-[#faf8f5] rounded-[3rem] overflow-hidden shadow-2xl max-h-[90vh] overflow-y-auto"
+          >
+            <button 
+              onClick={onClose}
+              className="absolute top-6 right-6 z-10 w-10 h-10 rounded-full bg-white/80 backdrop-blur-md border border-[#ebdabe]/50 flex items-center justify-center text-[#29221c] hover:bg-[#c29a63] hover:text-white transition-all shadow-sm"
+            >
+              <X className="w-5 h-5" />
+            </button>
+            
+            <div className="aspect-video sm:aspect-[21/9] w-full relative">
+              <img src={service.img} alt={service.title} className="w-full h-full object-cover" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#faf8f5] via-transparent to-transparent" />
+            </div>
+
+            <div className="px-8 sm:px-12 pb-12 pt-4">
+              <div className="flex items-center gap-3 mb-6">
+                <div className="w-12 h-12 rounded-2xl bg-[#c29a63]/10 flex items-center justify-center text-[#c29a63]">
+                  {service.icon}
+                </div>
+                <h3 className="text-2xl sm:text-3xl font-heading font-bold text-[#29221c]">{service.title}</h3>
+              </div>
+              
+              <div className="space-y-4 text-[#5c4d40] text-lg font-light leading-relaxed whitespace-pre-wrap">
+                {service.fullDesc}
+              </div>
+
+              <div className="mt-10 pt-10 border-t border-[#ebdabe]/50 flex flex-col sm:flex-row items-center justify-between gap-6">
+                <p className="text-[#c29a63] font-heading font-bold text-lg italic">Pronta para redescobrir sua melhor versão?</p>
+                <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
+                  <Button size="lg" className="bg-[#c29a63] hover:bg-[#a88252] text-white rounded-full px-8 shadow-xl shadow-[#c29a63]/20 font-bold uppercase tracking-widest flex items-center gap-2">
+                    Agendar via WhatsApp
+                    <img src={whatsappIcon} alt="" className="w-5 h-5 brightness-0 invert" />
+                  </Button>
+                </a>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      )}
+    </AnimatePresence>
+  );
+}
+
 export default function Home() {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [selectedService, setSelectedService] = useState<any>(null);
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -306,34 +401,7 @@ export default function Home() {
           </div>
 
           <div className="grid gap-32">
-            {[
-              { 
-                title: "Mimetismo Dental & Facetas em Resina", 
-                desc: "A Dra. Maria Laura utiliza materiais modernos que garantem a estratificação (camadas de cor) ideal. A capacidade e técnica artística permitem criar restaurações que imitam perfeitamente a cor, translucidez, brilho e textura dos dentes naturais, sendo a solução perfeita para elementos dentais manchados, fraturados, desalinhados ou com presença de diastemas.",
-                img: specMimetismo,
-                icon: <Sparkles className="w-6 h-6" />
-              },
-              { 
-                title: "Clareamento Dental Estratégico", 
-                desc: "Realizar o clareamento antes de colocar as facetas permite que a Dra. Maria Laura alcance com facilidade uma cor de material mais clara, harmonizando perfeitamente com a tonalidade desejada pelo paciente. É a base fundamental para um sorriso luminoso e equilibrado.",
-                img: specClareamento,
-                icon: <Star className="w-6 h-6" />,
-                reverse: true
-              },
-              { 
-                title: "Saúde Gengival: Estética Branca x Rosa", 
-                desc: "Prezamos pelo equilíbrio visual absoluto. A estética branca aliada à estética rosa permite sofisticação no sorriso. O tratamento periodontal personalizado garante que a gengiva saudável contorne os elementos dentais de forma simétrica, assegurando melhores resultados nas facetas e lentes de contato.",
-                img: specPeriodontal,
-                icon: <Smile className="w-6 h-6" />
-              },
-              { 
-                title: "Restaurações de Alta Performance", 
-                desc: "Utilizamos resinas de última geração para restaurações que devolvem a força e a função original do dente. O foco é na biomimética: o dente restaurado deve ser indistinguível do dente natural, mantendo a integridade e saúde bucal a longo prazo.",
-                img: specRestauracao,
-                icon: <CheckCircle2 className="w-6 h-6" />,
-                reverse: true
-              }
-            ].map((service, idx) => (
+            {services.map((service, idx) => (
               <div key={idx} className={`grid lg:grid-cols-2 gap-16 items-center ${service.reverse ? 'lg:flex-row-reverse' : ''}`}>
                 <motion.div 
                   initial={{ opacity: 0, x: service.reverse ? 40 : -40 }}
@@ -351,7 +419,14 @@ export default function Home() {
                     {service.icon}
                   </div>
                   <h3 className="text-3xl font-heading font-bold mb-6 text-[#29221c] leading-tight">{service.title}</h3>
-                  <p className="text-[#5c4d40] text-lg font-light leading-relaxed mb-8">{service.desc}</p>
+                  <p className="text-[#5c4d40] text-lg font-light leading-relaxed mb-8">{service.shortDesc}</p>
+                  <Button 
+                    variant="link" 
+                    onClick={() => setSelectedService(service)}
+                    className="text-[#c29a63] p-0 font-bold uppercase tracking-widest text-xs flex items-center gap-2 hover:gap-4 transition-all"
+                  >
+                    Saber mais detalhes <ArrowRight className="w-4 h-4" />
+                  </Button>
                 </div>
               </div>
             ))}
@@ -359,7 +434,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* FAQ Section - IMPROVED */}
+      {/* FAQ Section */}
       <section id="faq" className="py-24 px-6 bg-[#faf8f5] relative overflow-hidden">
         <div className="absolute top-0 right-0 w-96 h-96 bg-[#c29a63]/5 rounded-full blur-[100px] -z-10" />
         <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#c29a63]/5 rounded-full blur-[100px] -z-10" />
@@ -432,7 +507,7 @@ export default function Home() {
                     target="_blank" 
                     className="flex items-center gap-2 text-[#c29a63] font-bold text-xs uppercase tracking-widest hover:text-white transition-all group"
                   >
-                    Avalie-nos no Google <ExternalLink className="w-3 h-3 group-hover:translate-x-1" />
+                    Avaliar no Google <ExternalLink className="w-3 h-3 group-hover:translate-x-1" />
                   </a>
                 </div>
                 <div className="w-full h-full min-h-[150px] bg-white/5 rounded-[2.5rem] overflow-hidden relative border border-white/10 grayscale opacity-40 hover:opacity-100 transition-all duration-1000">
@@ -454,6 +529,13 @@ export default function Home() {
           </div>
         </div>
       </footer>
+
+      {/* Service Modal */}
+      <ServiceModal 
+        service={selectedService} 
+        isOpen={!!selectedService} 
+        onClose={() => setSelectedService(null)} 
+      />
     </div>
   );
 }
