@@ -224,7 +224,7 @@ export default function Home() {
             <a href="#especialidades" className="hover:text-[#c29a63] transition-colors text-[13px]">Serviços</a>
             <a href="#clinica" className="hover:text-[#c29a63] transition-colors text-[13px]">Clínica</a>
             <a href="#sobre" className="hover:text-[#c29a63] transition-colors text-[13px]">Sobre Mim</a>
-            <a href="#depoimentos" className="hover:text-[#c29a63] transition-colors">Depoimentos</a>
+            <a href="#depoimentos" className="hover:text-[#c29a63] transition-colors text-[13px]">Depoimentos</a>
           </div>
 
           <div className="flex items-center gap-4">
