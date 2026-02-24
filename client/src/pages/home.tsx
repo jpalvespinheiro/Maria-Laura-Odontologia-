@@ -282,9 +282,9 @@ export default function Home() {
             <motion.div variants={textVariant} className="flex flex-col sm:flex-row gap-5">
               <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
                 <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                  <Button size="lg" className="w-full bg-[#c29a63] hover:bg-[#a88252] text-white rounded-full text-base h-16 px-10 shadow-xl shadow-[#c29a63]/20 font-normal uppercase tracking-widest flex items-center gap-3" data-testid="button-whatsapp-hero">
+                  <Button size="lg" className="w-full sm:w-auto bg-[#c29a63] hover:bg-[#a88252] text-white rounded-full text-sm h-14 px-8 shadow-xl shadow-[#c29a63]/20 font-normal uppercase tracking-widest flex items-center justify-center gap-3" data-testid="button-whatsapp-hero">
                     Agendar via WhatsApp
-                    <img src={whatsappIcon} alt="WhatsApp" className="w-6 h-6 object-contain" />
+                    <img src={whatsappIcon} alt="WhatsApp" className="w-5 h-5 object-contain" />
                   </Button>
                 </motion.div>
               </a>
