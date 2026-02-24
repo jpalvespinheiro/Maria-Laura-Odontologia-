@@ -107,14 +107,14 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-[#faf8f5] text-[#332b24] overflow-hidden selection:bg-[#d4b98e]/30 font-sans">
       {/* Navigation */}
-      <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${scrolled ? 'bg-[#faf8f5]/90 backdrop-blur-md shadow-sm h-20' : 'bg-transparent h-24'}`}>
+      <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${scrolled ? 'bg-[#faf8f5]/95 backdrop-blur-md shadow-sm h-20' : 'bg-transparent h-24'}`}>
         <div className="max-w-7xl mx-auto px-6 h-full flex items-center justify-between">
           <div className="flex items-center">
-            <div className="h-14 w-auto flex items-center justify-center">
+            <div className="h-16 w-auto flex items-center justify-center">
               <img 
                 src={headerLogo} 
                 alt="Dra. Maria Laura Logo" 
-                className="h-full w-auto object-contain" 
+                className="h-full w-auto object-contain py-2" 
                 style={{ 
                   filter: 'brightness(0) saturate(100%) invert(67%) sepia(18%) saturate(917%) hue-rotate(352deg) brightness(87%) contrast(83%)' 
                 }} 
