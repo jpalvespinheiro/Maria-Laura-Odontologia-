@@ -482,7 +482,7 @@ export default function Home() {
                     Com foco total em <span className="font-semibold text-[#c29a63]">Mimetismo Dental e Facetas em Resina</span>, dedico meu olhar artístico para criar sorrisos que não parecem ter sido "feitos", mas que se integram perfeitamente à face, respeitando a anatomia e a naturalidade de cada sorriso.
                   </p>
                   <p>
-                    Cada planejamento é único, focado nos mínimos detalhes para que o resultado final seja sofisticado, harmônico e, acima de tudo, autêntico.
+                    Cada planejamento é único, focado nos mínimos detalhes para que o resultado final seja sofisticado, harmônico e acima de tudo autêntico.
                   </p>
                 </div>
                 
