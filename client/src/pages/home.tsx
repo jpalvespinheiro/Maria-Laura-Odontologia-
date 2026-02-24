@@ -731,6 +731,41 @@ export default function Home() {
                 </a>
               </div>
             </div>
+
+            <div>
+              <h4 className="font-bold text-lg mb-8">Navegação</h4>
+              <ul className="space-y-4">
+                <li><a href="#especialidades" className="text-[#a0948c] hover:text-[#c29a63] transition-colors">Serviços</a></li>
+                <li><a href="#clinica" className="text-[#a0948c] hover:text-[#c29a63] transition-colors">Clínica</a></li>
+                <li><a href="#sobre" className="text-[#a0948c] hover:text-[#c29a63] transition-colors">Sobre Mim</a></li>
+                <li><a href="#depoimentos" className="text-[#a0948c] hover:text-[#c29a63] transition-colors">Depoimentos</a></li>
+              </ul>
+            </div>
+
+            <div>
+              <h4 className="font-bold text-lg mb-8">Contato</h4>
+              <ul className="space-y-4">
+                <li className="flex items-start gap-3 text-[#a0948c]">
+                  <MapPin className="w-5 h-5 text-[#c29a63] shrink-0" />
+                  <span>Av. João Ferreira da Cunha, 470, Centro, Mossâmedes - GO</span>
+                </li>
+                <li className="flex items-center gap-3 text-[#a0948c]">
+                  <Phone className="w-5 h-5 text-[#c29a63] shrink-0" />
+                  <span>(64) 98164-4853</span>
+                </li>
+                <li className="flex items-center gap-3 text-[#a0948c]">
+                  <Mail className="w-5 h-5 text-[#c29a63] shrink-0" />
+                  <a href="mailto:dramarialaurabarbosacunhaesilv@gmail.com" className="hover:text-white transition-colors truncate">
+                    dramarialaurabarbosacunhaesilv@gmail.com
+                  </a>
+                </li>
+                <li className="pt-4">
+                  <a href="https://g.page/r/YOUR_GOOGLE_REVIEW_ID/review" target="_blank" className="inline-flex items-center gap-2 text-[#c29a63] font-bold text-xs uppercase tracking-widest hover:gap-3 transition-all">
+                    Avaliar no Google <ArrowRight className="w-4 h-4" />
+                  </a>
+                </li>
+              </ul>
+            </div>
           </div>
           
           <div className="border-t border-white/10 pt-10 flex flex-col md:flex-row items-center justify-between gap-4 text-white/20 text-[10px] uppercase font-bold tracking-[0.3em]">
