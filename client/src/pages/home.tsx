@@ -210,18 +210,19 @@ export default function Home() {
           <div className="flex items-center gap-3 py-4">
             <div className="h-14 w-14 rounded-full overflow-hidden border-2 border-[#c29a63]/20 shadow-sm flex-shrink-0 bg-white">
               <img src="/assets/logo.jpg" alt="Logo" className="w-full h-full object-cover" />
+          <div className="flex items-center gap-3 py-4">
+            <div className="h-14 w-14 rounded-full overflow-hidden border-2 border-[#a88252]/30 shadow-sm flex-shrink-0 bg-white">
+              <img src="/assets/logo.jpg" alt="Logo" className="w-full h-full object-cover" />
             </div>
             <div className="flex flex-col justify-center">
-              <span className="text-base md:text-lg font-medium tracking-tight text-[#29221c] leading-[1.1]" style={{ fontFamily: "'Montserrat', sans-serif" }}>
+              <span className="font-heading text-base md:text-lg font-bold tracking-tight text-[#29221c] leading-[1.1]">
                 Dra. Maria Laura
               </span>
-              <span className="text-[10px] md:text-xs font-light tracking-[0.15em] uppercase text-[#c29a63] mt-0.5" style={{ fontFamily: "'Montserrat', sans-serif" }}>
+              <span className="font-heading text-[10px] md:text-xs font-bold tracking-[0.1em] uppercase text-[#a88252] mt-0.5">
                 Odontologia
               </span>
             </div>
           </div>
-          <div className="hidden md:flex gap-8 text-[11px] font-normal tracking-[0.1em] uppercase text-[#5c4d40]">
-            <a href="#especialidades" className="hover:text-[#c29a63] transition-colors">Serviços</a>
             <a href="#clinica" className="hover:text-[#c29a63] transition-colors">Clínica</a>
             <a href="#sobre" className="hover:text-[#c29a63] transition-colors">Sobre Mim</a>
             <a href="#depoimentos" className="hover:text-[#c29a63] transition-colors">Depoimentos</a>
