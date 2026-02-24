@@ -151,7 +151,7 @@ function ServiceModal({ service, isOpen, onClose }: { service: any, isOpen: bool
               </div>
 
               <div className="mt-10 pt-10 border-t border-[#ebdabe]/50 flex flex-col sm:flex-row items-center justify-between gap-6">
-                <p className="text-[#c29a63] font-heading font-bold text-lg italic">Pronta para redescobrir sua melhor versão?</p>
+                <p className="text-[#c29a63] font-heading italic font-normal text-left text-[18px]">Pronta para redescobrir sua melhor versão?</p>
                 <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
                   <Button size="lg" className="bg-[#c29a63] hover:bg-[#a88252] text-white rounded-full px-8 shadow-xl shadow-[#c29a63]/20 font-bold uppercase tracking-widest flex items-center gap-2">
                     Agendar via WhatsApp
