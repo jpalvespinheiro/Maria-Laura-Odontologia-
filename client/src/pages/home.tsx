@@ -207,13 +207,16 @@ export default function Home() {
       {/* Navigation */}
       <nav className="fixed top-0 w-full z-50 bg-[#faf8f5]/80 backdrop-blur-md">
         <div className="max-w-7xl mx-auto px-6 h-24 flex items-center justify-between">
-          <div className="flex items-center gap-2 py-4">
+          <div className="flex items-center gap-3 py-4">
             <div className="h-14 w-14 rounded-full overflow-hidden border-2 border-[#c29a63]/20 shadow-sm flex-shrink-0 bg-white">
               <img src="/assets/logo.jpg" alt="Logo" className="w-full h-full object-cover" />
             </div>
-            <div className="flex flex-col">
-              <span className="font-heading text-base md:text-lg font-medium tracking-tighter text-[#29221c] leading-tight">
-                Dra. Maria Laura <span className="text-[#c29a63] mx-0">|</span> <span className="text-[#c29a63]">Odontologia</span>
+            <div className="flex flex-col justify-center">
+              <span className="text-base md:text-lg font-medium tracking-tight text-[#29221c] leading-[1.1]" style={{ fontFamily: "'Montserrat', sans-serif" }}>
+                Dra. Maria Laura
+              </span>
+              <span className="text-[10px] md:text-xs font-light tracking-[0.15em] uppercase text-[#c29a63] mt-0.5" style={{ fontFamily: "'Montserrat', sans-serif" }}>
+                Odontologia
               </span>
             </div>
           </div>
