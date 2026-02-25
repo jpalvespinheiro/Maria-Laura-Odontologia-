@@ -578,7 +578,7 @@ export default function Home() {
             <h2 className="text-4xl lg:text-5xl font-heading font-bold text-[#29221c] tracking-tight">Feedback de Clientes</h2>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8 mb-20">
+          <div className="grid md:grid-cols-3 gap-8 mb-16">
             {testimonials.map((t, idx) => (
               <motion.div 
                 key={idx}
@@ -597,45 +597,33 @@ export default function Home() {
                   </div>
                   <p className="text-[#5c4d40] italic font-light leading-relaxed mb-8">"{t.comment}"</p>
                 </div>
-                <p className="font-heading font-bold text-[#29221c]">— {t.name}</p>
+                <div className="flex items-center gap-4 pt-6 border-t border-[#faf8f5]">
+                  <div className="w-12 h-12 rounded-full bg-[#ebdabe]/30 flex items-center justify-center text-[#c29a63] font-bold text-lg">
+                    {t.name.charAt(0)}
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-[#29221c] leading-none mb-1">{t.name}</h4>
+                    <p className="text-[10px] text-[#a88252] uppercase tracking-[0.2em] font-bold">Paciente Satisfeito</p>
+                  </div>
+                </div>
               </motion.div>
             ))}
           </div>
 
-          {/* Feedback Form */}
           <motion.div 
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            className="max-w-2xl mx-auto bg-white p-8 sm:p-12 rounded-[3rem] border border-[#ebdabe]/30 shadow-xl"
+            className="bg-white/40 backdrop-blur-md border border-[#ebdabe] rounded-[3rem] p-8 md:p-12 text-center shadow-sm"
           >
-            <div className="text-center mb-10">
-              <h3 className="text-2xl font-heading font-bold text-[#29221c] mb-2">Deixe sua avaliação</h3>
-              <p className="text-[#5c4d40] font-light">Sua opinião é muito importante para nós.</p>
-            </div>
-            <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
-              <div className="grid sm:grid-cols-2 gap-6">
-                <div className="space-y-2">
-                  <label className="text-xs font-bold uppercase tracking-widest text-[#a88252] ml-2">Seu Nome</label>
-                  <input type="text" placeholder="Ex: Maria Silva" className="w-full h-14 bg-[#faf8f5] border border-[#ebdabe]/50 rounded-2xl px-6 focus:outline-none focus:border-[#c29a63] transition-all" />
-                </div>
-                <div className="space-y-2">
-                  <label className="text-xs font-bold uppercase tracking-widest text-[#a88252] ml-2">Avaliação</label>
-                  <div className="flex items-center h-14 bg-[#faf8f5] border border-[#ebdabe]/50 rounded-2xl px-6 gap-2">
-                    {[1, 2, 3, 4, 5].map((s) => (
-                      <Star key={s} className="w-5 h-5 text-[#c29a63] cursor-pointer hover:fill-[#c29a63]" />
-                    ))}
-                  </div>
-                </div>
-              </div>
-              <div className="space-y-2">
-                <label className="text-xs font-bold uppercase tracking-widest text-[#a88252] ml-2">Seu Comentário</label>
-                <textarea rows={4} placeholder="Conte-nos como foi sua experiência..." className="w-full bg-[#faf8f5] border border-[#ebdabe]/50 rounded-2xl px-6 py-4 focus:outline-none focus:border-[#c29a63] transition-all resize-none"></textarea>
-              </div>
-              <Button className="w-full bg-[#c29a63] hover:bg-[#a88252] text-white rounded-full h-14 font-bold uppercase tracking-widest transition-all shadow-lg shadow-[#c29a63]/20">
-                Enviar Avaliação
+            <h3 className="text-2xl md:text-3xl font-heading font-bold text-[#29221c] mb-6">Quer deixar seu depoimento?</h3>
+            <p className="text-[#5c4d40] mb-8 max-w-2xl mx-auto font-light leading-relaxed">Sua opinião é fundamental para nós. Se você já é nosso paciente, compartilhe sua experiência diretamente no Google.</p>
+            <a href="https://g.page/r/ChIJR87L7XG4ZpMRV8S8-E-R7P0/review" target="_blank" rel="noopener noreferrer">
+              <Button size="lg" className="bg-white text-[#c29a63] border-2 border-[#c29a63] hover:bg-[#c29a63] hover:text-white rounded-full px-10 h-14 font-bold uppercase tracking-widest transition-all duration-500 shadow-lg shadow-[#c29a63]/5 flex items-center gap-3 mx-auto">
+                Avaliar no Google
+                <ArrowRight className="w-5 h-5" />
               </Button>
-            </form>
+            </a>
           </motion.div>
         </div>
       </section>
@@ -789,7 +777,7 @@ export default function Home() {
                   </a>
                 </li>
                 <li className="pt-4">
-                  <a href="https://g.page/r/YOUR_GOOGLE_REVIEW_ID/review" target="_blank" className="flex items-center justify-center gap-2 w-full py-3 rounded-xl bg-[#a88252]/10 border border-[#a88252]/20 text-[#a88252] font-bold text-[10px] uppercase tracking-widest hover:bg-[#a88252] hover:text-white transition-all">
+                  <a href="https://g.page/r/ChIJR87L7XG4ZpMRV8S8-E-R7P0/review" target="_blank" className="flex items-center justify-center gap-2 w-full py-3 rounded-xl bg-[#a88252]/10 border border-[#a88252]/20 text-[#a88252] font-bold text-[10px] uppercase tracking-widest hover:bg-[#a88252] hover:text-white transition-all">
                     Avaliar no Google <ArrowRight className="w-3 h-3" />
                   </a>
                 </li>
