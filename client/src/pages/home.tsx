@@ -9,9 +9,9 @@ import dentist1 from "@assets/WhatsApp_Image_2026-02-24_at_12.42.38_(1)_17719487
 import dentist2 from "@assets/WhatsApp_Image_2026-02-24_at_12.42.36_1771948728854.jpeg";
 import dentist3 from "@assets/WhatsApp_Image_2026-02-24_at_12.42.35_1771948728854.jpeg";
 import dentist4 from "@assets/WhatsApp_Image_2026-02-24_at_12.42.37_1771948728853.jpeg";
-import clinic1 from "@assets/ChatGPT_Image_25_de_fev._de_2026,_17_51_30_1772052790861.png";
-import clinic2 from "@assets/ChatGPT_Image_25_de_fev._de_2026,_17_50_11_1772052790860.png";
-import clinicFacade from "@assets/ChatGPT_Image_25_de_fev._de_2026,_17_52_47_1772052790860.png";
+import clinic1 from "@assets/ChatGPT_Image_25_de_fev._de_2026,_18_08_28_1772053755217.png";
+import clinic2 from "@assets/ChatGPT_Image_25_de_fev._de_2026,_17_50_11_1772053755218.png";
+import clinicFacade from "@assets/ChatGPT_Image_25_de_fev._de_2026,_18_08_02_1772053755217.png";
 import specMimetismo from "@assets/WhatsApp_Image_2026-02-24_at_13.05.38_1771949220712.jpeg";
 import specClareamento from "@assets/WhatsApp_Image_2026-02-24_at_13.06.05_1771949220711.jpeg";
 import specPeriodontal from "@assets/WhatsApp_Image_2026-02-24_at_13.06.19_1771949220710.jpeg";
