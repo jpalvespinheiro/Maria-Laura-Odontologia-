@@ -9,6 +9,9 @@ import dentist1 from "@assets/WhatsApp_Image_2026-02-24_at_12.42.38_(1)_17719487
 import dentist2 from "@assets/WhatsApp_Image_2026-02-24_at_12.42.36_1771948728854.jpeg";
 import dentist3 from "@assets/WhatsApp_Image_2026-02-24_at_12.42.35_1771948728854.jpeg";
 import dentist4 from "@assets/WhatsApp_Image_2026-02-24_at_12.42.37_1771948728853.jpeg";
+import clinic1 from "@assets/WhatsApp_Image_2026-02-25_at_13.31.20_1772051691947.jpeg";
+import clinic2 from "@assets/WhatsApp_Image_2026-02-25_at_13.23.28_1772051691949.jpeg";
+import clinicFacade from "@assets/ChatGPT_Image_25_de_fev._de_2026,_17_38_54_1772051941983.png";
 import specMimetismo from "@assets/WhatsApp_Image_2026-02-24_at_13.05.38_1771949220712.jpeg";
 import specClareamento from "@assets/WhatsApp_Image_2026-02-24_at_13.06.05_1771949220711.jpeg";
 import specPeriodontal from "@assets/WhatsApp_Image_2026-02-24_at_13.06.19_1771949220710.jpeg";
@@ -25,6 +28,7 @@ const FACEBOOK_URL = "https://www.facebook.com/people/Maria-Laura-Odontologia/61
 const EMAIL = "dramarialaurabarbosacunhaesilv@gmail.com";
 
 const dentistPhotos = [dentist1, dentist2, dentist3, dentist4];
+const clinicPhotos = [clinicFacade, clinic1, clinic2];
 
 const staggerContainer = {
   hidden: { opacity: 0 },
@@ -190,17 +194,22 @@ function ServiceModal({ service, isOpen, onClose }: { service: any, isOpen: bool
 
 export default function Home() {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [currentClinicSlide, setCurrentClinicSlide] = useState(0);
   const [selectedService, setSelectedService] = useState<any>(null);
 
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % dentistPhotos.length);
+      setCurrentClinicSlide((prev) => (prev + 1) % clinicPhotos.length);
     }, 5000);
     return () => clearInterval(timer);
   }, []);
 
   const nextSlide = () => setCurrentSlide((prev) => (prev + 1) % dentistPhotos.length);
   const prevSlide = () => setCurrentSlide((prev) => (prev - 1 + dentistPhotos.length) % dentistPhotos.length);
+
+  const nextClinicSlide = () => setCurrentClinicSlide((prev) => (prev + 1) % clinicPhotos.length);
+  const prevClinicSlide = () => setCurrentClinicSlide((prev) => (prev - 1 + clinicPhotos.length) % clinicPhotos.length);
 
   return (
     <div className="min-h-screen bg-[#faf8f5] text-[#332b24] overflow-hidden selection:bg-[#d4b98e]/30 font-sans">
@@ -391,14 +400,28 @@ export default function Home() {
               className="order-1 lg:order-2 relative"
             >
               <div className="absolute -inset-4 border border-[#c29a63]/20 rounded-[3.5rem] -z-10" />
-              <div className="rounded-[3rem] overflow-hidden shadow-2xl aspect-video lg:aspect-[4/5]">
-                <motion.img 
-                  src={clinicImg} 
-                  alt="Ambiente da Clínica" 
-                  whileHover={{ scale: 1.05 }}
-                  transition={{ duration: 0.7 }}
-                  className="w-full h-full object-cover" 
-                />
+              <div className="relative rounded-[3rem] overflow-hidden aspect-video lg:aspect-[4/5] shadow-2xl bg-[#ebdabe]/20">
+                <AnimatePresence mode="wait">
+                  <motion.img 
+                    key={currentClinicSlide}
+                    src={clinicPhotos[currentClinicSlide]} 
+                    initial={{ opacity: 0, scale: 1.05 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    exit={{ opacity: 0, scale: 0.95 }}
+                    transition={{ duration: 1, ease: "easeInOut" }}
+                    className="w-full h-full object-cover"
+                  />
+                </AnimatePresence>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-40" />
+                
+                <div className="absolute bottom-6 right-6 flex gap-2 z-20">
+                  <button onClick={prevClinicSlide} className="w-10 h-10 rounded-full bg-white/10 backdrop-blur-xl text-white border border-white/20 flex items-center justify-center hover:bg-white/20 transition-all">
+                    <ChevronLeft className="w-5 h-5" />
+                  </button>
+                  <button onClick={nextClinicSlide} className="w-10 h-10 rounded-full bg-[#c29a63] text-white flex items-center justify-center hover:bg-[#a88252] transition-all shadow-lg shadow-[#c29a63]/40">
+                    <ChevronRight className="w-5 h-5" />
+                  </button>
+                </div>
               </div>
             </motion.div>
           </div>
