@@ -221,7 +221,7 @@ export default function Home() {
               <img src="/assets/logo.jpg" alt="Logo" className="w-full h-full object-cover" />
             </div>
             <div className="flex flex-col items-start -space-y-1">
-              <span className="text-base md:text-lg font-normal tracking-tighter text-[#5c4d40] leading-none antialiased">
+              <span className="text-base md:text-lg font-normal tracking-tighter leading-none antialiased text-[#a88252]">
                 Dra. Maria Laura
               </span>
               <span className="text-sm md:text-base font-normal tracking-tighter text-[#a88252] antialiased">
