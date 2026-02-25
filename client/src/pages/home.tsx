@@ -19,7 +19,7 @@ import logoImg from "@assets/WhatsApp_Image_2026-02-24_at_14.00.46_1771955133778
 
 import newLogoImg from "@assets/A8d309b8f7da943c18b43dc818515f3d0u_1771961817737.png";
 
-const WHATSAPP_URL = "https://wa.me/5564981644853?text=Olá%20Dra.%20Maria%20Laura!%20Gostaria%20de%20agendar%20a%20minha%20consulta%20individualizada.⚜️";
+const WHATSAPP_URL = "https://wa.me/5564981644853?text=Olá%20Dra.%20Maria%20Laura!%20Gostaria%20de%20agendar%20a%20minha%20consulta%20individualizada.";
 const INSTAGRAM_URL = "https://www.instagram.com/dra.marialauraodontologia/";
 const FACEBOOK_URL = "https://www.facebook.com/people/Maria-Laura-Odontologia/61588240837741/?mibextid=wwXIfr&rdid=MSE1H9VaSlgYIUwR&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F18Nqeg93hG%2F%3Fmibextid%3DwwXIfr%26utm_source%3Dig%26utm_medium%3Dsocial%26utm_content%3Dlink_in_bio";
 const EMAIL = "dramarialaurabarbosacunhaesilv@gmail.com";
