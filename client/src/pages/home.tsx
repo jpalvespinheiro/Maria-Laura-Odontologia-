@@ -192,7 +192,7 @@ function ServiceModal({ service, isOpen, onClose }: { service: any, isOpen: bool
   );
 }
 
-const GOOGLE_REVIEW_URL = "https://search.google.com/local/writereview?placeid=ChIJR87L7XG4ZpMRV8S8-E-R7P0";
+const GOOGLE_REVIEW_URL = "https://www.google.com/search?q=Dra.+Maria+Laura+%7C+Odontologia&rlimm=4285785004975737535#lrd=0x9406b871edcb3947:0x3bce114ff4bcce57,3";
 
 export default function Home() {
   const [currentSlide, setCurrentSlide] = useState(0);
