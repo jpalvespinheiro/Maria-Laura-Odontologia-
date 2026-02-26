@@ -192,6 +192,8 @@ function ServiceModal({ service, isOpen, onClose }: { service: any, isOpen: bool
   );
 }
 
+const GOOGLE_REVIEW_URL = "https://search.google.com/local/writereview?placeid=ChIJR87L7XG4ZpMRV8S8-E-R7P0";
+
 export default function Home() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [currentClinicSlide, setCurrentClinicSlide] = useState(0);
@@ -618,7 +620,7 @@ export default function Home() {
           >
             <h3 className="text-2xl md:text-3xl font-heading font-bold text-[#29221c] mb-6">Quer deixar seu depoimento?</h3>
             <p className="text-[#5c4d40] mb-8 max-w-2xl mx-auto font-light leading-relaxed">Sua opinião é fundamental para nós. Se você já é nosso paciente, compartilhe sua experiência diretamente no Google.</p>
-            <a href="https://g.page/r/ChIJR87L7XG4ZpMRV8S8-E-R7P0/review" target="_blank" rel="noopener noreferrer">
+            <a href={GOOGLE_REVIEW_URL} target="_blank" rel="noopener noreferrer">
               <Button size="lg" className="bg-white text-[#c29a63] border-2 border-[#c29a63] hover:bg-[#c29a63] hover:text-white rounded-full px-10 h-14 font-bold uppercase tracking-widest transition-all duration-500 shadow-lg shadow-[#c29a63]/5 flex items-center gap-3 mx-auto">
                 Avaliar no Google
                 <ArrowRight className="w-5 h-5" />
@@ -777,7 +779,7 @@ export default function Home() {
                   </a>
                 </li>
                 <li className="pt-4">
-                  <a href="https://g.page/r/ChIJR87L7XG4ZpMRV8S8-E-R7P0/review" target="_blank" className="flex items-center justify-center gap-2 w-full py-3 rounded-xl bg-[#a88252]/10 border border-[#a88252]/20 text-[#a88252] font-bold text-[10px] uppercase tracking-widest hover:bg-[#a88252] hover:text-white transition-all">
+                  <a href={GOOGLE_REVIEW_URL} target="_blank" className="flex items-center justify-center gap-2 w-full py-3 rounded-xl bg-[#a88252]/10 border border-[#a88252]/20 text-[#a88252] font-bold text-[10px] uppercase tracking-widest hover:bg-[#a88252] hover:text-white transition-all">
                     Avaliar no Google <ArrowRight className="w-3 h-3" />
                   </a>
                 </li>
