@@ -472,7 +472,10 @@ export default function Home() {
                   Olá, eu sou a <span className="text-[#29221c] font-bold">Dra. Maria Laura</span>.
                 </p>
                 <p>
-                  Sou Cirurgiã-Dentista formada pelo Centro Universitário Unibras Montes Belos (UniBras). Minha trajetória é marcada pelo constante aperfeiçoamento e um profundo perfeccionismo, especialmente voltado para <span className="text-[#c29a63] font-semibold">Facetas e Lentes em Resinas Compostas</span>.
+                  Sou Cirurgiã-Dentista formada pelo Centro Universitário Unibras Montes Belos (UniBras). Na minha trajetória acadêmica tive a honra de presidir a Liga Acadêmica de Reabilitação Orofacial (LAROF), entrelaçando a ciência e dedicação obtive a busca pelo saber a minha bússola.
+                </p>
+                <p>
+                  Essa foi uma grande oportunidade de traduzir minha paixão profissional em movimento. Uma jornada dedicada a elevar o padrão do conhecimento odontológico e a construir pontes entre o aprendizado e a prática da excelência.
                 </p>
                 <p>
                   Me considero uma entusiasta na arte dental, onde busco sempre resultados com extrema naturalidade, respeitando a essência de cada sorriso. Acredito que a odontologia estética vai além da técnica; é sobre devolver confiança e harmonia através de um olhar artístico e delicado.
