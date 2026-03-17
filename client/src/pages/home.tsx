@@ -808,7 +808,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="pt-10 border-t border-[#ebdabe]/30 flex flex-col items-center gap-8">
+          <div className="pt-8 border-t border-[#ebdabe]/30 flex flex-col gap-6">
             <div className="flex items-center justify-center">
               <a href="#" className="flex items-center gap-2 px-6 py-3 rounded-full bg-[#a88252]/10 border border-[#a88252]/20 text-[#a88252] hover:bg-[#a88252] hover:text-white transition-all font-bold uppercase text-xs tracking-widest group">
                 Voltar ao Topo
@@ -816,22 +816,15 @@ export default function Home() {
               </a>
             </div>
 
-            <div className="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-16">
-              <div>
-                <p className="text-[#8a7a6e] text-[11px] uppercase font-bold tracking-[0.3em] mb-1 text-center">© {new Date().getFullYear()} Dra. Maria Laura Barbosa</p>
-                <p className="text-[#8a7a6e]/60 text-[10px] uppercase tracking-[0.2em] text-center">Odontologia de Excelência</p>
+            <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+              <div className="text-center md:text-left">
+                <p className="text-[#8a7a6e] text-[10px] uppercase font-bold tracking-[0.3em]">© {new Date().getFullYear()} Dra. Maria Laura Barbosa | Odontologia de Excelência</p>
               </div>
 
-              <div className="h-10 w-px bg-[#ebdabe]/30" />
-
-              <a href="https://ethosoftware.com.br/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 px-5 py-3 rounded-xl bg-white/50 border border-[#a88252]/20 group hover:bg-[#a88252]/5 transition-all">
-                <div className="w-8 h-8 flex items-center justify-center flex-shrink-0">
-                  <img src={ethosLogoImg} alt="Ethos Software" className="w-full h-full object-contain" />
-                </div>
-                <div className="flex flex-col items-start">
-                  <span className="text-[#a88252] font-bold text-[10px] uppercase tracking-widest">Desenvolvido por</span>
-                  <span className="text-[#8a7a6e] text-xs font-bold uppercase tracking-[0.1em]">Ethos Software</span>
-                </div>
+              <a href="https://ethosoftware.com.br/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-[#8a7a6e] hover:text-[#a88252] transition-colors">
+                <span className="text-[9px] uppercase font-bold tracking-widest">Desenvolvido por</span>
+                <img src={ethosLogoImg} alt="Ethos Software" className="h-6 w-6 object-contain" />
+                <span className="text-[9px] font-bold uppercase tracking-[0.1em]">Ethos</span>
               </a>
             </div>
           </div>
