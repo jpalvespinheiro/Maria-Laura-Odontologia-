@@ -498,7 +498,7 @@ export default function Home() {
                   Me considero uma entusiasta na arte dental, onde busco sempre resultados com extrema naturalidade, respeitando a essência de cada sorriso. Acredito que a odontologia estética vai além da técnica; é sobre devolver confiança e harmonia através de um olhar artístico e delicado.
                 </p>
               </motion.div>
-              <motion.div variants={textVariant} className="mt-10 grid grid-cols-2 gap-6">
+              <motion.div variants={textVariant} className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-6">
                 <motion.div whileHover={{ y: -5, scale: 1.02 }} className="flex items-start gap-3 p-4 bg-white rounded-2xl shadow-sm border border-[#ebdabe]/20 transition-all">
                   <Heart className="w-5 h-5 text-[#c29a63] mt-1" />
                   <p className="text-sm font-medium text-[#29221c]">Atendimento <br/>Humanizado</p>
