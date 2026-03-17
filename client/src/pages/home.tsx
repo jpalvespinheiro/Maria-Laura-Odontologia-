@@ -807,18 +807,32 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="pt-10 border-t border-[#ebdabe]/30 flex flex-col md:flex-row items-center justify-between gap-6">
-            <div className="flex items-center gap-4">
-              <p className="text-[#8a7a6e]/40 text-[10px] uppercase font-bold tracking-[0.3em]">© {new Date().getFullYear()} DRA. MARIA LAURA BARBOSA | LUXO & ODONTOLOGIA</p>
+          <div className="pt-10 border-t border-[#ebdabe]/30 flex flex-col items-center gap-8">
+            <div className="flex items-center justify-center">
+              <a href="#" className="flex items-center gap-2 px-6 py-3 rounded-full bg-[#a88252]/10 border border-[#a88252]/20 text-[#a88252] hover:bg-[#a88252] hover:text-white transition-all font-bold uppercase text-xs tracking-widest group">
+                Voltar ao Topo
+                <ArrowRight className="w-4 h-4 group-hover:translate-y-1 transition-transform" style={{transform: 'rotate(270deg)'}} />
+              </a>
             </div>
-            <a href="#" className="flex items-center gap-2 px-6 py-3 rounded-full bg-[#a88252]/10 border border-[#a88252]/20 text-[#a88252] hover:bg-[#a88252] hover:text-white transition-all font-bold uppercase text-xs tracking-widest group">
-              Voltar ao Topo
-              <ArrowRight className="w-4 h-4 group-hover:translate-y-1 transition-transform" style={{transform: 'rotate(270deg)'}} />
-            </a>
-            <div className="flex items-center gap-2 text-[#8a7a6e]/40 text-[10px] uppercase font-bold tracking-[0.3em]">
-              <span>Desenvolvido por</span>
-              <span className="text-[#a88252] text-xs">Ethos</span>
+
+            <div className="flex flex-col md:flex-row items-center justify-center gap-12">
+              <div>
+                <p className="text-[#8a7a6e] text-[11px] uppercase font-bold tracking-[0.3em] mb-2 text-center">© {new Date().getFullYear()} Dra. Maria Laura Barbosa</p>
+                <p className="text-[#8a7a6e]/60 text-[10px] uppercase tracking-[0.2em] text-center">Odontologia de Excelência</p>
+              </div>
+
+              <div className="h-12 w-px bg-[#ebdabe]/30" />
+
+              <a href="https://ethosoftware.com.br/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 group hover:opacity-80 transition-opacity">
+                <img src="/assets/ethos-logo.png" alt="Ethos Software" className="h-10 w-10 object-contain" />
+                <div className="flex flex-col items-start">
+                  <span className="text-[#a88252] font-bold text-sm">Desenvolvido por</span>
+                  <span className="text-[#8a7a6e] text-[11px] uppercase font-bold tracking-[0.1em]">Ethos Software</span>
+                </div>
+              </a>
             </div>
+
+            <p className="text-[#8a7a6e]/40 text-[9px] uppercase tracking-[0.3em]">Todos os direitos reservados</p>
           </div>
         </div>
       </footer>
