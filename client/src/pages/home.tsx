@@ -808,15 +808,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="pt-8 border-t border-[#ebdabe]/30 flex flex-col gap-6">
-            <div className="flex items-center justify-center">
-              <a href="#" className="flex items-center gap-2 px-6 py-3 rounded-full bg-[#a88252]/10 border border-[#a88252]/20 text-[#a88252] hover:bg-[#a88252] hover:text-white transition-all font-bold uppercase text-xs tracking-widest group">
-                Voltar ao Topo
-                <ArrowRight className="w-4 h-4 group-hover:translate-y-1 transition-transform" style={{transform: 'rotate(270deg)'}} />
-              </a>
-            </div>
-
-            <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+          <div className="pt-8 border-t border-[#ebdabe]/30 flex flex-col md:flex-row items-center justify-between gap-4">
               <div className="text-center md:text-left">
                 <p className="text-[#8a7a6e] text-[10px] uppercase font-bold tracking-[0.3em]">© {new Date().getFullYear()} Dra. Maria Laura Barbosa | Odontologia de Excelência</p>
               </div>
