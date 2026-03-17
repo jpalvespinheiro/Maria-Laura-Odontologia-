@@ -24,6 +24,7 @@ import clinicImg from "@assets/dentista-em-lagoa-santa-scaled_1771954238429.jpg"
 import logoImg from "@assets/WhatsApp_Image_2026-02-24_at_14.00.46_1771955133778.jpeg";
 
 import newLogoImg from "@assets/A8d309b8f7da943c18b43dc818515f3d0u_1771961817737.png";
+import ethosLogoImg from "@assets/Captura_de_tela_2026-02-26_010155-removebg-preview_-_Copia_(2)_1773768757432.png";
 
 const WHATSAPP_URL = "https://wa.me/5564981644853?text=Olá%20Dra.%20Maria%20Laura!%20Gostaria%20de%20agendar%20a%20minha%20consulta%20individualizada.";
 const INSTAGRAM_URL = "https://www.instagram.com/dra.marialauraodontologia/";
@@ -825,7 +826,7 @@ export default function Home() {
 
               <a href="https://ethosoftware.com.br/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 px-5 py-3 rounded-xl bg-white/50 border border-[#a88252]/20 group hover:bg-[#a88252]/5 transition-all">
                 <div className="w-8 h-8 flex items-center justify-center flex-shrink-0">
-                  <img src="/assets/ethos-logo.png" alt="Ethos Software" className="w-full h-full object-contain" />
+                  <img src={ethosLogoImg} alt="Ethos Software" className="w-full h-full object-contain" />
                 </div>
                 <div className="flex flex-col items-start">
                   <span className="text-[#a88252] font-bold text-[10px] uppercase tracking-widest">Desenvolvido por</span>
