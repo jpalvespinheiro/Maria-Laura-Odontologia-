@@ -808,7 +808,8 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="pt-8 border-t border-[#ebdabe]/30 flex flex-col md:flex-row items-center justify-between gap-4">
+          <div className="pt-8 border-t border-[#ebdabe]/30 flex flex-col gap-6">
+            <div className="flex flex-col md:flex-row items-center justify-between gap-4">
               <div className="text-center md:text-left">
                 <p className="text-[#8a7a6e] text-[10px] uppercase font-bold tracking-[0.3em]">© {new Date().getFullYear()} Dra. Maria Laura Barbosa | Odontologia de Excelência</p>
               </div>
