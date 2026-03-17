@@ -815,24 +815,24 @@ export default function Home() {
               </a>
             </div>
 
-            <div className="flex flex-col md:flex-row items-center justify-center gap-12">
+            <div className="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-16">
               <div>
-                <p className="text-[#8a7a6e] text-[11px] uppercase font-bold tracking-[0.3em] mb-2 text-center">© {new Date().getFullYear()} Dra. Maria Laura Barbosa</p>
+                <p className="text-[#8a7a6e] text-[11px] uppercase font-bold tracking-[0.3em] mb-1 text-center">© {new Date().getFullYear()} Dra. Maria Laura Barbosa</p>
                 <p className="text-[#8a7a6e]/60 text-[10px] uppercase tracking-[0.2em] text-center">Odontologia de Excelência</p>
               </div>
 
-              <div className="h-12 w-px bg-[#ebdabe]/30" />
+              <div className="h-10 w-px bg-[#ebdabe]/30" />
 
-              <a href="https://ethosoftware.com.br/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 group hover:opacity-80 transition-opacity">
-                <img src="/assets/ethos-logo.png" alt="Ethos Software" className="h-10 w-10 object-contain" />
+              <a href="https://ethosoftware.com.br/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 px-6 py-4 rounded-2xl bg-white/50 border border-[#a88252]/20 group hover:bg-[#a88252]/5 transition-all">
+                <div className="w-12 h-12 flex items-center justify-center flex-shrink-0">
+                  <img src="/assets/ethos-logo.png" alt="Ethos Software" className="w-full h-full object-contain" />
+                </div>
                 <div className="flex flex-col items-start">
-                  <span className="text-[#a88252] font-bold text-sm">Desenvolvido por</span>
-                  <span className="text-[#8a7a6e] text-[11px] uppercase font-bold tracking-[0.1em]">Ethos Software</span>
+                  <span className="text-[#a88252] font-bold text-xs uppercase tracking-widest">Desenvolvido por</span>
+                  <span className="text-[#8a7a6e] text-sm font-bold uppercase tracking-[0.1em]">Ethos Software</span>
                 </div>
               </a>
             </div>
-
-            <p className="text-[#8a7a6e]/40 text-[9px] uppercase tracking-[0.3em]">Todos os direitos reservados</p>
           </div>
         </div>
       </footer>
