@@ -5,10 +5,13 @@ import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger, SheetClose } from "@/components/ui/sheet";
 
 // Assets
-import dentist1 from "@assets/WhatsApp_Image_2026-02-24_at_12.42.38_(1)_1771948728851.jpeg";
-import dentist2 from "@assets/WhatsApp_Image_2026-02-24_at_12.42.36_1771948728854.jpeg";
-import dentist3 from "@assets/WhatsApp_Image_2026-02-24_at_12.42.35_1771948728854.jpeg";
-import dentist4 from "@assets/WhatsApp_Image_2026-02-24_at_12.42.37_1771948728853.jpeg";
+import dentist1 from "@assets/WhatsApp_Image_2026-03-16_at_18.33.59_(3)_1773768008374.jpeg";
+import dentist2 from "@assets/WhatsApp_Image_2026-03-16_at_18.33.59_(2)_1773768008375.jpeg";
+import dentist3 from "@assets/WhatsApp_Image_2026-03-16_at_18.33.59_(1)_1773768008375.jpeg";
+import dentist4 from "@assets/WhatsApp_Image_2026-03-16_at_18.33.59_1773768008375.jpeg";
+import dentist5 from "@assets/WhatsApp_Image_2026-03-16_at_18.33.58_(1)_1773768008376.jpeg";
+import dentist6 from "@assets/WhatsApp_Image_2026-03-16_at_18.33.58_1773768008376.jpeg";
+import dentist7 from "@assets/WhatsApp_Image_2026-03-16_at_18.33.57_1773768008376.jpeg";
 import clinic1 from "@assets/ChatGPT_Image_25_de_fev._de_2026,_18_08_28_1772053755217.png";
 import clinic2 from "@assets/ChatGPT_Image_25_de_fev._de_2026,_17_50_11_1772053755218.png";
 import clinicFacade from "@assets/ChatGPT_Image_25_de_fev._de_2026,_18_08_02_1772053755217.png";
@@ -27,7 +30,7 @@ const INSTAGRAM_URL = "https://www.instagram.com/dra.marialauraodontologia/";
 const FACEBOOK_URL = "https://www.facebook.com/people/Maria-Laura-Odontologia/61588240837741/?mibextid=wwXIfr&rdid=MSE1H9VaSlgYIUwR&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F18Nqeg93hG%2F%3Fmibextid%3DwwXIfr%26utm_source%3Dig%26utm_medium%3Dsocial%26utm_content%3Dlink_in_bio";
 const EMAIL = "dramarialaurabarbosacunhaesilv@gmail.com";
 
-const dentistPhotos = [dentist1, dentist2, dentist3, dentist4];
+const dentistPhotos = [dentist1, dentist2, dentist3, dentist4, dentist5, dentist6, dentist7];
 const clinicPhotos = [clinicFacade, clinic1, clinic2];
 
 const staggerContainer = {
@@ -197,12 +200,14 @@ const GOOGLE_REVIEW_URL = "https://www.google.com/search?q=Dra.+Maria+Laura+%7C+
 export default function Home() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [currentClinicSlide, setCurrentClinicSlide] = useState(0);
+  const [currentAboutSlide, setCurrentAboutSlide] = useState(0);
   const [selectedService, setSelectedService] = useState<any>(null);
 
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % dentistPhotos.length);
       setCurrentClinicSlide((prev) => (prev + 1) % clinicPhotos.length);
+      setCurrentAboutSlide((prev) => (prev + 1) % dentistPhotos.length);
     }, 5000);
     return () => clearInterval(timer);
   }, []);
@@ -440,10 +445,38 @@ export default function Home() {
               className="relative"
             >
               <div className="absolute -top-10 -left-10 w-40 h-40 bg-[#c29a63]/5 rounded-full blur-3xl -z-10" />
-              <div className="rounded-[3rem] overflow-hidden shadow-2xl aspect-[4/5] border-8 border-white">
-                <img src={dentist1} alt="Dra. Maria Laura" className="w-full h-full object-cover" />
+              <div className="rounded-[3rem] overflow-hidden shadow-2xl aspect-[4/5] border-8 border-white relative bg-[#ebdabe]/20">
+                <AnimatePresence mode="wait">
+                  <motion.img 
+                    key={currentAboutSlide}
+                    src={dentistPhotos[currentAboutSlide]} 
+                    alt="Dra. Maria Laura"
+                    initial={{ opacity: 0, scale: 1.05 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    exit={{ opacity: 0, scale: 0.95 }}
+                    transition={{ duration: 1, ease: "easeInOut" }}
+                    className="w-full h-full object-cover"
+                  />
+                </AnimatePresence>
               </div>
-              <div className="absolute -bottom-6 -right-6 bg-white p-6 rounded-3xl shadow-xl border border-[#ebdabe]/30">
+
+              {/* Carousel Controls */}
+              <div className="absolute bottom-6 right-6 flex gap-2 z-20">
+                <button 
+                  onClick={() => setCurrentAboutSlide((prev) => (prev - 1 + dentistPhotos.length) % dentistPhotos.length)}
+                  className="w-10 h-10 rounded-full bg-white/10 backdrop-blur-xl text-white border border-white/20 flex items-center justify-center hover:bg-white/20 transition-all"
+                >
+                  <ChevronLeft className="w-5 h-5" />
+                </button>
+                <button 
+                  onClick={() => setCurrentAboutSlide((prev) => (prev + 1) % dentistPhotos.length)}
+                  className="w-10 h-10 rounded-full bg-[#c29a63] text-white flex items-center justify-center hover:bg-[#a88252] transition-all shadow-lg shadow-[#c29a63]/40"
+                >
+                  <ChevronRight className="w-5 h-5" />
+                </button>
+              </div>
+
+              <div className="absolute -bottom-6 -right-6 bg-white p-6 rounded-3xl shadow-xl border border-[#ebdabe]/30 z-10">
                 <div className="flex items-center gap-3 mb-2">
                   <div className="w-10 h-10 rounded-full bg-[#c29a63]/10 flex items-center justify-center text-[#c29a63]">
                     <Award className="w-5 h-5" />
