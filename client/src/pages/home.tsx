@@ -223,7 +223,7 @@ export default function Home() {
       {/* Navigation */}
       <nav className="fixed top-0 w-full z-50 backdrop-blur-md bg-[#faf8f5]/60 border-b border-[#ebdabe]/20 text-[#fffafa]">
         <div className="max-w-7xl mx-auto px-6 h-24 flex items-center justify-between text-[#fffafa] bg-[#ffffff00]">
-          <div className="flex items-center gap-1 py-4">
+          <a href="#" className="flex items-center gap-1 py-4 hover:opacity-80 transition-opacity">
             <div className="h-14 w-14 rounded-full overflow-hidden border-2 border-[#a88252]/30 shadow-sm flex-shrink-0 bg-white">
               <img src="/assets/logo.jpg" alt="Logo" className="w-full h-full object-cover" />
             </div>
@@ -235,7 +235,7 @@ export default function Home() {
                 Odontologia
               </span>
             </div>
-          </div>
+          </a>
           <div className="hidden md:flex gap-8 text-[11px] font-normal tracking-[0.1em] uppercase text-[#5c4d40]">
             <a href="#especialidades" className="hover:text-[#c29a63] transition-colors text-[13px] text-[#5c4d40]">Serviços</a>
             <a href="#clinica" className="hover:text-[#c29a63] transition-colors text-[13px] text-[#5c4d40]">Clínica</a>
@@ -807,11 +807,17 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="pt-10 flex flex-col md:flex-row items-center justify-between gap-4 text-[#8a7a6e]/40 text-[10px] uppercase font-bold tracking-[0.3em]">
-            <p>© {new Date().getFullYear()} DRA. MARIA LAURA BARBOSA | LUXO & ODONTOLOGIA</p>
-            <div className="flex items-center gap-2">
+          <div className="pt-10 border-t border-[#ebdabe]/30 flex flex-col md:flex-row items-center justify-between gap-6">
+            <div className="flex items-center gap-4">
+              <p className="text-[#8a7a6e]/40 text-[10px] uppercase font-bold tracking-[0.3em]">© {new Date().getFullYear()} DRA. MARIA LAURA BARBOSA | LUXO & ODONTOLOGIA</p>
+            </div>
+            <a href="#" className="flex items-center gap-2 px-6 py-3 rounded-full bg-[#a88252]/10 border border-[#a88252]/20 text-[#a88252] hover:bg-[#a88252] hover:text-white transition-all font-bold uppercase text-xs tracking-widest group">
+              Voltar ao Topo
+              <ArrowRight className="w-4 h-4 group-hover:translate-y-1 transition-transform" style={{transform: 'rotate(270deg)'}} />
+            </a>
+            <div className="flex items-center gap-2 text-[#8a7a6e]/40 text-[10px] uppercase font-bold tracking-[0.3em]">
               <span>Desenvolvido por</span>
-              <span className="text-[#a88252] text-xs">Ethos Desenvolvimento de Software</span>
+              <span className="text-[#a88252] text-xs">Ethos</span>
             </div>
           </div>
         </div>
