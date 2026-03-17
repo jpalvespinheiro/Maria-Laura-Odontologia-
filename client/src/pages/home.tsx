@@ -460,22 +460,6 @@ export default function Home() {
                 </AnimatePresence>
               </div>
 
-              {/* Carousel Controls */}
-              <div className="absolute bottom-6 right-6 flex gap-2 z-20">
-                <button 
-                  onClick={() => setCurrentAboutSlide((prev) => (prev - 1 + dentistPhotos.length) % dentistPhotos.length)}
-                  className="w-10 h-10 rounded-full bg-white/10 backdrop-blur-xl text-white border border-white/20 flex items-center justify-center hover:bg-white/20 transition-all"
-                >
-                  <ChevronLeft className="w-5 h-5" />
-                </button>
-                <button 
-                  onClick={() => setCurrentAboutSlide((prev) => (prev + 1) % dentistPhotos.length)}
-                  className="w-10 h-10 rounded-full bg-[#c29a63] text-white flex items-center justify-center hover:bg-[#a88252] transition-all shadow-lg shadow-[#c29a63]/40"
-                >
-                  <ChevronRight className="w-5 h-5" />
-                </button>
-              </div>
-
               <div className="absolute -bottom-6 -right-6 bg-white p-6 rounded-3xl shadow-xl border border-[#ebdabe]/30 z-10">
                 <div className="flex items-center gap-3 mb-2">
                   <div className="w-10 h-10 rounded-full bg-[#c29a63]/10 flex items-center justify-center text-[#c29a63]">
