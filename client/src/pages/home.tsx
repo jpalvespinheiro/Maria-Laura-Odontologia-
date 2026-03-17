@@ -815,7 +815,7 @@ export default function Home() {
               </div>
 
               <a href="https://ethosoftware.com.br/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-[#8a7a6e] hover:text-[#a88252] transition-colors">
-                <span className="text-[9px] uppercase font-bold tracking-widest">Desenvolvido por</span>
+                <span className="uppercase font-bold tracking-widest text-[12px]">Desenvolvido por</span>
                 <img src={ethosLogoImg} alt="Ethos Software" className="h-6 w-6 object-contain" />
                 <span className="text-[9px] font-bold uppercase tracking-[0.1em]">Ethos</span>
               </a>
