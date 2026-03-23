@@ -1,6 +1,6 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
-import { ArrowRight, MapPin, Sparkles, Smile, Star, CheckCircle2, ChevronRight, ChevronLeft, Instagram, Phone, Mail, ExternalLink, Award, Heart, Wind, Coffee, ShieldCheck, Plus, Minus, X, Facebook, Menu } from "lucide-react";
+import { ArrowRight, MapPin, Sparkles, Smile, Star, CheckCircle2, ChevronRight, ChevronLeft, Instagram, Phone, Mail, ExternalLink, Award, Heart, Wind, Coffee, ShieldCheck, Plus, Minus, X, Facebook, Menu, Zap } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger, SheetClose } from "@/components/ui/sheet";
 
@@ -19,6 +19,7 @@ import specMimetismo from "@assets/WhatsApp_Image_2026-02-24_at_13.05.38_1771949
 import specClareamento from "@assets/WhatsApp_Image_2026-02-24_at_13.06.05_1771949220711.jpeg";
 import specPeriodontal from "@assets/WhatsApp_Image_2026-02-24_at_13.06.19_1771949220710.jpeg";
 import specRestauracao from "@assets/WhatsApp_Image_2026-02-24_at_13.06.31_1771949220708.jpeg";
+import specRadioX from "@assets/image_1774272347733.png";
 import whatsappIcon from "/assets/whatsapp-custom.png";
 import clinicImg from "@assets/dentista-em-lagoa-santa-scaled_1771954238429.jpg";
 import logoImg from "@assets/WhatsApp_Image_2026-02-24_at_14.00.46_1771955133778.jpeg";
@@ -92,6 +93,13 @@ const services = [
     img: specRestauracao,
     icon: <CheckCircle2 className="w-6 h-6" />,
     reverse: true
+  },
+  { 
+    title: "Raio X Digital Odontológico", 
+    shortDesc: "Você sabe qual é a tecnologia mais precisa para diagnosticar problemas que o olho não vê?",
+    fullDesc: `Você sabe qual é a tecnologia mais precisa para diagnosticar problemas que o olho não vê?\n\nO raio X digital odontológico é a evolução completa da radiografia tradicional. Utilizando sensores de última geração no lugar de filmes convencionais, geramos imagens instantâneas em alta resolução com até 80% menos radiação — uma diferença significativa para sua saúde.\n\nAlém da segurança, a tecnologia oferece mobilidade total no consultório. Eliminamos completamente a necessidade de revelação química, permitindo diagnósticos instantâneos diretamente no computador portátil. Isso significa mais precisão, mais rapidez e mais segurança em cada análise.\n\nCompreendemos cada detalhe — desde pequenas fraturas até problemas periodontais — com clareza que os métodos tradicionais não oferecem.\n\nMais do que tecnologia, é tranquilidade. Você recebe diagnósticos precisos, rápidos e seguros.\n\nSe você busca tratamentos baseados em diagnósticos de excelência, a diferença começa aqui — com a visão completa e precisa do que você realmente precisa.\n\nAgende sua avaliação e descubra como a tecnologia digital transforma o planejamento do seu tratamento.`,
+    img: specRadioX,
+    icon: <Zap className="w-6 h-6" />
   }
 ];
 
